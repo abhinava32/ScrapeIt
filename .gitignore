@@ -1,2 +1,29 @@
+# General
+node_modules/
+dist/
+.DS_Store
 .env
-node_modules
+.vscode/
+.idea/
+*.log
+npm-debug.log*
+
+# Backend (Node.js + Express)
+Backend/node_modules/
+Backend/.env
+Backend/logs/
+Backend/debug.log
+Backend/*.db
+Backend/secret.txt
+
+# Frontend (Vite + TypeScript)
+Frontend/node_modules/
+Frontend/dist/
+Frontend/.env
+Frontend/.cache/
+Frontend/.turbo/
+Frontend/*.log
+Frontend/*.map
+
+# Git-specific
+.git/
