@@ -1,0 +1,1772 @@
+<!DOCTYPE html><html lang="en-US"><head> <script type="54a9ed80920ef8178c15d01c-text/javascript">
+/* <![CDATA[ */
+ var gform;gform||(document.addEventListener("gform_main_scripts_loaded",function(){gform.scriptsLoaded=!0}),document.addEventListener("gform/theme/scripts_loaded",function(){gform.themeScriptsLoaded=!0}),window.addEventListener("DOMContentLoaded",function(){gform.domLoaded=!0}),gform={domLoaded:!1,scriptsLoaded:!1,themeScriptsLoaded:!1,isFormEditor:()=>"function"==typeof InitializeEditor,callIfLoaded:function(o){return!(!gform.domLoaded||!gform.scriptsLoaded||!gform.themeScriptsLoaded&&!gform.isFormEditor()||(gform.isFormEditor()&&console.warn("The use of gform.initializeOnLoaded() is deprecated in the form editor context and will be removed in Gravity Forms 3.1."),o(),0))},initializeOnLoaded:function(o){gform.callIfLoaded(o)||(document.addEventListener("gform_main_scripts_loaded",()=>{gform.scriptsLoaded=!0,gform.callIfLoaded(o)}),document.addEventListener("gform/theme/scripts_loaded",()=>{gform.themeScriptsLoaded=!0,gform.callIfLoaded(o)}),window.addEventListener("DOMContentLoaded",()=>{gform.domLoaded=!0,gform.callIfLoaded(o)}))},hooks:{action:{},filter:{}},addAction:function(o,r,e,t){gform.addHook("action",o,r,e,t)},addFilter:function(o,r,e,t){gform.addHook("filter",o,r,e,t)},doAction:function(o){gform.doHook("action",o,arguments)},applyFilters:function(o){return gform.doHook("filter",o,arguments)},removeAction:function(o,r){gform.removeHook("action",o,r)},removeFilter:function(o,r,e){gform.removeHook("filter",o,r,e)},addHook:function(o,r,e,t,n){null==gform.hooks[o][r]&&(gform.hooks[o][r]=[]);var d=gform.hooks[o][r];null==n&&(n=r+"_"+d.length),gform.hooks[o][r].push({tag:n,callable:e,priority:t=null==t?10:t})},doHook:function(r,o,e){var t;if(e=Array.prototype.slice.call(e,1),null!=gform.hooks[r][o]&&((o=gform.hooks[r][o]).sort(function(o,r){return o.priority-r.priority}),o.forEach(function(o){"function"!=typeof(t=o.callable)&&(t=window[t]),"action"==r?t.apply(null,e):e[0]=t.apply(null,e)})),"filter"==r)return e[0]},removeHook:function(o,r,t,n){var e;null!=gform.hooks[o][r]&&(e=(e=gform.hooks[o][r]).filter(function(o,r,e){return!!(null!=n&&n!=o.tag||null!=t&&t!=o.priority)}),gform.hooks[o][r]=e)}}); 
+/* ]]> */
+</script>
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="shortcut icon" href="https://www.chauvetdj.com/wp-content/themes/chauvetdj/favicon.ico">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet">
+
+<link href="https://www.chauvetdj.com/wp-content/themes/chauvetdj/images/apple-touch-icon.png" rel="apple-touch-icon">
+<!-- <link href="/wp-content/themes/chauvetdj/fonts/fonts.css" rel="stylesheet" type="text/css" /> -->
+<link rel="pingback" href="https://www.chauvetdj.com/xmlrpc.php">
+<script type="54a9ed80920ef8178c15d01c-text/javascript" src="https://www.chauvetdj.com/wp-content/themes/chauvetdj/js/jquery.js"></script><!--test-->
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+	<style>img:is([sizes="auto" i], [sizes^="auto," i]) { contain-intrinsic-size: 3000px 1500px }</style>
+	<link rel="alternate" hreflang="en-us" href="https://www.chauvetdj.com/contact-us/">
+<link rel="alternate" hreflang="fr-fr" href="https://fr.chauvetdj.com/contact-us/">
+<link rel="alternate" hreflang="de-de" href="https://de.chauvetdj.com/contact-us/">
+<link rel="alternate" hreflang="es-es" href="https://es.chauvetdj.com/contact-us/">
+<link rel="alternate" hreflang="x-default" href="https://www.chauvetdj.com/contact-us/">
+
+	<!-- This site is optimized with the Yoast SEO plugin v23.9 - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>Contact Us - CHAUVET DJ</title>
+	<link rel="canonical" href="https://www.chauvetdj.com/contact-us/">
+	<meta property="og:locale" content="en_US">
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="Contact Us - CHAUVET DJ">
+	<meta property="og:description" content="For parts and service, technical and sales support, demo and catalog requests, and warranty questions in regions where Chauvet does not have a branch office, please contact the CHAUVET DJ national distributor for your area. View global distribution network.">
+	<meta property="og:url" content="https://www.chauvetdj.com/contact-us/">
+	<meta property="og:site_name" content="CHAUVET DJ">
+	<meta property="article:publisher" content="https://www.facebook.com/chauvetdj/">
+	<meta property="article:modified_time" content="2024-06-10T18:19:53+00:00">
+	<meta property="og:image" content="https://www.chauvetdj.com/wp-content/uploads/2024/07/CHAUVET-DJ-site-image.png">
+	<meta property="og:image:width" content="1200">
+	<meta property="og:image:height" content="675">
+	<meta property="og:image:type" content="image/png">
+	<meta name="twitter:card" content="summary_large_image">
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://www.chauvetdj.com/contact-us/","url":"https://www.chauvetdj.com/contact-us/","name":"Contact Us - CHAUVET DJ","isPartOf":{"@id":"https://www.chauvetdj.com/#website"},"datePublished":"2016-01-27T16:15:05+00:00","dateModified":"2024-06-10T18:19:53+00:00","breadcrumb":{"@id":"https://www.chauvetdj.com/contact-us/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://www.chauvetdj.com/contact-us/"]}]},{"@type":"BreadcrumbList","@id":"https://www.chauvetdj.com/contact-us/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.chauvetdj.com/"},{"@type":"ListItem","position":2,"name":"Contact Us"}]},{"@type":"WebSite","@id":"https://www.chauvetdj.com/#website","url":"https://www.chauvetdj.com/","name":"CHAUVET DJ","description":"Leader in the Entertainment Lighting Market","publisher":{"@id":"https://www.chauvetdj.com/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://www.chauvetdj.com/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"en-US"},{"@type":"Organization","@id":"https://www.chauvetdj.com/#organization","name":"CHAUVET DJ","url":"https://www.chauvetdj.com/","logo":{"@type":"ImageObject","inLanguage":"en-US","@id":"https://www.chauvetdj.com/#/schema/logo/image/","url":"https://www.chauvetdj.com/wp-content/uploads/2024/07/CHAUVET-DJ-Logo-black.png","contentUrl":"https://www.chauvetdj.com/wp-content/uploads/2024/07/CHAUVET-DJ-Logo-black.png","width":1961,"height":808,"caption":"CHAUVET DJ"},"image":{"@id":"https://www.chauvetdj.com/#/schema/logo/image/"},"sameAs":["https://www.facebook.com/chauvetdj/","https://www.youtube.com/user/@CHAUVETDJ","https://instagram.com/chauvet_dj"]}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel="dns-prefetch" href="//static.addtoany.com">
+<link rel="dns-prefetch" href="//maps.googleapis.com">
+<link rel="dns-prefetch" href="//www.googletagmanager.com">
+<link rel="stylesheet" id="sbi_styles-css" href="https://www.chauvetdj.com/wp-content/plugins/instagram-feed-pro/css/sbi-styles.min.css?ver=6.5.1" type="text/css" media="all">
+<link rel="stylesheet" id="wp-block-library-css" href="https://www.chauvetdj.com/wp-includes/css/dist/block-library/style.min.css?ver=38f773a0918e3fc3a4abd70b36e446b2" type="text/css" media="all">
+<style id="classic-theme-styles-inline-css" type="text/css">
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+</style>
+<style id="global-styles-inline-css" type="text/css">
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}
+</style>
+<link rel="stylesheet" id="titan-adminbar-styles-css" href="https://www.chauvetdj.com/wp-content/plugins/anti-spam/assets/css/admin-bar.css?ver=7.3.8" type="text/css" media="all">
+<link rel="stylesheet" id="cookie-notice-front-css" href="https://www.chauvetdj.com/wp-content/plugins/cookie-notice/css/front.min.css?ver=2.5.3" type="text/css" media="all">
+<link rel="stylesheet" id="nextend_google_connect_stylesheet-css" href="https://www.chauvetdj.com/wp-content/plugins/nextend-google-connect/buttons/google-btn.css?ver=38f773a0918e3fc3a4abd70b36e446b2" type="text/css" media="all">
+<link rel="stylesheet" id="wk-styles-css" href="https://www.chauvetdj.com/wp-content/plugins/widgetkit/cache/wk-styles-fd882770.css?ver=38f773a0918e3fc3a4abd70b36e446b2" type="text/css" media="all">
+<link rel="stylesheet" id="dashicons-css" href="https://www.chauvetdj.com/wp-includes/css/dashicons.min.css?ver=38f773a0918e3fc3a4abd70b36e446b2" type="text/css" media="all">
+<link rel="stylesheet" id="cff-css" href="https://www.chauvetdj.com/wp-content/plugins/custom-facebook-feed-pro/assets/css/cff-style.min.css?ver=4.6.6" type="text/css" media="all">
+<link rel="stylesheet" id="wpml-legacy-dropdown-0-css" href="https://www.chauvetdj.com/wp-content/plugins/sitepress-multilingual-cms/templates/language-switchers/legacy-dropdown/style.min.css?ver=1" type="text/css" media="all">
+<style id="wpml-legacy-dropdown-0-inline-css" type="text/css">
+.wpml-ls-statics-shortcode_actions{background-color:#142b3b;}.wpml-ls-statics-shortcode_actions a, .wpml-ls-statics-shortcode_actions .wpml-ls-sub-menu a, .wpml-ls-statics-shortcode_actions .wpml-ls-sub-menu a:link, .wpml-ls-statics-shortcode_actions li:not(.wpml-ls-current-language) .wpml-ls-link, .wpml-ls-statics-shortcode_actions li:not(.wpml-ls-current-language) .wpml-ls-link:link {color:#ffffff;background-color:#142b3b;}.wpml-ls-statics-shortcode_actions a, .wpml-ls-statics-shortcode_actions .wpml-ls-sub-menu a:hover,.wpml-ls-statics-shortcode_actions .wpml-ls-sub-menu a:focus, .wpml-ls-statics-shortcode_actions .wpml-ls-sub-menu a:link:hover, .wpml-ls-statics-shortcode_actions .wpml-ls-sub-menu a:link:focus {color:#000000;background-color:#eeeeee;}.wpml-ls-statics-shortcode_actions .wpml-ls-current-language > a {color:#ffffff;background-color:#142b3b;}.wpml-ls-statics-shortcode_actions .wpml-ls-current-language:hover>a, .wpml-ls-statics-shortcode_actions .wpml-ls-current-language>a:focus {color:#000000;background-color:#ffffff;}
+</style>
+<link rel="stylesheet" id="dj-styles-css" href="https://www.chauvetdj.com/wp-content/themes/chauvetdj/style.css?ver=1.0.16" type="text/css" media="all">
+<link rel="stylesheet" id="dj-responsive-css" href="https://www.chauvetdj.com/wp-content/themes/chauvetdj/media-queries.css?ver=1.0.0" type="text/css" media="all">
+<link rel="stylesheet" id="addtoany-css" href="https://www.chauvetdj.com/wp-content/plugins/add-to-any/addtoany.min.css?ver=1.16" type="text/css" media="all">
+<script type="54a9ed80920ef8178c15d01c-text/javascript">
+            window._nslDOMReady = function (callback) {
+                if ( document.readyState === "complete" || document.readyState === "interactive" ) {
+                    callback();
+                } else {
+                    document.addEventListener( "DOMContentLoaded", callback );
+                }
+            };
+            </script><script type="54a9ed80920ef8178c15d01c-text/javascript" id="wpml-cookie-js-extra">
+/* <![CDATA[ */
+var wpml_cookies = {"wp-wpml_current_language":{"value":"en","expires":1,"path":"\/"}};
+var wpml_cookies = {"wp-wpml_current_language":{"value":"en","expires":1,"path":"\/"}};
+/* ]]> */
+</script>
+<script type="54a9ed80920ef8178c15d01c-text/javascript" src="https://www.chauvetdj.com/wp-content/plugins/sitepress-multilingual-cms/res/js/cookies/language-cookie.js?ver=4.6.14" id="wpml-cookie-js" defer="defer" data-wp-strategy="defer"></script>
+<script type="54a9ed80920ef8178c15d01c-text/javascript" id="addtoany-core-js-before">
+/* <![CDATA[ */
+window.a2a_config=window.a2a_config||{};a2a_config.callbacks=[];a2a_config.overlays=[];a2a_config.templates={};
+/* ]]> */
+</script>
+<script type="54a9ed80920ef8178c15d01c-text/javascript" defer="" src="https://static.addtoany.com/menu/page.js" id="addtoany-core-js"></script>
+<script type="54a9ed80920ef8178c15d01c-text/javascript" src="https://www.chauvetdj.com/wp-includes/js/jquery/jquery.min.js?ver=3.7.1" id="jquery-core-js"></script>
+<script type="54a9ed80920ef8178c15d01c-text/javascript" src="https://www.chauvetdj.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1" id="jquery-migrate-js"></script>
+<script type="54a9ed80920ef8178c15d01c-text/javascript" defer="" src="https://www.chauvetdj.com/wp-content/plugins/add-to-any/addtoany.min.js?ver=1.1" id="addtoany-jquery-js"></script>
+<script type="54a9ed80920ef8178c15d01c-text/javascript" id="cookie-notice-front-js-before">
+/* <![CDATA[ */
+var cnArgs = {"ajaxUrl":"https:\/\/www.chauvetdj.com\/wp-admin\/admin-ajax.php","nonce":"079f2f7be4","hideEffect":"fade","position":"bottom","onScroll":false,"onScrollOffset":100,"onClick":false,"cookieName":"cookie_notice_accepted","cookieTime":2592000,"cookieTimeRejected":2592000,"globalCookie":false,"redirection":false,"cache":true,"revokeCookies":false,"revokeCookiesOpt":"automatic"};
+/* ]]> */
+</script>
+<script type="54a9ed80920ef8178c15d01c-text/javascript" src="https://www.chauvetdj.com/wp-content/plugins/cookie-notice/js/front.min.js?ver=2.5.3" id="cookie-notice-front-js"></script>
+<script type="54a9ed80920ef8178c15d01c-text/javascript" id="email-posts-to-subscribers-js-extra">
+/* <![CDATA[ */
+var elp_data = {"messages":{"elp_name_required":"Please enter name.","elp_email_required":"Please enter email address.","elp_invalid_name":"Name seems invalid.","elp_invalid_email":"Email address seems invalid.","elp_unexpected_error":"Oops.. Unexpected error occurred.","elp_invalid_captcha":"Robot verification failed, please try again.","elp_invalid_key":"Robot verification failed, invalid key.","elp_successfull_single":"You have successfully subscribed.","elp_successfull_double":"You have successfully subscribed. You will receive a confirmation email in few minutes. Please follow the link in it to confirm your subscription. If the email takes more than 15 minutes to appear in your mailbox, please check your spam folder.","elp_email_exist":"Email already exist.","elp_email_squeeze":"You are trying to submit too fast. try again in 1 minute."},"elp_ajax_url":"https:\/\/www.chauvetdj.com\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type="54a9ed80920ef8178c15d01c-text/javascript" src="https://www.chauvetdj.com/wp-content/plugins/email-posts-to-subscribers//inc/email-posts-to-subscribers.js?ver=2.2" id="email-posts-to-subscribers-js"></script>
+<script type="54a9ed80920ef8178c15d01c-text/javascript" src="https://www.chauvetdj.com/wp-content/plugins/html-to-pdf-master/public/js/html-to-pdf-public.js?ver=1.0.0" id="html-to-pdf-js"></script>
+<script type="54a9ed80920ef8178c15d01c-text/javascript" src="https://www.chauvetdj.com/wp-content/plugins/widgetkit/cache/uikit2-2a9892be.js?ver=38f773a0918e3fc3a4abd70b36e446b2" id="uikit2-js"></script>
+<script type="54a9ed80920ef8178c15d01c-text/javascript" src="https://www.chauvetdj.com/wp-content/plugins/widgetkit/cache/wk-scripts-b87edcd5.js?ver=38f773a0918e3fc3a4abd70b36e446b2" id="wk-scripts-js"></script>
+<script type="54a9ed80920ef8178c15d01c-text/javascript" src="https://www.chauvetdj.com/wp-content/plugins/sitepress-multilingual-cms/templates/language-switchers/legacy-dropdown/script.min.js?ver=1" id="wpml-legacy-dropdown-0-js"></script>
+<script type="54a9ed80920ef8178c15d01c-text/javascript" src="https://www.chauvetdj.com/wp-content/plugins/slp-experience/include/widgets/slp_widgets.js?ver=38f773a0918e3fc3a4abd70b36e446b2" id="slp-experience/slp-experience.php_widgets-js"></script>
+<script type="54a9ed80920ef8178c15d01c-text/javascript" id="slp-experience/slp-experience.php_widgets-js-after">
+/* <![CDATA[ */
+const slp_experience = {"ajaxurl":"https:\/\/www.chauvetdj.com\/wp-admin\/admin-ajax.php"}
+/* ]]> */
+</script>
+<script type="54a9ed80920ef8178c15d01c-text/javascript" id="product_filter-js-extra">
+/* <![CDATA[ */
+var productFilter = {"ajaxurl":"https:\/\/www.chauvetdj.com\/wp-admin\/admin-ajax.php","maxPages":"0","currentPage":"1"};
+/* ]]> */
+</script>
+<script type="54a9ed80920ef8178c15d01c-text/javascript" src="https://www.chauvetdj.com/wp-content/themes/chauvetdj/js/product-filter.js?ver=38f773a0918e3fc3a4abd70b36e446b2" id="product_filter-js"></script>
+
+<!-- Google tag (gtag.js) snippet added by Site Kit -->
+
+<!-- Google Analytics snippet added by Site Kit -->
+<script type="54a9ed80920ef8178c15d01c-text/javascript" src="https://www.googletagmanager.com/gtag/js?id=GT-K8FZNV3" id="google_gtagjs-js" async=""></script>
+<script type="54a9ed80920ef8178c15d01c-text/javascript" id="google_gtagjs-js-after">
+/* <![CDATA[ */
+window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}
+gtag("set","linker",{"domains":["www.chauvetdj.com"]});
+gtag("js", new Date());
+gtag("set", "developer_id.dZTNiMT", true);
+gtag("config", "GT-K8FZNV3");
+/* ]]> */
+</script>
+
+<!-- End Google tag (gtag.js) snippet added by Site Kit -->
+<meta name="generator" content="WPML ver:4.6.14 stt:1,4,3,2;">
+<!-- Custom Facebook Feed JS vars -->
+<script type="54a9ed80920ef8178c15d01c-text/javascript">
+var cffsiteurl = "https://www.chauvetdj.com/wp-content/plugins";
+var cffajaxurl = "https://www.chauvetdj.com/wp-admin/admin-ajax.php";
+
+
+var cfflinkhashtags = "false";
+</script>
+<style>.elp_form_message.success { color: #008000;font-weight: bold; } .elp_form_message.error { color: #ff0000; } .elp_form_message.boterror { color: #ff0000; } </style><meta name="generator" content="Site Kit by Google 1.140.0"><!-- SLP Custom CSS -->
+<style type="text/css">
+div#map.slp_map {
+width:100%;
+height:480px;
+}
+div#slp_tagline {
+width:100%;
+}
+.slp_search_form .search_box .search_item{ display:block !important; } #radius_in_submit input#addressSubmit{ margin: 0; } #distributors #addy_in_radius{ display:block !important; } #usa-rentals #addy_in_country, #usa-dealers #addy_in_country, #usa-installers #addy_in_country{ display:none !important; }</style>
+
+
+<!-- Meta Pixel Code -->
+<script type="54a9ed80920ef8178c15d01c-text/javascript">
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js?v=next');
+</script>
+<!-- End Meta Pixel Code -->
+
+      <script type="54a9ed80920ef8178c15d01c-text/javascript">
+        var url = window.location.origin + '?ob=open-bridge';
+        fbq('set', 'openbridge', '637871040715094', url);
+      </script>
+    <script type="54a9ed80920ef8178c15d01c-text/javascript">fbq('init', '637871040715094', {}, {
+    "agent": "wordpress-6.7.1-4.0.1"
+})</script><script type="54a9ed80920ef8178c15d01c-text/javascript">
+    fbq('track', 'PageView', []);
+  </script>
+<!-- Meta Pixel Code -->
+<noscript>
+<img height="1" width="1" style="display:none" alt="fbpx"
+src="https://www.facebook.com/tr?id=637871040715094&ev=PageView&noscript=1" />
+</noscript>
+<!-- End Meta Pixel Code -->
+
+<!-- Google Tag Manager snippet added by Site Kit -->
+<script type="54a9ed80920ef8178c15d01c-text/javascript">
+/* <![CDATA[ */
+
+			( function( w, d, s, l, i ) {
+				w[l] = w[l] || [];
+				w[l].push( {'gtm.start': new Date().getTime(), event: 'gtm.js'} );
+				var f = d.getElementsByTagName( s )[0],
+					j = d.createElement( s ), dl = l != 'dataLayer' ? '&l=' + l : '';
+				j.async = true;
+				j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+				f.parentNode.insertBefore( j, f );
+			} )( window, document, 'script', 'dataLayer', 'GTM-NZHPF57' );
+			
+/* ]]> */
+</script>
+
+<!-- End Google Tag Manager snippet added by Site Kit -->
+			<style id="wpsp-style-frontend"></style>
+					<style type="text/css" id="wp-custom-css">
+			p {
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+
+.xpress-table-wrap {
+    float: left !important;
+    width: 100% !important;
+}
+
+
+#sl_div {
+    width: 70% !important;
+    float: left !important;
+    position: relative !important;
+}
+
+/*
+a.user-locale {
+    margin-left: 20px !important;
+    font-size: 14px !important;
+    width: 100% !important;
+    /* text-align: right !important; */
+    /*font-family: 'Helvetica LT Std';
+    font-weight: 700;
+    color: rgb(87, 102, 112);
+    text-transform: uppercase;
+    display: block;
+    clear: both;
+    /* position: absolute; */
+   /* top: 50%;
+    margin-right: 25px !important;
+    margin-top: 17px;
+}
+*/
+
+
+a.languagechooser2 .languagechooser2 {
+    font-family: 'Helvetica LT Std', sans-serif;
+    font-size: 14px !important;
+    color: rgb(87, 102, 112);
+    font-weight: 700;
+    text-transform: uppercase;
+    display: block;
+    line-height: 50px;
+    padding: 0 20px 0 15px;
+}
+
+
+
+
+/*Bt Air Sidebar*/
+
+
+aside.xpress ul li div {
+    border: 0px #cdcdcd solid !important;
+}
+
+
+
+
+aside.xpress ul li {
+    float: left;
+    list-style: outside none none;
+    margin-bottom: 0px;
+  width: 50% !important;
+}
+
+
+
+.content-block img {
+    display: block;
+    /*max-width: 50% !important;*/
+    height: auto;
+    /*padding: 10px 0 20px;*/
+		padding: 0px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+aside.xpress ul li h3 {
+    font-size: 16px;
+    text-align: center;
+    padding: 5px 0px;
+}
+
+
+.content-block h3 {
+    font-size: 20px;
+    line-height: 36px;
+    padding: 10px 10px 0px 10px;
+    border-radius: 50px;
+}
+
+.uk-accordion-title {
+    margin-top: 0;
+    margin-bottom: 5px;
+    /*padding: 5px 20px;*/
+    background: #eee;
+    font-size: 18px;
+    line-height: 24px;
+    cursor: pointer;
+    padding-left: 15px !important;
+    padding-bottom: 2px !important;
+}
+
+h3.uk-accordion-title {
+    border: 3px solid #ccc;
+    background: transparent;
+    /* color: #333; */
+}
+
+.content-block ul li, .content-block ol li {
+    padding: 0px !important;
+    line-height: 26px;
+}
+
+.content-block ul li, .content-block ol li {
+    padding: 5px !important;
+    line-height: 26px;
+}
+.uk-list-striped>li:nth-of-type(odd) {
+    background: #eee;
+    padding: 5px !important;
+}
+
+
+.uk-button-large {
+    text-transform: uppercase;
+	  background-color: #052031;
+    color: #fff !important;
+    border-radius: 500px !important;
+    padding-top: 15px;
+    padding-bottom: 10px;
+	font-size: 24px !important;
+}
+
+.uk-button-large {
+    text-transform: uppercase;
+    background-color: #052031;
+    color: #fff !important;
+    border-radius: 500px !important;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    font-size: 24px !important;
+}
+
+.uk-button-large:focus, .uk-button-large:hover {
+    background-color: #990000;
+}
+
+.uk-button-primary {
+    background-color: #990000;
+    color: #fff !important;
+    border-radius: 500px !important;
+}
+
+.uk-button-primary:focus, .uk-button-primary:hover {
+    background-color: #052031;
+}
+
+
+
+
+.uk-panel-space .uk-panel-badge {
+    top: 10px;
+    left: 30px;
+    font-size: 14px;
+    color: #333 !important;
+    font-weight: 100 !important;
+}
+
+
+.uk-panel-badge {
+    position: absolute;
+    top: 0;
+    right: auto !important;
+    z-index: 1;
+    background: #ccc;
+    padding: 2px 15px 2px 15px;
+    color: #fff !important;
+    border-radius: 50px !important;
+}
+
+#main #wrapper.box.alt {
+    padding: 100px 20px 15px !important;
+}
+
+.uk-text-large {
+    font-size: 17px;
+    line-height: 26px;
+
+}
+
+.uk-panel-box {
+    padding: 20px;
+    background: #fff;
+    border: 3px solid #e5e5e5;
+    border-radius: 20px;
+}
+
+body {
+    font-family: 'Helvetica LT Std';
+}
+
+*+.uk-dotnav, *+.uk-subnav {
+    margin-top: 0px!important;
+}
+.uk-dotnav, .uk-subnav {
+    margin-bottom: 0px!important;
+}
+
+.uk-subnav {
+    margin-left: 0;
+}
+
+.content-block h3 {
+   line-height: 24px !important;
+}
+
+
+.product.single .main .header h1 {
+    margin-top: 5px;
+}
+
+/*Awards page heading Widgetkit*/ 
+h3.uk-heading-large.uk-margin-top-remove {
+    font-size: 26px;
+    font-weight: 700;
+}
+
+
+
+/*WPML menu*/
+
+#header #nav ul.sub_menu li a {
+    display: block;
+    font-size: 14px;
+    color: #bb2025;
+    line-height: 50px;
+    padding: 0px 20px 0px 20px;
+}
+
+
+.wpml-ls-statics-shortcode_actions .wpml-ls-current-language>a {
+    color: #444444;
+    
+}
+
+.wpml-ls-legacy-dropdown a {
+    border: 0px solid #142b3b !important;
+    width: 90px !important;
+}
+#masthead .wrapper .circle {
+    z-index: 99 !important;
+}
+
+.wpml-ls-legacy-dropdown .wpml-ls-flag {
+    margin-top: -4px;
+}
+
+.content-block a {
+color: #bb2025;
+font-family: inherit !important;
+font-weight: bold;
+font-size: inherit;
+line-height: inherit;
+}
+
+.uk-tab>li.uk-active>a {
+border-color: #e5e5e5 #e5e5e5 transparent;
+background: #fff;
+color: #bb2025;
+}
+
+ul#social li.snap-w a, .sub-menu.mobile li.snap-w a {
+	visibility: hidden !important;
+}
+#footer ul#social li.snapchat a {
+    background-image: url(images/snapchat.svg);
+    visibility: hidden;
+}
+
+/*BTAir page*/
+
+#searchForm SELECT {
+    line-height: 24px;
+}
+
+#radius_in_submit INPUT {
+    background: #bb2024;
+}
+/* Already in style.css but cache was not successfully clearing the file */
+.specs.box ul li span {
+    margin-right: 5px;
+}
+
+#masthead .wrapper .circle.top {
+    display: none;
+}
+
+
+
+/*NEW DJ BRANDING 2024*/
+
+body {
+    background: #a91d22;
+}
+
+
+.fontface {
+    font-family: poppins, sans-serif;
+    font-weight: 400;
+}
+
+.content-block h1, .content-block h2, .content-block h3, .content-block h4, .content-block h5 {
+    font-family: 'poppins', sans-serif;
+}
+
+#home ul.slideshow li.slide .main h2 {
+    font-size: 46px;
+    line-height: 50px;
+    margin: 0 0 8px;
+    font-weight: 600;
+    padding-top: 20px;
+}
+
+#home ul.slideshow li.slide .main h3 {
+    font-size: 28px;
+    line-height: 32px;
+    margin: 0 0 12px;
+    font-weight: 400;
+}
+
+.product.preview .header h2 {
+    font-weight: 600;
+}
+
+
+.section .header.title h1 {
+    font-size: 68px;
+    line-height: 78px;
+    font-weight: 600;
+}
+
+.circle-expand a.expand-filter {
+    display: none;
+}
+
+.product.single .main .header.new span.new {
+    font-family: poppins, sans-serif;
+    color: #bb2025;
+}
+
+.fontface.bold,
+.fontface strong {
+    font-weight: 600;
+}
+
+#home #masthead ul.rslides_tabs li a {
+     display: none !important;
+}
+
+
+/*
+#header #searchform .submit {
+    background: url(images/search-wht.svg) no-repeat center !important;
+}
+*/
+
+.wpml-ls-legacy-dropdown .wpml-ls-sub-menu {
+    z-index: 999999;
+		background: #000;
+}
+
+
+#header #nav ul.sub_menu .wpml-ls-sub-menu li a:hover {
+    background: #bb2025 !important;
+    color: white!important;
+}
+
+#header #searchform .submit:hover {
+    filter: invert(1);
+}
+
+
+
+#header #nav ul.menu li.cats .dropdown ul.categories li a:hover .icon {
+    border-color: #000000;
+}
+
+#header #nav ul.menu li.cats .dropdown ul.categories li a:hover img {
+    filter: invert(1);
+}
+
+
+
+#header #nav .sub .excemted-on-filter #quick-product-find {
+    background: #000;
+}
+
+#header #nav ul.sub_menu li a:hover {
+    color: #000 !important;
+}
+
+
+#header #nav ul.sub_menu li.menu-item-has-children ul.sub-menu li {
+    border-bottom: 1px solid #fff;
+}
+
+#header #nav ul.menu li.cats .dropdown ul.prod_sub_menu li.menu-item-has-children ul.sub-menu li a {
+    font-weight: 400;
+}
+
+#header #nav ul.menu li.menu-item-has-children ul.sub-menu li a {
+    font-weight: 400;
+}
+
+
+#header #nav ul.menu li.menu-item-has-children ul.sub-menu {
+    background: #a91d22;
+    width: auto;
+}
+
+#header #nav ul.menu li.menu-item-has-children ul.sub-menu li:first-child {
+    border-top: 1px solid #fff;
+}
+
+#header #nav ul.menu li.menu-item-has-children ul.sub-menu li {
+    height: auto;
+    float: none;
+    display: block;
+    clear: both;
+    border-bottom: 1px solid #fff;
+}
+
+#header #nav ul.menu li a:hover {
+    color: #000 !important;
+}
+
+#header #nav ul.menu li a.active {
+    color: #000;
+}
+
+#header #nav ul.menu li a:hover {
+    color: #000 !important;
+}
+
+#header #nav ul.sub_menu li.menu-item-has-children ul.sub-menu {
+    background: #a91d22;
+    z-index: 99999;
+    border: 2px solid #fff;
+    width: 275px;
+    max-height: 548px;
+
+}
+
+#header #nav ul.sub_menu li.menu-item-has-children ul.sub-menu li a {
+    font-weight: 400;
+}
+
+.wpml-ls-statics-shortcode_actions .wpml-ls-current-language>a {
+    color: #ffffff;
+    background-color: transparent;
+}
+
+.circle-expand a.expand-filter {
+    background: #e30c1c;
+    border: 1px solid #e30c1c;
+    font-weight: 300;
+    font-size: 20px;
+}
+
+ul#social li a,
+.sub-menu.mobile li a {
+    border: 2px solid #e30c1c;
+    border-radius: 8px;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+
+}
+
+#masthead .wrapper .wrapper {
+    padding: 20px 20px 20px 20px;
+    overflow: hidden;
+}
+
+
+#header #logo h1 a {
+    background: url(/wp-content/themes/chauvetdj/images/logo.svg) no-repeat center !important;
+}
+
+#header {
+    background: #fff;
+}
+
+#header #nav ul.sub_menu li a {
+    color: #999;
+}
+
+#masthead .wrapper .circle.top {
+    display: none;
+}
+
+
+#header #nav .sub .excemted-on-filter #quick-product-find {
+    color: #fff;
+}
+
+
+#masthead .wrapper .circle.btm {
+    display: none;
+}
+
+
+#home #masthead .wrapper .circle::before {
+    background: #e30c1c;
+}
+
+#header .main {
+    background: #a91d22;
+}
+
+#home #masthead {
+    background: #e30c1c;
+    background-image: url("/wp-content/uploads/2024/05/Halftone-Single2024-1.png");
+    background-repeat: repeat-x;
+}
+
+#home #masthead ul.rslides_tabs {
+    width: 800px;
+}
+
+#header #nav ul.menu li.menu-item-has-children>a::after {
+    background: url(/wp-content/themes/chauvetdj/images/arrow_down_white.svg) no-repeat center top 50% !important;
+}
+#header #nav ul.menu li.menu-item-has-children>a:hover::after,
+#header #nav ul.menu li.menu-item-has-children>a.active::after {
+    filter: invert(1);
+}
+
+
+#header #nav ul.menu li.cats .dropdown {
+    background: #a91d22;
+}
+
+#header #nav ul.menu li.cats .dropdown ul.prod_sub_menu {
+    border-left: 2px solid #fff;
+}
+
+#header #nav ul.menu li.cats .dropdown ul.categories {
+    border-right: 2px solid #fff;
+}
+
+#header #nav ul.menu li.cats .dropdown ul.prod_sub_menu li {
+    border-top: 2px solid #fff;
+}
+
+.btn.round {
+    font-family: Poppins, sans-serif;
+		color: #e30c1c;
+    border: 2px solid #e30c1c;
+}
+
+a:hover.btn.round {
+    color: #fff;
+    background-color: #e30c1c;
+}
+
+
+
+
+/*Footer*/
+
+#footer .top {
+    background: #e30c1c;
+}
+
+
+
+.updates .signup .field {
+    background: #a91d22;
+}
+
+input.submit.btn.fontface.round.box {
+    color: #fff;
+    border: 2px solid #fff;
+}
+
+.updates .signup .submit:hover {
+    color: #e30c1c !important;
+    background: #fff;
+}
+
+a:hover.btn.round.white {
+    color: #e30c1c;
+    background-color: #fff;
+}
+
+
+
+#footer {
+    background: #fff;
+}
+
+#footer .nav ul.menu li a {
+    color: #999999;
+}
+
+#footer ul#social li a {
+    border: 2px solid #e30c1c;
+    border-radius: 8px;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+
+}
+
+#footer ul#social li a:hover {
+    background-color: #000;
+    border: 2px solid #e30c1c;
+}
+
+#footer .nav {
+    border-bottom: 3px solid #999;
+}
+
+/*Responsive Menu*/
+
+@media only screen and (max-width: 980px) {
+    #nav_btn span, #nav_btn span::before, #nav_btn span::after {
+        background: #fff;
+    }
+}
+
+
+@media only screen and (max-width: 980px) {
+    #header #nav ul.menu li {
+         border-top: 3px solid #fff !important;
+    }
+}
+
+@media only screen and (max-width: 980px) {
+    #header #nav ul.sub_menu li {
+        border-top: 3px solid #fff !important;
+    }
+}
+
+h1, h2, h3, h4, h5, h6, p, label, span, a, button {
+	font-family: "Poppins", sans-serif;
+}
+
+.download.item.fontface.box a {
+    background: transparent;
+    border: 10px solid #a91d22;
+    border-radius: 30px;
+    color: #a91d22;
+}
+
+.gform_button {
+    display: block;
+    font-size: 24px;
+    line-height: 58px;
+    text-transform: uppercase;
+    padding: 0 50px;
+    font-family: Poppins, sans-serif;
+    background: #e30c1c;
+    border: 2px solid #e30c1c;
+    color:white;
+    cursor: pointer;
+    border-radius: 30px;
+}
+
+.gform_button:hover {
+    color: #e30c1c;
+    background: transparent;
+}
+		</style>
+		<script type="application/ld+json">{
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "CHAUVET DJ",
+        "url": "https://www.chauvetdj.com/",
+        "logo": "https://www.chauvetdj.com/wp-content/themes/chauvetdj/images/logo.svg",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "(800)762-1084",
+          "contactType": "customer service",
+          "areaServed": "IN",
+          "availableLanguage": "en"
+        },
+        "sameAs": [
+          "https://www.facebook.com/chauvetdj",
+          "https://instagram.com/chauvet_dj",
+          "https://www.youtube.com/user/chauvetlighting"
+        ]
+ }
+</script>
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org", 
+      "@type": "WebSite",
+      "url": "https://www.chauvetdj.com",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://www.chauvetdj.com/?s={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    }
+</script>
+</head>
+<body id="contact-us" class="page">
+
+<div id="container" class="box">
+  <header id="header" class="box">
+    <div id="logo" class="box">
+      <h1><a href="https://www.chauvetdj.com/" title="CHAUVET DJ - Leader in the Entertainment Lighting Market">CHAUVET DJ</a></h1>
+    </div>
+    <div class="main box">
+      <div class="wrapper box">
+        
+        <a id="nav_btn"><span>Toggle Menu</span></a>
+        <nav id="nav" class="toggle box">
+          <ul class="menu fontface box">
+                          <li class="cats menu-item-has-children">
+                <a href="/products/">Products</a>
+                <div class="dropdown fontface box">
+                  <div class="wrapper box">
+                    <ul class="categories box">
+                                                    <li class="box">
+                                <a href="/products/">
+                                  <figure class="icon img box"><img src="https://www.chauvetdj.com/wp-content/uploads/2024/06/chauvet-dj-triangle-3.png" alt=""></figure>
+                                  <span>All Products</span>
+                                </a>
+                              </li>
+                            
+
+                                                                                                    <li class="box">
+                              <a href="https://www.chauvetdj.com/products/category/atmospherics/">
+                        <figure class="icon img box"><img src="https://www.chauvetdj.com/wp-content/uploads/2015/12/atmospherics-icon.png" alt="Atmospherics"></figure>
+                                <span>Atmospherics</span>
+                              </a>
+                            </li>
+                                                                                                                                                      <li class="box">
+                              <a href="https://www.chauvetdj.com/products/category/battery-wireless/">
+                        <figure class="icon img box"><img src="https://www.chauvetdj.com/wp-content/uploads/2015/12/battery-wireless-icon.png" alt="Battery &amp; Wireless"></figure>
+                                <span>Battery &amp; Wireless</span>
+                              </a>
+                            </li>
+                                                                                                                                                      <li class="box">
+                              <a href="https://www.chauvetdj.com/products/category/blacklights/">
+                        <figure class="icon img box"><img src="https://www.chauvetdj.com/wp-content/uploads/2016/01/blacklights-icon.png" alt=""></figure>
+                                <span>Blacklights</span>
+                              </a>
+                            </li>
+                                                                                                                                                      <li class="box">
+                              <a href="https://www.chauvetdj.com/products/category/bluetooth/">
+                        <figure class="icon img box"><img src="https://www.chauvetdj.com/wp-content/uploads/2020/03/bluetooth-category-ico.png" alt=""></figure>
+                                <span>Bluetooth</span>
+                              </a>
+                            </li>
+                                                                                                                                                      <li class="box">
+                              <a href="https://www.chauvetdj.com/products/category/controllers/">
+                        <figure class="icon img box"><img src="https://www.chauvetdj.com/wp-content/uploads/2015/12/controllers-icon.png" alt="Controllers"></figure>
+                                <span>Controllers</span>
+                              </a>
+                            </li>
+                                                                                                                                                      <li class="box">
+                              <a href="https://www.chauvetdj.com/products/category/effects/">
+                        <figure class="icon img box"><img src="https://www.chauvetdj.com/wp-content/uploads/2015/12/effects-icon.png" alt="Effects"></figure>
+                                <span>Effects</span>
+                              </a>
+                            </li>
+                                                                                                                                                      <li class="box">
+                              <a href="https://www.chauvetdj.com/products/category/exterior/">
+                        <figure class="icon img box"><img src="https://www.chauvetdj.com/wp-content/uploads/2015/12/exterior-icon.png" alt="Exterior"></figure>
+                                <span>Exterior</span>
+                              </a>
+                            </li>
+                                                                                                                                                      <li class="box">
+                              <a href="https://www.chauvetdj.com/products/category/gobo-projectors/">
+                        <figure class="icon img box"><img src="https://www.chauvetdj.com/wp-content/uploads/2015/12/gobo-projectors-icon.png" alt="Gobo Projectors"></figure>
+                                <span>Gobo Projectors</span>
+                              </a>
+                            </li>
+                                                                                                                                                      <li class="box">
+                              <a href="https://www.chauvetdj.com/products/category/ils/">
+                        <figure class="icon img box"><img src="https://www.chauvetdj.com/wp-content/uploads/2022/10/ils-menu-icon.png" alt=""></figure>
+                                <span>ILS</span>
+                              </a>
+                            </li>
+                                                                                                                                                      <li class="box">
+                              <a href="https://www.chauvetdj.com/products/category/lasers/">
+                        <figure class="icon img box"><img src="https://www.chauvetdj.com/wp-content/uploads/2015/12/lasers-icon.png" alt="Lasers"></figure>
+                                <span>Lasers</span>
+                              </a>
+                            </li>
+                                                                                                                                                      <li class="box">
+                              <a href="https://www.chauvetdj.com/products/category/moving-heads-scanners/">
+                        <figure class="icon img box"><img src="https://www.chauvetdj.com/wp-content/uploads/2015/12/moving-heads-icon.png" alt="Moving Heads &amp; Scanners"></figure>
+                                <span>Moving Heads &amp; Scanners</span>
+                              </a>
+                            </li>
+                                                                                                                                                      <li class="box">
+                              <a href="https://www.chauvetdj.com/products/category/stage/">
+                        <figure class="icon img box"><img src="https://www.chauvetdj.com/wp-content/uploads/2021/03/stage-video-icon-1.png" alt=""></figure>
+                                <span>Small Stage &amp; Video</span>
+                              </a>
+                            </li>
+                                                                                                                                                      <li class="box">
+                              <a href="https://www.chauvetdj.com/products/category/spotlights/">
+                        <figure class="icon img box"><img src="https://www.chauvetdj.com/wp-content/uploads/2015/12/spotlights-icon.png" alt="Spotlights"></figure>
+                                <span>Spotlights</span>
+                              </a>
+                            </li>
+                                                                                                                                                      <li class="box">
+                              <a href="https://www.chauvetdj.com/products/category/streaming/">
+                        <figure class="icon img box"><img src="https://www.chauvetdj.com/wp-content/uploads/2021/12/streaming-white-icon.png" alt=""></figure>
+                                <span>Streaming</span>
+                              </a>
+                            </li>
+                                                                                                                                                      <li class="box">
+                              <a href="https://www.chauvetdj.com/products/category/strobes/">
+                        <figure class="icon img box"><img src="https://www.chauvetdj.com/wp-content/uploads/2015/12/strobes-backlights-icon.png" alt="Strobes &amp; Blacklights"></figure>
+                                <span>Strobes</span>
+                              </a>
+                            </li>
+                                                                                                                                                      <li class="box">
+                              <a href="https://www.chauvetdj.com/products/category/washlights/">
+                        <figure class="icon img box"><img src="https://www.chauvetdj.com/wp-content/uploads/2015/12/washlights-icon.png" alt="Washlights"></figure>
+                                <span>Wash Lights</span>
+                              </a>
+                            </li>
+                                                                                            </ul>
+                    
+                    <ul class="prod_sub_menu box">
+                      <li id="menu-item-9350" class="menu-item menu-item-type-taxonomy menu-item-object-product_category menu-item-9350"><a href="https://www.chauvetdj.com/products/category/new/">What’s New?</a></li>
+<li id="menu-item-9351" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-9351"><a href="#">Family</a>
+<ul class="sub-menu">
+	<li id="menu-item-78863" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-78863"><a href="/products/family/4bar/">4BAR</a></li>
+	<li id="menu-item-71437" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-71437"><a href="/products/family/bt/">BT</a></li>
+	<li id="menu-item-16657" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-16657"><a href="/products/family/color-band/">COLORband</a></li>
+	<li id="menu-item-16660" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-16660"><a href="/products/family/color-strip">COLORstrip</a></li>
+	<li id="menu-item-16661" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-16661"><a href="/products/family/core/">Core</a></li>
+	<li id="menu-item-56808" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-56808"><a href="/products/family/eve/">EVE</a></li>
+	<li id="menu-item-16668" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-16668"><a href="/products/family/ez/">EZ</a></li>
+	<li id="menu-item-16673" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-16673"><a href="/products/family/freedom/">Freedom</a></li>
+	<li id="menu-item-78864" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-78864"><a href="/products/family/gigbar/">GigBAR</a></li>
+	<li id="menu-item-16674" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-16674"><a href="/products/family/hurricane/">Hurricane</a></li>
+	<li id="menu-item-100527" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-100527"><a href="/ils/">ILS</a></li>
+	<li id="menu-item-16676" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-16676"><a href="/products/family/intimidator/">Intimidator</a></li>
+	<li id="menu-item-16675" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-16675"><a href="/products/family/obey/">Obey</a></li>
+	<li id="menu-item-16677" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-16677"><a href="/products/family/scorpion/">Scorpion</a></li>
+	<li id="menu-item-16683" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-16683"><a href="/products/family/slimbank/">SlimBANK</a></li>
+	<li id="menu-item-16684" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-16684"><a href="/products/family/slimpar/">SlimPAR</a></li>
+	<li id="menu-item-61225" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-61225"><a href="/products/family/vivid/">Vivid</a></li>
+</ul>
+</li>
+<li id="menu-item-9352" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-9352"><a href="#">Applications</a>
+<ul class="sub-menu">
+	<li id="menu-item-16700" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-16700"><a href="/products/primary-use/dj-mobile/">DJ/Mobile</a></li>
+	<li id="menu-item-16699" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-16699"><a href="/products/primary-use/bands-stages/">Bands/Stages</a></li>
+	<li id="menu-item-16701" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-16701"><a href="/products/primary-use/events/">Events</a></li>
+	<li id="menu-item-16702" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-16702"><a href="/products/primary-use/clubs/">Bars/Clubs</a></li>
+	<li id="menu-item-16703" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-16703"><a href="/products/primary-use/party//">Party</a></li>
+	<li id="menu-item-23633" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-23633"><a href="/products/primary-use/worship/">Worship</a></li>
+	<li id="menu-item-78665" class="menu-item menu-item-type-taxonomy menu-item-object-product_category menu-item-78665"><a href="https://www.chauvetdj.com/products/category/halloween/">Halloween</a></li>
+</ul>
+</li>
+<li id="menu-item-25802" class="menu-item menu-item-type-taxonomy menu-item-object-product_category menu-item-25802"><a href="https://www.chauvetdj.com/products/category/accessories/">Accessories</a></li>
+<li id="menu-item-25876" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-25876"><a href="https://www.chauvetdj.com/products/category/discontinued/">Discontinued</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+                            <li id="menu-item-68367" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-68367"><a href="/sales-network/">Sales Network</a></li>
+<li id="menu-item-7" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-7"><a href="#">Support</a>
+<ul class="sub-menu">
+	<li id="menu-item-109546" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-109546"><a href="https://www.chauvetdj.com/learning-library/">Learning Library</a></li>
+	<li id="menu-item-77256" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-77256"><a href="https://www.chauvetdj.com/wireless-lighting-control/">Wireless Lighting Control</a></li>
+	<li id="menu-item-107539" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-107539"><a href="https://www.chauvetdj.com/downloads/">Downloads</a></li>
+	<li id="menu-item-53167" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-53167"><a href="https://www.chauvetdj.com/service-request/">Service Request</a></li>
+	<li id="menu-item-53166" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-53166"><a href="https://www.chauvetdj.com/service-request-status/">Service Request Status</a></li>
+	<li id="menu-item-24046" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-24046"><a href="https://www.chauvetdj.com/chauvet-dj-dip-switch-calculator/">Dip Switch Calculator</a></li>
+	<li id="menu-item-15165" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-15165"><a href="https://www.chauvetdj.com/warranty/">Warranty</a></li>
+	<li id="menu-item-51175" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-51175"><a href="https://www.chauvetdj.com/dj-showroom/">Showroom/Tradeshow</a></li>
+</ul>
+</li>
+<li id="menu-item-19960" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-19960"><a href="https://www.chauvetdj.com/news/">News</a></li>
+<li id="menu-item-21131" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-20002 current_page_item menu-item-21131"><a href="https://www.chauvetdj.com/contact-us/" aria-current="page">Contact Us</a></li>
+<li id="menu-item-168822" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-168822"><a>Financing</a>
+<ul class="sub-menu">
+	<li id="menu-item-168823" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-168823"><a target="_blank" href="https://shineeqfin.com/">U.S. Only</a></li>
+	<li id="menu-item-168938" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-168938"><a target="_blank" href="https://chauvetlighting.com/financing/">Outside The U.S.</a></li>
+</ul>
+</li>
+          </ul>
+
+          <form role="search" method="get" id="searchform" class="box" action="https://www.chauvetdj.com/products/">
+              <div class="field box">
+                  <input type="text" name="search" id="s" class="box" value="" placeholder="Search">
+              </div>
+              <input type="submit" class="submit" value="Search">
+          </form>
+
+
+         
+          <div class="sub box">
+            <!--Comment out Google Translator SB 2-2-16 ?php echo do_shortcode('[google-translator]'); ?> -->
+            <!--Comment out Change Region sub menu
+            <ul class="sub_menu fontface bold box">
+              <!?php wp_nav_menu( array( 'menu' => 'Sub Nav', 'container' => '', 'sort_column' => 'menu_order' ) ); ?>
+            </ul>-->
+     
+            <!--mp_global_switch_begins->
+            <div style="font-size:14px;display:block;position:absolute;top:50%;right:200px;margin-top:-25px;" class="languagechooser"><a mporgnav="" class="languagechooser2" href="#" onclick="return chooser();
+            function chooser(){
+            var script=document.createElement('SCRIPT');
+            script.src='https://chauvetdjcom.mpeasylink.com/mpel/mpel_chooser.js';
+            document.body.appendChild(script);
+            return false;
+            }" title="Global Switch" style="font-family:'Helvetica LT Std', sans-serif;color:rgb(87, 102, 112);font-weight:700;text-transform: uppercase;display: block; line-height: 50px; padding: 0 20px 0 15px;">Choose Language</a>
+            </div>
+            <!-mp_global_switch_ends-->
+            
+            <!--New Choose Language Dropdown Begin-->
+            <ul class="sub_menu fontface bold box">
+            <li><a href="#">
+</a><div class="wpml-ls-statics-shortcode_actions wpml-ls wpml-ls-legacy-dropdown js-wpml-ls-legacy-dropdown" id="lang_sel"><a href="#">
+	</a><ul><a href="#">
+
+		</a><li tabindex="0" class="wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-en wpml-ls-current-language wpml-ls-first-item wpml-ls-item-legacy-dropdown"><a href="#">
+			</a><a href="#" class="js-wpml-ls-item-toggle wpml-ls-item-toggle lang_sel_sel icl-en">
+                <span class="wpml-ls-native icl_lang_sel_native">English</span></a>
+
+			<ul class="wpml-ls-sub-menu">
+				
+					<li class="icl-fr wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-fr">
+						<a href="https://fr.chauvetdj.com/contact-us/" class="wpml-ls-link">
+                            <span class="wpml-ls-native icl_lang_sel_native" lang="fr">Français</span></a>
+					</li>
+
+				
+					<li class="icl-de wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-de">
+						<a href="https://de.chauvetdj.com/contact-us/" class="wpml-ls-link">
+                            <span class="wpml-ls-native icl_lang_sel_native" lang="de">Deutsch</span></a>
+					</li>
+
+				
+					<li class="icl-es wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-es wpml-ls-last-item">
+						<a href="https://es.chauvetdj.com/contact-us/" class="wpml-ls-link">
+                            <span class="wpml-ls-native icl_lang_sel_native" lang="es">Español</span></a>
+					</li>
+
+							</ul>
+
+		</li>
+
+	</ul>
+</div>
+
+            </li>
+            </ul>
+             <!--New Choose Language Dropdown Ends-->
+
+             <ul class="sub_menu fontface bold box">              
+                <li class="menu-item-has-children">
+                    <a href="#" id="quick-product-find-trigger">Quick Product Find</a>
+                    <ul id="quick-product-dropdown" class="sub-menu">
+                        <li class="excemted-on-filter box"><input type="text" id="quick-product-find" class="box" placeholder="Product Quickfind" style="text-transform:uppercase;"></li>
+                        <!-- AJAX content will be appended here -->
+                    </ul>
+                </li>
+            </ul>
+          </div>
+
+          <!-- Subscribe Form iContact -->
+          <div class="updates box">
+            <form method="post" action="/subscribe/" class="signup" target="_blank"> 
+              <div class="wrap">
+                <input class="field box" name="Email" placeholder="Enter your email address">
+              </div>
+              <input class="submit btn fontface round box" value="Get Updates" type="submit" name="footer_email_passer">          
+            </form>
+          </div>
+          <!-- End -->
+
+          <!-- Social Icons Mobile -->
+          <ul class="sub-menu mobile">
+              <li class="facebook-w"><a href="https://www.facebook.com/chauvetdj" target="_blank"><span>Facebook</span></a></li>
+              <li class="twitter-w"><a href="https://twitter.com/ChauvetDJ" target="_blank"><span>Twitter</span></a></li>
+              <li class="instagram-w"><a href="https://www.instagram.com/chauvet_dj/" target="_blank"><span>Instagram</span></a></li>
+              <li class="youtube-w"><a href="https://www.youtube.com/user/chauvetlighting" target="_blank"><span>Youtube</span></a></li>
+              <li class="wordpress-w"><a href="http://www.chauvetdj.com/blog/" target="_blank"><span>Wordpress</span></a></li>
+              <li class="snap-w"><a href="https://www.snapchat.com/add/chauvetdj" target="_blank"><span>Snapchat</span></a></li>
+            </ul>
+                         <!-- End -->
+
+            <!-- Social Icons Desktop -->
+            <ul id="social" class="desktop sub_menu fontface bold box">
+            <li class="facebook-w"><a href="https://www.facebook.com/chauvetdj" title="Facebook" target="_blank">Facebook</a></li>                                <li class="instagram-w"><a href="https://instagram.com/chauvet_dj" title="Instagram" target="_blank">Instagram</a></li>                <li class="youtube-w"><a href="https://www.youtube.com/user/@CHAUVETDJ" title="YouTube" target="_blank">YouTube</a></li>            
+                                <li class="snap-w"><a href="https://www.snapchat.com/add/chauvetdj" title="Snapchat" target="_blank"><span>Snapchat</span></a></li>
+            </ul>
+                         <!-- End -->
+
+        </nav>
+      </div>
+    </div>
+  </header>
+  <!--Motionpoint EasyLink Code Begins Here->
+  <script type="text/javascript" id="mpelid"
+  src="//chauvetdjcom.mpeasylink.com/mpel/mpel.js" async></script>
+  <!-Motionpoint EasyLink Code Ends Here-->
+  <script src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="54a9ed80920ef8178c15d01c-|49" defer=""></script>
+
+<script type="54a9ed80920ef8178c15d01c-text/javascript">
+jQuery(document).ready(function($){
+
+$(".clicktoshowprod input").change(function() {
+    if(this.checked) {
+        $('.showwhencheck').css('display','block');
+    }
+    else{
+      $('.showwhencheck').css('display','none');
+    }
+});
+
+
+});
+</script>
+
+  <main id="main" class="box">
+              <article class="entry with_sidebar box">
+        <section id="masthead" class="section box">
+          <div class="wrapper main box">
+            <div class="circle top"></div>
+            <div class="wrapper box">
+              <header class="header title box">
+                                  <h1 class="split fontface"><span class="fontface bold">Contact</span> US</h1>
+                              </header>
+            </div>
+            <div class="circle btm"></div>
+          </div>
+        </section>
+    
+        <div id="wrapper" class="box">
+          <section class="section main std box">
+                          <header class="header sub_title box">
+                <h2 class="fontface">Find CHAUVET DJ in your area</h2>
+              </header>
+                        <div class="content content-block">
+		      <p>For parts and service, technical and sales support, demo and catalog requests, and warranty questions in regions where Chauvet does not have a branch office, please contact the CHAUVET DJ national distributor for your area. <a href="/sales-network/distributors/">View global distribution network</a>.</p>
+            </div>
+            
+                          <section class="region_contact section std fontface box">
+                                  <div class="locations details box">
+                                                                  <ul>
+                          <li class="name">Global Headquarters</li>                          <li class="address">3360 Davie Road, Suite 509</li>                          <li class="address">Davie, FL 33314, USA</li>                                                    <li class="phone">(954) 577-4455</li>                          <li class="phone">(800) 762-1084 (toll free)</li>                                                  </ul>
+                                                                                        <ul>
+                          <li class="name">Las Vegas Branch</li>                          <li class="address">3325 W. Sunset Rd.</li>                          <li class="address">Suite i</li>                          <li class="address">Las Vegas, NV  89118 USA</li>                          <li class="phone">(800) 762-1084 (toll free)</li>                                                                            </ul>
+                                                            </div>
+                              
+                                  <div class="contacts details box">
+                    <ul>
+                                                                        <li><a href="/cdn-cgi/l/email-protection#9ffcf7feeae9faebfcecdffcf7feeae9faebf3f6f8f7ebf6f1f8b1fcf0f2">Customer Service:</a> (954) 577-4455  option 4</li>
+					                                                                            <li><a href="https://chauvetlighting.service-now.com/csp">Technical Support</a></li>
+                                                                                                <li><a href="/sales-support">Guidance on Project/Product selection</a></li>
+                                                                                                <li><a href="/marketing-support">Media &amp; Marketing</a></li>
+                                                                                                <li><a href="https://chauvetlighting.com/career-opportunities/">Careers</a></li>
+                                                                                                <li><a href="/sales-support">User Feedback</a></li>
+                                                                                                <li><a href="/dealerdistribution-inquiry">Interested in Distributing CHAUVET DJ</a></li>
+                                                                                                <li><a href="/dealerdistribution-inquiry">Interested in Dealership opportunities</a></li>
+                                                                                                <li><a href="/dj-showroom">Showroom Appointment</a></li>
+                                                                                                <li><a href="https://www.chauvetdealer.com/content/CustomPages/dealerlogin.htm">USA Dealer Login</a></li>
+                                                                  </ul>
+                  </div>
+                              </section>
+                        
+                          <section class="region_contact section std fontface box">
+                                  <div class="locations details box">
+                                                                  <ul>
+                          <li class="name">UK Branch</li>                          <li class="address">Pod 1, EVO Park  Little Oak Drive  Sherwood Park,</li>                          <li class="address">Nottingham  NG15 0EB United Kingdom</li>                                                    <li class="phone">+44 1773 511115</li>                                                    <li class="website"><a href="http://www.chauvetdj.eu">www.chauvetdj.eu</a></li>                        </ul>
+                                                                                        <ul>
+                          <li class="name">Belgium Branch</li>                          <li class="address">Stokstraat 18</li>                          <li class="address">9770 Kruisem</li>                          <li class="address">Belgium</li>                          <li class="phone">+32 9 388 93 97</li>                                                    <li class="website"><a href="http://www.chauvetdj.eu">www.chauvetdj.eu</a></li>                        </ul>
+                                                                                        <ul>
+                          <li class="name">Germany Branch</li>                          <li class="address">Bruno-Bürgel-Str. 11</li>                          <li class="address">28759 Bremen</li>                          <li class="address">Germany</li>                          <li class="phone">+49 421 62 60 20</li>                                                                            </ul>
+                                                                                        <ul>
+                          <li class="name">France Branch</li>                          <li class="address">3, Rue Ampère</li>                          <li class="address">91380 Chilly-Mazarin</li>                          <li class="address">France</li>                          <li class="phone">+33 1 78 85 33 59</li>                                                                            </ul>
+                                                            </div>
+                              
+                                  <div class="contacts details box">
+                    <ul>
+                                                                        <li><a href="/cdn-cgi/l/email-protection#d7a2bca3b2b4bf97b4bfb6a2a1b2a3bbbeb0bfa3beb9b0f9b4b8ba">Customer Service UK</a></li>
+					                                                                            <li><a href="/cdn-cgi/l/email-protection#1f7a6a6b7a7c775f7c777e6a697a6b737678776b767178317c7072">Customer Service EU</a></li>
+					                                                                            <li><a href="/cdn-cgi/l/email-protection#9feaf4ebfafcf7dffcf7feeae9faebf3f6f8f7ebf6f1f8b1fcf0f2">Product &amp; Technical Support</a></li>
+					                                                                            <li><a href="/cdn-cgi/l/email-protection#fc99898f9d90998fbc9f949d898a998890959b948895929bd29f9391">Guidance on Project/Product selection</a></li>
+					                                                                            <li><a href="/cdn-cgi/l/email-protection#482d3d38293a3c3b082b20293d3e2d3c24212f203c21262f662b2725">EU Parts Enquiries</a></li>
+					                                                                            <li><a href="/cdn-cgi/l/email-protection#234e42514846574a4d445746424e63404b42565546574f4a444b574a4d440d404c4e">Media &amp; Marketing</a></li>
+					                                                                            <li><a href="/cdn-cgi/l/email-protection#aacfdfd9cbc6cfd9eac9c2cbdfdccfdec6c3cdc2dec3c4cd84c9c5c7">User Feedback</a></li>
+					                                                                            <li><a href="https://www.chauvetdj.com/dealerdistribution-inquiry/">Interested in Distributing CHAUVET DJ</a></li>
+                                                                                                <li><a href="https://www.chauvetdj.com/dj-showroom/">Showroom Appointment</a></li>
+                                                                  </ul>
+                  </div>
+                              </section>
+                        
+                          <section class="region_contact section std fontface box">
+                                  <div class="locations details box">
+                                                                  <ul>
+                          <li class="name">México Branch</li>                          <li class="address">Av. de las Partidas 34, 3-B (entrada por Calle 2)</li>                          <li class="address">Zona Industrial Lerma</li>                          <li class="address">Lerma, Mexico, C.P. 52000</li>                          <li class="phone">+52 728 690 2010</li>                                                    <li class="website"><a href="http://www.chauvetdj.mx">www.chauvetdj.mx</a></li>                        </ul>
+                                                            </div>
+                              
+                                  <div class="contacts details box">
+                    <ul>
+                                                                        <li><a href="/cdn-cgi/l/email-protection#355259505a5b75565d54404350411b565a581b584d">Customer Service MX</a></li>
+					                                                                            <li><a href="/cdn-cgi/l/email-protection#ddb8beb2aeb4b29dbeb5bca8abb8a9f3beb2b0f3b0a5">Product &amp; Technical Support</a></li>
+					                                                                            <li><a href="/cdn-cgi/l/email-protection#1b7278737a6d7e6969725b78737a6e6d7e6f35787476357663">Media &amp; Marketing</a></li>
+					                                                                            <li><a href="/cdn-cgi/l/email-protection#5d3e3233293c3e29321d3e353c282b3829733e3230733025">Interested in Distributing CHAUVET DJ</a></li>
+					                                                                            <li><a href="/dj-showroom">Showroom Appointment</a></li>
+                                                                  </ul>
+                  </div>
+                              </section>
+                        
+          </section>
+          
+                      <aside id="support" class="sidebar section fontface box">
+                              <header class="header title box">
+                  <h2 class="fontface">Business Client Support</h2>
+                </header>
+                            <ul class="box">
+			                                          <li class="box">
+                      <a href="#" class="btn round box">US Sales Team</a>
+                      <ul class="round box">
+                                                                             <li class="box"><strong>Bob Laino</strong><br> Northeast Territory Manager<br> (954)577-4524</li>
+                                                                                                       <li class="box"><strong>Zev Birnbaum</strong><br> West Territory Manager<br> (818)445-9964</li>
+                                                                                                       <li class="box"><strong>Roy White</strong><br> Southeast Territory Manager<br> (954)577-4418</li>
+                                                                                                       <li class="box"><strong>Jeremy Pace</strong><br> National Account Manager / Central Territory<br> (954)577-4528</li>
+                                                                          
+                                                  <li class="details box">
+                            <span>Sales Support</span>
+                            <p>To speak LIVE with any member of our Sales Support team: (954) 577-4455, select option 2 for domestic sales and a team member will answer immediately. </p>
+                          </li>
+                        					  
+					                                                          <li class="box"><strong>West</strong><br> <a href="/cdn-cgi/l/email-protection#07687563627574297062747347646f66727162736b6e606f736e69602964686a"><span class="__cf_email__" data-cfemail="6d021f09081f1e431a081e192d0e050c181b081901040a051904030a430e0200">[email&nbsp;protected]</span></a><br> Fax: (954) 282-4080</li>
+                                                                                                        <li class="box"><strong>Central</strong><br> <a href="/cdn-cgi/l/email-protection#503f22343522237e33353e2422313c10333831252635243c39373824393e377e333f3d"><span class="__cf_email__" data-cfemail="bdd2cfd9d8cfce93ded8d3c9cfdcd1fdded5dcc8cbd8c9d1d4dad5c9d4d3da93ded2d0">[email&nbsp;protected]</span></a><br> Fax: (954) 282-4164</li>
+                                                                                                        <li class="box"><strong>Southeast</strong><br> <a href="/cdn-cgi/l/email-protection#fa95889e9f8889d4899fba99929b8f8c9f8e96939d928e93949dd4999597"><span class="__cf_email__" data-cfemail="305f42545542431e435570535851454655445c59575844595e571e535f5d">[email&nbsp;protected]</span></a><br> Fax: (954) 688-2053</li>
+                                                                                                        <li class="box"><strong>Northeast</strong><br> <a href="/cdn-cgi/l/email-protection#fa95889e9f8889d4949fba99929b8f8c9f8e96939d928e93949dd4999597"><span class="__cf_email__" data-cfemail="c2adb0a6a7b0b1ecaca782a1aaa3b7b4a7b6aeaba5aab6abaca5eca1adaf">[email&nbsp;protected]</span></a><br> Fax: (954) 282-4179</li>
+                                                                        </ul>                    
+                    </li>
+                                                
+                                                      <li class="box">
+                      <a href="#" class="btn round box">Europe</a>
+                      <ul class="round box">
+                                                                              <li class="box"><strong>UK and Ireland:</strong><br> Sam Bowden - UK Sales Manager<br>
+Simon Cox - Business Development Manager - Distribution and Special Projects<br>
+Rob Moore - Business Development Manager - Retail<br>
+Simon Gooding - Business Development Manager – Production Install South<br>
+Graham Barron - Business Development Manager – Production Install North &amp; Ireland<br>
+Shaun Robertshaw - Business Development Manager - Rental and Cruise<br>
+Tyler Lloyd - Business Development Manager - ChamSys<br>
+Nick Jackson - Business Development Support<br>
+Chris Hale - Product and Application Specialist<br> <a href="/cdn-cgi/l/email-protection#21544a52404d445261424940545744554d48464955484f460f424e4c"><span class="__cf_email__" data-cfemail="b3c6d8c0d2dfd6c0f3d0dbd2c6c5d6c7dfdad4dbc7daddd49dd0dcde">[email&nbsp;protected]</span></a></li>
+                                                                                                        <li class="box"><strong>Benelux Region:</strong><br> Steven Batslé - Sales Manager <br>
+Manu Schepens - Business Development Manager<br> <a href="/cdn-cgi/l/email-protection#f597908694999086b5969d9480839081999c929d819c9b92db9080"><span class="__cf_email__" data-cfemail="36545345575a534576555e57434053425a5f515e425f5851185343">[email&nbsp;protected]</span></a></li>
+                                                                                                        <li class="box"><strong>Belgium:</strong><br> Frank Lambrechts - Key Account Manager - Belgium<br>
+Max Sarolea - Business Development Manager - Belgium South &amp; Luxembourg<br>
+Quinten Segers - Product Specialist<br> <a href="/cdn-cgi/l/email-protection#6f0d0a1c0e030a1c2f0c070e1a190a1b030608071b060108410a1a"><span class="__cf_email__" data-cfemail="23414650424f465063404b42565546574f4a444b574a4d440d4656">[email&nbsp;protected]</span></a></li>
+                                                                                                        <li class="box"><strong>Netherlands:</strong><br> Wilco Korthout – Business Development Manager - Netherlands<br>
+Marcel Zandbergen - Business Development Manager Rental - Netherlands <br> <a href="/cdn-cgi/l/email-protection#4e20223d2f222b3d0e2d262f3b382b3a222729263a272029602b3b"><span class="__cf_email__" data-cfemail="7917150a18151c0a391a11180c0f1c0d15101e110d10171e571c0c">[email&nbsp;protected]</span></a></li>
+                                                                                                        <li class="box"><strong>France:</strong><br> Laurent Ballarin - Chef des Ventes France<br>
+Guillaume Lestang - Business Development Manager<br>
+Aland Mahieu - Responsable de Secteur Sud/Est France - Suisse Romande<br>
+Victor Faré - Responsable de Secteur Nord Ouest<br>
+Paul Derambure – Responsable de Secteur Nord et Est<br>
+Laurent Pinout – Responsable de Secteur Sud Ouest<br>
+Robin Caravecchia - Responsable de Secteur Paris RP &amp; Est<br> <a href="/cdn-cgi/l/email-protection#8fe9fdfceee3eafccfece7eefaf9eafbe3e6e8e7fbe6e1e8a1e9fd"><span class="__cf_email__" data-cfemail="b1d7c3c2d0ddd4c2f1d2d9d0c4c7d4c5ddd8d6d9c5d8dfd69fd7c3">[email&nbsp;protected]</span></a></li>
+                                                                                                        <li class="box"><strong>Germany:</strong><br> Alexander Rexforth - Sales Manager Germany – Key Account Manager<br>
+Björn Friesenkoten - Business Development Manager DJ DE<br>
+Lars Hemmerling - Business Development Manager - DE East<br>
+Lars Baumhauer - Business Development Manager - DE West<br>
+Dominik Kiefer - Business Development Manager - DE South<br>
+Henning Oeker - Operations Manager Germany<br> <a href="/cdn-cgi/l/email-protection#791d1c0a18151c0a391a11180c0f1c0d15101e110d10171e571d1c"><span class="__cf_email__" data-cfemail="6d09081e0c01081e2d0e050c181b081901040a051904030a430908">[email&nbsp;protected]</span></a></li>
+                                                                                                        <li class="box"><strong>Export Sales &amp; Distribution:</strong><br> Goran Dončić - Senior European Business Development Manager - EMEA<br>
+Stéphane Gressier - International Sales Director<br>
+Antonio Parise - Business Development Manager - EMEA<br> <a href="/cdn-cgi/l/email-protection#345141514c445b464074575c5541425140585d535c405d5a531a575b59"><span class="__cf_email__" data-cfemail="c5a0b0a0bdb5aab7b185a6ada4b0b3a0b1a9aca2adb1acaba2eba6aaa8">[email&nbsp;protected]</span></a></li>
+                                                                        </ul>                    
+                    </li>
+                                                  
+                                                      <li class="box">
+                      <a href="#" class="btn round box">Mexico</a>
+                      <ul class="round box">
+                                                                              <li class="box"><strong>Customer Service</strong><br> Guillermo Leon <br> <a href="/cdn-cgi/l/email-protection#3b5c575e54557b58535a4e4d5e4f15585456155643"><span class="__cf_email__" data-cfemail="60070c050f0e20030801151605144e030f0d4e0d18">[email&nbsp;protected]</span></a></li>
+                                                                                                        <li class="box"><strong>Information</strong><br> <a href="/cdn-cgi/l/email-protection#c5acaba3aa85a6ada4b0b3a0b1eba6aaa8eba8bd"><span class="__cf_email__" data-cfemail="d5bcbbb3ba95b6bdb4a0a3b0a1fbb6bab8fbb8ad">[email&nbsp;protected]</span></a></li>
+                                                                                                        <li class="box"><strong>Product &amp; Technical Support</strong><br> Edgar Cosio<br> <a href="/cdn-cgi/l/email-protection#5e3b3d312d37311e3d363f2b283b2a703d3133703326"><span class="__cf_email__" data-cfemail="debbbdb1adb7b19ebdb6bfaba8bbaaf0bdb1b3f0b3a6">[email&nbsp;protected]</span></a></li>
+                                                                                                        <li class="box"><strong>Media &amp; Marketing</strong><br> Iraís Chaverri<br> <a href="/cdn-cgi/l/email-protection#7b1218131a0d1e0909123b18131a0e0d1e0f55181416551603"><span class="__cf_email__" data-cfemail="177e747f76617265657e57747f76626172633974787a397a6f">[email&nbsp;protected]</span></a></li>
+                                                                                                        <li class="box"><strong>Showroom Apointment</strong><br> <a href="/cdn-cgi/l/email-protection#bedbddd1cdd7d1feddd6dfcbc8dbca90ddd1d390d3c6"><span class="__cf_email__" data-cfemail="d5b0b6baa6bcba95b6bdb4a0a3b0a1fbb6bab8fbb8ad">[email&nbsp;protected]</span></a></li>
+                                                                        </ul>                    
+                    </li>
+                                                
+                                                      <li class="box">
+                      <a href="#" class="btn round box">Exports &amp; Distribution</a>
+                      <ul class="round box">
+                                                                              <li class="box"><strong>Stéphane Gressier</strong><br> International Sales Director<br> <a href="/cdn-cgi/l/email-protection#90e5e3f5e8e0ffe2e4d0f3f8f1e5e6f5e4fcf9f7f8e4f9fef7bef3fffd"><span class="__cf_email__" data-cfemail="0174726479716e737541626960747764756d68666975686f662f626e6c">[email&nbsp;protected]</span></a></li>
+                                                                          
+                                                  <li class="divider box"></li>
+                        					  
+					                                                          <li class="box"><strong>Americas</strong><br> <a href="/cdn-cgi/l/email-protection#fd888e98858d928f89bd9e959c888b988991949a958994939ad39e9290"><span class="__cf_email__" data-cfemail="d6a3a5b3aea6b9a4a296b5beb7a3a0b3a2babfb1bea2bfb8b1f8b5b9bb">[email&nbsp;protected]</span></a></li>
+                                                                                                        <li class="box"><strong>Europe</strong><br> <a href="/cdn-cgi/l/email-protection#f48187918c849b8680b4979c9581829180989d939c809d9a93da979b99"><span class="__cf_email__" data-cfemail="661315031e1609141226050e07131003120a0f010e120f08014805090b">[email&nbsp;protected]</span></a></li>
+                                                                                                        <li class="box"><strong>Asia</strong><br> <a href="/cdn-cgi/l/email-protection#4d383e28353d223f390d2e252c383b283921242a253924232a632e2220"><span class="__cf_email__" data-cfemail="c5b0b6a0bdb5aab7b185a6ada4b0b3a0b1a9aca2adb1acaba2eba6aaa8">[email&nbsp;protected]</span></a></li>
+                                                                                                        <li class="box"><strong>Middle East</strong><br> <a href="/cdn-cgi/l/email-protection#deabadbba6aeb1acaa9ebdb6bfaba8bbaab2b7b9b6aab7b0b9f0bdb1b3"><span class="__cf_email__" data-cfemail="b7c2c4d2cfc7d8c5c3f7d4dfd6c2c1d2c3dbded0dfc3ded9d099d4d8da">[email&nbsp;protected]</span></a></li>
+                                                                                                        <li class="box"><strong>Africa</strong><br> <a href="/cdn-cgi/l/email-protection#ed989e88959d829f99ad8e858c989b889981848a859984838ac38e8280"><span class="__cf_email__" data-cfemail="aedbddcbd6dec1dcdaeecdc6cfdbd8cbdac2c7c9c6dac7c0c980cdc1c3">[email&nbsp;protected]</span></a></li>
+                                                                                                        <li class="box"><strong>Oceania</strong><br> <a href="/cdn-cgi/l/email-protection#027771677a726d707642616a63777467766e6b656a766b6c652c616d6f"><span class="__cf_email__" data-cfemail="4035332538302f323400232821353625342c29272834292e276e232f2d">[email&nbsp;protected]</span></a></li>
+                                                                        </ul>                    
+                    </li>
+                                                
+                                                      <li class="box">
+                      <a href="#" class="btn round box">Finance</a>
+                      <ul class="round box">
+                                                                              <li class="box"><strong>Steve Chou</strong><br> Corporate Controller</li>
+                                                                                                        <li class="box"><strong>Christine Lee</strong><br> Accounting Manager</li>
+                                                                                                        <li class="box"><strong>Becki Pointon</strong><br> Chauvet Europe Finance Manager</li>
+                                                                                                        <li class="box"><strong>Denise Rodriguez</strong><br> Accounts  Receivables Manager/USA<br> <a href="/cdn-cgi/l/email-protection#76170436151e17030013021a1f111e021f18115815191b"><span class="__cf_email__" data-cfemail="eb8a99ab88838a9e9d8e9f87828c839f82858cc5888486">[email&nbsp;protected]</span></a></li>
+                                                                        </ul>                    
+                    </li>
+                                                </ul>
+              <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="54a9ed80920ef8178c15d01c-text/javascript">
+			    jQuery('#support .btn').bind('click', function(e) {
+				    var clickedbtn = $(this);
+				    if( $(this).next().is(':visible') ) {
+					    $(this).removeClass('active').next().slideUp('fast', 'swing');
+				    }
+				    if( $(this).next().is(':hidden') ) {
+					    if( $('#support .btn.active').next().is(':visible') ) {
+						    $('#support .btn.active').next().slideUp('fast', 'swing', function(){
+							    $('#support .btn.active').removeClass('active');
+							    $(clickedbtn).toggleClass('active').next().slideDown('fast', 'swing');
+						    });
+					    } else {
+						    $(this).toggleClass('active').next().slideDown('fast', 'swing');
+					    }
+				    }
+				    e.preventDefault();
+			    });
+			  </script>
+            </aside>
+                  </div>
+      </article>
+          </main>    
+  
+<footer id="footer" class="box">
+    <section class="section top box">
+      <div class="wrapper box">
+                  <div class="showroom_appt box">
+            <h4 class="fontface"><span>Showroom Appointment</span></h4>            <a href="https://www.chauvetdj.com/dj-showroom/" class="btn white fontface round box">Book Now</a>          </div>
+                <div class="updates box">
+          <script type="54a9ed80920ef8178c15d01c-text/javascript">var gform;gform||(document.addEventListener("gform_main_scripts_loaded",function(){gform.scriptsLoaded=!0}),document.addEventListener("gform/theme/scripts_loaded",function(){gform.themeScriptsLoaded=!0}),window.addEventListener("DOMContentLoaded",function(){gform.domLoaded=!0}),gform={domLoaded:!1,scriptsLoaded:!1,themeScriptsLoaded:!1,isFormEditor:()=>"function"==typeof InitializeEditor,callIfLoaded:function(o){return!(!gform.domLoaded||!gform.scriptsLoaded||!gform.themeScriptsLoaded&&!gform.isFormEditor()||(gform.isFormEditor()&&console.warn("The use of gform.initializeOnLoaded() is deprecated in the form editor context and will be removed in Gravity Forms 3.1."),o(),0))},initializeOnLoaded:function(o){gform.callIfLoaded(o)||(document.addEventListener("gform_main_scripts_loaded",()=>{gform.scriptsLoaded=!0,gform.callIfLoaded(o)}),document.addEventListener("gform/theme/scripts_loaded",()=>{gform.themeScriptsLoaded=!0,gform.callIfLoaded(o)}),window.addEventListener("DOMContentLoaded",()=>{gform.domLoaded=!0,gform.callIfLoaded(o)}))},hooks:{action:{},filter:{}},addAction:function(o,r,e,t){gform.addHook("action",o,r,e,t)},addFilter:function(o,r,e,t){gform.addHook("filter",o,r,e,t)},doAction:function(o){gform.doHook("action",o,arguments)},applyFilters:function(o){return gform.doHook("filter",o,arguments)},removeAction:function(o,r){gform.removeHook("action",o,r)},removeFilter:function(o,r,e){gform.removeHook("filter",o,r,e)},addHook:function(o,r,e,t,n){null==gform.hooks[o][r]&&(gform.hooks[o][r]=[]);var d=gform.hooks[o][r];null==n&&(n=r+"_"+d.length),gform.hooks[o][r].push({tag:n,callable:e,priority:t=null==t?10:t})},doHook:function(r,o,e){var t;if(e=Array.prototype.slice.call(e,1),null!=gform.hooks[r][o]&&((o=gform.hooks[r][o]).sort(function(o,r){return o.priority-r.priority}),o.forEach(function(o){"function"!=typeof(t=o.callable)&&(t=window[t]),"action"==r?t.apply(null,e):e[0]=t.apply(null,e)})),"filter"==r)return e[0]},removeHook:function(o,r,t,n){var e;null!=gform.hooks[o][r]&&(e=(e=gform.hooks[o][r]).filter(function(o,r,e){return!!(null!=n&&n!=o.tag||null!=t&&t!=o.priority)}),gform.hooks[o][r]=e)}});</script>
+                <div class="gf_browser_chrome gform_wrapper gform-theme gform-theme--foundation gform-theme--framework gform-theme--orbital" data-form-theme="orbital" data-form-index="0" id="gform_wrapper_9"><style>#gform_wrapper_9[data-form-index="0"].gform-theme,[data-parent-form="9_0"]{--gf-color-primary: #204ce5;--gf-color-primary-rgb: 32, 76, 229;--gf-color-primary-contrast: #fff;--gf-color-primary-contrast-rgb: 255, 255, 255;--gf-color-primary-darker: #001AB3;--gf-color-primary-lighter: #527EFF;--gf-color-secondary: #fff;--gf-color-secondary-rgb: 255, 255, 255;--gf-color-secondary-contrast: #112337;--gf-color-secondary-contrast-rgb: 17, 35, 55;--gf-color-secondary-darker: #F5F5F5;--gf-color-secondary-lighter: #FFFFFF;--gf-color-out-ctrl-light: rgba(17, 35, 55, 0.1);--gf-color-out-ctrl-light-rgb: 17, 35, 55;--gf-color-out-ctrl-light-darker: rgba(104, 110, 119, 0.35);--gf-color-out-ctrl-light-lighter: #F5F5F5;--gf-color-out-ctrl-dark: #585e6a;--gf-color-out-ctrl-dark-rgb: 88, 94, 106;--gf-color-out-ctrl-dark-darker: #112337;--gf-color-out-ctrl-dark-lighter: rgba(17, 35, 55, 0.65);--gf-color-in-ctrl: #fff;--gf-color-in-ctrl-rgb: 255, 255, 255;--gf-color-in-ctrl-contrast: #112337;--gf-color-in-ctrl-contrast-rgb: 17, 35, 55;--gf-color-in-ctrl-darker: #F5F5F5;--gf-color-in-ctrl-lighter: #FFFFFF;--gf-color-in-ctrl-primary: #204ce5;--gf-color-in-ctrl-primary-rgb: 32, 76, 229;--gf-color-in-ctrl-primary-contrast: #fff;--gf-color-in-ctrl-primary-contrast-rgb: 255, 255, 255;--gf-color-in-ctrl-primary-darker: #001AB3;--gf-color-in-ctrl-primary-lighter: #527EFF;--gf-color-in-ctrl-light: rgba(17, 35, 55, 0.1);--gf-color-in-ctrl-light-rgb: 17, 35, 55;--gf-color-in-ctrl-light-darker: rgba(104, 110, 119, 0.35);--gf-color-in-ctrl-light-lighter: #F5F5F5;--gf-color-in-ctrl-dark: #585e6a;--gf-color-in-ctrl-dark-rgb: 88, 94, 106;--gf-color-in-ctrl-dark-darker: #112337;--gf-color-in-ctrl-dark-lighter: rgba(17, 35, 55, 0.65);--gf-radius: 3px;--gf-font-size-secondary: 14px;--gf-font-size-tertiary: 13px;--gf-icon-ctrl-number: url("data:image/svg+xml,%3Csvg width='8' height='14' viewBox='0 0 8 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M4 0C4.26522 5.96046e-08 4.51957 0.105357 4.70711 0.292893L7.70711 3.29289C8.09763 3.68342 8.09763 4.31658 7.70711 4.70711C7.31658 5.09763 6.68342 5.09763 6.29289 4.70711L4 2.41421L1.70711 4.70711C1.31658 5.09763 0.683417 5.09763 0.292893 4.70711C-0.0976311 4.31658 -0.097631 3.68342 0.292893 3.29289L3.29289 0.292893C3.48043 0.105357 3.73478 0 4 0ZM0.292893 9.29289C0.683417 8.90237 1.31658 8.90237 1.70711 9.29289L4 11.5858L6.29289 9.29289C6.68342 8.90237 7.31658 8.90237 7.70711 9.29289C8.09763 9.68342 8.09763 10.3166 7.70711 10.7071L4.70711 13.7071C4.31658 14.0976 3.68342 14.0976 3.29289 13.7071L0.292893 10.7071C-0.0976311 10.3166 -0.0976311 9.68342 0.292893 9.29289Z' fill='rgba(17, 35, 55, 0.65)'/%3E%3C/svg%3E");--gf-icon-ctrl-select: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0.292893 0.292893C0.683417 -0.097631 1.31658 -0.097631 1.70711 0.292893L5 3.58579L8.29289 0.292893C8.68342 -0.0976311 9.31658 -0.0976311 9.70711 0.292893C10.0976 0.683417 10.0976 1.31658 9.70711 1.70711L5.70711 5.70711C5.31658 6.09763 4.68342 6.09763 4.29289 5.70711L0.292893 1.70711C-0.0976311 1.31658 -0.0976311 0.683418 0.292893 0.292893Z' fill='rgba(17, 35, 55, 0.65)'/%3E%3C/svg%3E");--gf-icon-ctrl-search: url("data:image/svg+xml,%3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' width='640' height='640'%3E%3Cpath d='M256 128c-70.692 0-128 57.308-128 128 0 70.691 57.308 128 128 128 70.691 0 128-57.309 128-128 0-70.692-57.309-128-128-128zM64 256c0-106.039 85.961-192 192-192s192 85.961 192 192c0 41.466-13.146 79.863-35.498 111.248l154.125 154.125c12.496 12.496 12.496 32.758 0 45.254s-32.758 12.496-45.254 0L367.248 412.502C335.862 434.854 297.467 448 256 448c-106.039 0-192-85.962-192-192z' fill='rgba(17, 35, 55, 0.65)'/%3E%3C/svg%3E");--gf-label-space-y-secondary: var(--gf-label-space-y-md-secondary);--gf-ctrl-border-color: #686e77;--gf-ctrl-size: var(--gf-ctrl-size-md);--gf-ctrl-label-color-primary: #112337;--gf-ctrl-label-color-secondary: #112337;--gf-ctrl-choice-size: var(--gf-ctrl-choice-size-md);--gf-ctrl-checkbox-check-size: var(--gf-ctrl-checkbox-check-size-md);--gf-ctrl-radio-check-size: var(--gf-ctrl-radio-check-size-md);--gf-ctrl-btn-font-size: var(--gf-ctrl-btn-font-size-md);--gf-ctrl-btn-padding-x: var(--gf-ctrl-btn-padding-x-md);--gf-ctrl-btn-size: var(--gf-ctrl-btn-size-md);--gf-ctrl-btn-border-color-secondary: #686e77;--gf-ctrl-file-btn-bg-color-hover: #EBEBEB;--gf-field-img-choice-size: var(--gf-field-img-choice-size-md);--gf-field-img-choice-card-space: var(--gf-field-img-choice-card-space-md);--gf-field-img-choice-check-ind-size: var(--gf-field-img-choice-check-ind-size-md);--gf-field-img-choice-check-ind-icon-size: var(--gf-field-img-choice-check-ind-icon-size-md);--gf-field-pg-steps-number-color: rgba(17, 35, 55, 0.8);}</style><div id="gf_9" class="gform_anchor" tabindex="-1"></div><form method="post" enctype="multipart/form-data" target="gform_ajax_frame_9" id="gform_9" action="/contact-us/#gf_9" data-formid="9" novalidate="">
+                        <div class="gform-body gform_body"><div id="gform_fields_9" class="gform_fields top_label form_sublabel_below description_below validation_below"><div id="field_9_2" class="gfield gfield--type-hidden gfield--input-type-hidden gfield--width-full gform_hidden field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible" data-js-reload="field_9_2"><div class="ginput_container ginput_container_text"><input name="input_2" id="input_9_2" type="hidden" class="gform_hidden" aria-invalid="false" value="20002 Contact Us"></div></div><div id="field_9_1" class="gfield gfield--type-email gfield--input-type-email gfield--width-two-thirds field_sublabel_below gfield--no-description field_description_below hidden_label field_validation_below gfield_visibility_visible" data-js-reload="field_9_1"><label class="gfield_label gform-field-label" for="input_9_1">Email</label><div class="ginput_container ginput_container_email">
+                            <input name="input_1" id="input_9_1" type="email" value="" class="large" placeholder="Enter Your Email Address" aria-invalid="false">
+                        </div></div><div id="field_submit" class="gfield gfield--type-submit gfield--width-third field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible" data-field-class="gform_editor_submit_container" data-field-position="inline" data-js-reload="true"><input type="submit" id="gform_submit_button_9" class="gform-button gform-button--white  button gform-button--width-full" onclick="if (!window.__cfRLUnblockHandlers) return false; gform.submission.handleButtonClick(this)" value="Get Updates" data-cf-modified-54a9ed80920ef8178c15d01c-=""></div><div id="field_9_3" class="gfield gfield--type-honeypot gform_validation_container field_sublabel_below gfield--has-description field_description_below field_validation_below gfield_visibility_visible" data-js-reload="field_9_3"><label class="gfield_label gform-field-label" for="input_9_3">Comments</label><div class="ginput_container"><input name="input_3" id="input_9_3" type="text" value="" autocomplete="new-password"></div><div class="gfield_description" id="gfield_description_9_3">This field is for validation purposes and should be left unchanged.</div></div></div></div>
+        <div class="gform-footer gform_footer top_label">  <input type="hidden" name="gform_ajax" value="form_id=9&amp;title=&amp;description=&amp;tabindex=0&amp;theme=orbital">
+            <input type="hidden" class="gform_hidden" name="gform_submission_method" data-js="gform_submission_method_9" value="iframe">
+            <input type="hidden" class="gform_hidden" name="is_submit_9" value="1">
+            <input type="hidden" class="gform_hidden" name="gform_submit" value="9">
+            
+            <input type="hidden" class="gform_hidden" name="gform_unique_id" value="">
+            <input type="hidden" class="gform_hidden" name="state_9" value="WyJbXSIsIjQ3YzYwMmY4ODA3ZTFlYzgzY2JiYjNhZWM0MDMwYTU3Il0=">
+            <input type="hidden" autocomplete="off" class="gform_hidden" name="gform_target_page_number_9" id="gform_target_page_number_9" value="0">
+            <input type="hidden" autocomplete="off" class="gform_hidden" name="gform_source_page_number_9" id="gform_source_page_number_9" value="1">
+            <input type="hidden" name="gform_field_values" value="">
+            
+        </div>
+                        </form>
+                        </div>
+		                <iframe style="display:none;width:0px;height:0px;" src="about:blank" name="gform_ajax_frame_9" id="gform_ajax_frame_9" title="This iframe contains the logic required to handle Ajax powered Gravity Forms."></iframe>
+		                <script type="54a9ed80920ef8178c15d01c-text/javascript">
+/* <![CDATA[ */
+ gform.initializeOnLoaded( function() {gformInitSpinner( 9, 'https://www.chauvetdj.com/wp-content/plugins/gravityforms/images/spinner.svg', false );jQuery('#gform_ajax_frame_9').on('load',function(){var contents = jQuery(this).contents().find('*').html();var is_postback = contents.indexOf('GF_AJAX_POSTBACK') >= 0;if(!is_postback){return;}var form_content = jQuery(this).contents().find('#gform_wrapper_9');var is_confirmation = jQuery(this).contents().find('#gform_confirmation_wrapper_9').length > 0;var is_redirect = contents.indexOf('gformRedirect(){') >= 0;var is_form = form_content.length > 0 && ! is_redirect && ! is_confirmation;var mt = parseInt(jQuery('html').css('margin-top'), 10) + parseInt(jQuery('body').css('margin-top'), 10) + 100;if(is_form){jQuery('#gform_wrapper_9').html(form_content.html());if(form_content.hasClass('gform_validation_error')){jQuery('#gform_wrapper_9').addClass('gform_validation_error');} else {jQuery('#gform_wrapper_9').removeClass('gform_validation_error');}setTimeout( function() { /* delay the scroll by 50 milliseconds to fix a bug in chrome */ jQuery(document).scrollTop(jQuery('#gform_wrapper_9').offset().top - mt); }, 50 );if(window['gformInitDatepicker']) {gformInitDatepicker();}if(window['gformInitPriceFields']) {gformInitPriceFields();}var current_page = jQuery('#gform_source_page_number_9').val();gformInitSpinner( 9, 'https://www.chauvetdj.com/wp-content/plugins/gravityforms/images/spinner.svg', false );jQuery(document).trigger('gform_page_loaded', [9, current_page]);window['gf_submitting_9'] = false;}else if(!is_redirect){var confirmation_content = jQuery(this).contents().find('.GF_AJAX_POSTBACK').html();if(!confirmation_content){confirmation_content = contents;}jQuery('#gform_wrapper_9').replaceWith(confirmation_content);jQuery(document).scrollTop(jQuery('#gf_9').offset().top - mt);jQuery(document).trigger('gform_confirmation_loaded', [9]);window['gf_submitting_9'] = false;wp.a11y.speak(jQuery('#gform_confirmation_message_9').text());}else{jQuery('#gform_9').append(contents);if(window['gformRedirect']) {gformRedirect();}}jQuery(document).trigger("gform_pre_post_render", [{ formId: "9", currentPage: "current_page", abort: function() { this.preventDefault(); } }]);                if (event && event.defaultPrevented) {                return;         }        const gformWrapperDiv = document.getElementById( "gform_wrapper_9" );        if ( gformWrapperDiv ) {            const visibilitySpan = document.createElement( "span" );            visibilitySpan.id = "gform_visibility_test_9";            gformWrapperDiv.insertAdjacentElement( "afterend", visibilitySpan );        }        const visibilityTestDiv = document.getElementById( "gform_visibility_test_9" );        let postRenderFired = false;                function triggerPostRender() {            if ( postRenderFired ) {                return;            }            postRenderFired = true;            jQuery( document ).trigger( 'gform_post_render', [9, current_page] );            gform.utils.trigger( { event: 'gform/postRender', native: false, data: { formId: 9, currentPage: current_page } } );            gform.utils.trigger( { event: 'gform/post_render', native: false, data: { formId: 9, currentPage: current_page } } );            if ( visibilityTestDiv ) {                visibilityTestDiv.parentNode.removeChild( visibilityTestDiv );            }        }        function debounce( func, wait, immediate ) {            var timeout;            return function() {                var context = this, args = arguments;                var later = function() {                    timeout = null;                    if ( !immediate ) func.apply( context, args );                };                var callNow = immediate && !timeout;                clearTimeout( timeout );                timeout = setTimeout( later, wait );                if ( callNow ) func.apply( context, args );            };        }        const debouncedTriggerPostRender = debounce( function() {            triggerPostRender();        }, 200 );        if ( visibilityTestDiv && visibilityTestDiv.offsetParent === null ) {            const observer = new MutationObserver( ( mutations ) => {                mutations.forEach( ( mutation ) => {                    if ( mutation.type === 'attributes' && visibilityTestDiv.offsetParent !== null ) {                        debouncedTriggerPostRender();                        observer.disconnect();                    }                });            });            observer.observe( document.body, {                attributes: true,                childList: false,                subtree: true,                attributeFilter: [ 'style', 'class' ],            });        } else {            triggerPostRender();        }    } );} ); 
+/* ]]> */
+</script>
+        </div>
+      </div>
+    </section>
+    
+    <nav class="section nav box">
+      <div class="wrapper box">
+        <ul class="menu fontface bold box">
+          <li id="menu-item-432" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-432"><a href="#">Products</a>
+<ul class="sub-menu">
+	<li id="menu-item-15272" class="menu-item menu-item-type-taxonomy menu-item-object-product_category menu-item-15272"><a href="https://www.chauvetdj.com/products/category/new/">What’s New?</a></li>
+	<li id="menu-item-15267" class="menu-item menu-item-type-taxonomy menu-item-object-product_category menu-item-15267"><a href="https://www.chauvetdj.com/products/category/accessories/">Accessories</a></li>
+	<li id="menu-item-15270" class="menu-item menu-item-type-taxonomy menu-item-object-product_category menu-item-15270"><a href="https://www.chauvetdj.com/products/category/atmospherics/">Atmospherics</a></li>
+	<li id="menu-item-15275" class="menu-item menu-item-type-taxonomy menu-item-object-product_category menu-item-15275"><a href="https://www.chauvetdj.com/products/category/battery-wireless/">Battery &amp; Wireless</a></li>
+	<li id="menu-item-15274" class="menu-item menu-item-type-taxonomy menu-item-object-product_category menu-item-15274"><a href="https://www.chauvetdj.com/products/category/blacklights/">Blacklights</a></li>
+	<li id="menu-item-15271" class="menu-item menu-item-type-taxonomy menu-item-object-product_category menu-item-15271"><a href="https://www.chauvetdj.com/products/category/controllers/">Controllers</a></li>
+	<li id="menu-item-15269" class="menu-item menu-item-type-taxonomy menu-item-object-product_category menu-item-15269"><a href="https://www.chauvetdj.com/products/category/effects/">Effects</a></li>
+	<li id="menu-item-15277" class="menu-item menu-item-type-taxonomy menu-item-object-product_category menu-item-15277"><a href="https://www.chauvetdj.com/products/category/exterior/">Exterior</a></li>
+	<li id="menu-item-15278" class="menu-item menu-item-type-taxonomy menu-item-object-product_category menu-item-15278"><a href="https://www.chauvetdj.com/products/category/gobo-projectors/">Gobo Projectors</a></li>
+	<li id="menu-item-15276" class="menu-item menu-item-type-taxonomy menu-item-object-product_category menu-item-15276"><a href="https://www.chauvetdj.com/products/category/lasers/">Lasers</a></li>
+	<li id="menu-item-15273" class="menu-item menu-item-type-taxonomy menu-item-object-product_category menu-item-15273"><a href="https://www.chauvetdj.com/products/category/moving-heads-scanners/">Moving Heads &amp; Scanners</a></li>
+	<li id="menu-item-15279" class="menu-item menu-item-type-taxonomy menu-item-object-product_category menu-item-15279"><a href="https://www.chauvetdj.com/products/category/spotlights/">Spotlights</a></li>
+	<li id="menu-item-15280" class="menu-item menu-item-type-taxonomy menu-item-object-product_category menu-item-15280"><a href="https://www.chauvetdj.com/products/category/strobes/">Strobes</a></li>
+	<li id="menu-item-15268" class="menu-item menu-item-type-taxonomy menu-item-object-product_category menu-item-15268"><a href="https://www.chauvetdj.com/products/category/washlights/">Wash Lights</a></li>
+	<li id="menu-item-61226" class="menu-item menu-item-type-taxonomy menu-item-object-product_category menu-item-61226"><a href="https://www.chauvetdj.com/products/category/video/">Video Panels</a></li>
+</ul>
+</li>
+<li id="menu-item-19857" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-19857"><a href="https://www.chauvetdj.com/news">News</a></li>
+<li id="menu-item-68369" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-68369"><a href="/sales-network/">Sales Network</a></li>
+<li id="menu-item-435" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-435"><a href="#">Support</a>
+<ul class="sub-menu">
+	<li id="menu-item-168731" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-168731"><a href="https://www.chauvetdj.com/learning-library/">Learning Library</a></li>
+	<li id="menu-item-77257" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-77257"><a href="https://www.chauvetdj.com/wireless-lighting-control/">Wireless Lighting Control</a></li>
+	<li id="menu-item-76899" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-76899"><a href="https://www.chauvetdj.com/downloads/">Downloads</a></li>
+	<li id="menu-item-93022" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-93022"><a href="https://www.chauvetdj.com/service-request/">Service Request</a></li>
+	<li id="menu-item-93023" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-93023"><a href="https://www.chauvetdj.com/service-request-status/">Service Request Status</a></li>
+	<li id="menu-item-51234" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-51234"><a href="https://www.chauvetdj.com/wp-content/uploads/2016/06/DMX_Primer.pdf">DMX Primer</a></li>
+	<li id="menu-item-51235" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-51235"><a href="https://www.chauvetdj.com/wp-content/uploads/2016/06/Sizing_circuit_breakers.pdf">Sizing Your Circuit Breakers</a></li>
+	<li id="menu-item-24047" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-24047"><a href="https://www.chauvetdj.com/chauvet-dj-dip-switch-calculator/">Dip Switch Calculator</a></li>
+	<li id="menu-item-15163" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-15163"><a href="https://www.chauvetdj.com/warranty/">Warranty</a></li>
+</ul>
+</li>
+<li id="menu-item-22542" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-22542"><a href="https://www.chauvetdj.com/blog/">Blog</a></li>
+<li id="menu-item-23486" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-23486"><a href="https://www.chauvetdj.com/about/">About</a></li>
+<li id="menu-item-439" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-439"><a href="https://www.chauvetdjvip.com/vip-rewards/">VIP Rewards</a></li>
+<li id="menu-item-21132" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-21132"><a href="#">Catalog</a>
+<ul class="sub-menu">
+	<li id="menu-item-23536" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-23536"><a href="/downloads/">US/EU (English)</a></li>
+	<li id="menu-item-23537" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-23537"><a href="/es-downloads/">Spanish</a></li>
+</ul>
+</li>
+<li id="menu-item-92709" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-92709"><a href="#">Choose Language</a>
+<ul class="sub-menu">
+	<li id="menu-item-92710" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-92710"><a href="https://www.chauvetdj.com">English</a></li>
+	<li id="menu-item-92711" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-92711"><a href="https://fr.chauvetdj.com">Français</a></li>
+	<li id="menu-item-92713" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-92713"><a href="https://de.chauvetdj.com">Deutsch</a></li>
+	<li id="menu-item-92712" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-92712"><a href="https://es.chauvetdj.com">Español</a></li>
+</ul>
+</li>
+<li id="menu-item-169622" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-169622"><a href="https://chauvetlighting.com/green-thinking/">Sustainability</a></li>
+                      <li class="menu-item-has-children">
+              <a href="#">House of Brands</a>
+              <ul id="sister_brands" class="sub-menu">
+                                                    <li class="box"><a href="https://www.chauvetprofessional.com/" target="_blank"><img src="https://www.chauvetdj.com/wp-content/uploads/2024/07/cp-pro-logo.png" alt=""></a></li>
+                                                    <li class="box"><a href="https://www.kinoflo.com/" target="_blank"><img src="https://www.chauvetdj.com/wp-content/uploads/2024/07/kinoflo-logo.png" alt=""></a></li>
+                                                    <li class="box"><a href="https://www.chamsyslighting.com" target="_blank"><img src="https://www.chauvetdj.com/wp-content/uploads/2024/07/chamsys-logo.png" alt=""></a></li>
+                                                    <li class="box"><a href="https://www.iluminarc.com/" target="_blank"><img src="https://www.chauvetdj.com/wp-content/uploads/2024/07/iluminarc-logo.png" alt=""></a></li>
+                                                    <li class="box"><a href="https://www.lyntec.com/" target="_blank"><img src="https://www.chauvetdj.com/wp-content/uploads/2024/07/lyntec-logo.png" alt=""></a></li>
+                                                    <li class="box"><a href="https://www.juicegoose.com" target="_blank"><img src="https://www.chauvetdj.com/wp-content/uploads/2024/07/juicegoose-logo.png" alt=""></a></li>
+                                                    <li class="box"><a href="https://trusst.com/" target="_blank"><img src="https://www.chauvetdj.com/wp-content/uploads/2024/07/trusst-logo.png" alt=""></a></li>
+                              </ul>
+            </li>
+                  </ul>
+                  <ul id="social" class="box">
+            <li class="facebook"><a href="https://www.facebook.com/chauvetdj" title="Facebook" target="_blank">Facebook</a></li>                        <li class="instagram"><a href="https://instagram.com/chauvet_dj" title="Instagram" target="_blank">Instagram</a></li>            <li class="youtube"><a href="https://www.youtube.com/user/@CHAUVETDJ" title="YouTube" target="_blank">YouTube</a></li>            
+			                  <li class="snapchat"><a href="https://www.snapchat.com/add/chauvetdj" title="Snapchat" target="_blank"><span>Snapchat</span></a></li>
+          </ul>
+              </div>
+    </nav>    
+    <section class="section meta box">
+      <div class="wrapper box">
+                  <ul class="memberships box">
+                                        <li class="box"><a href="https://www.usitt.org/" target="_blank"><img src="https://www.chauvetdj.com/wp-content/uploads/2016/11/usitt_logo.png" alt=""></a></li>
+                                        <li class="box"><a href="https://www.namm.org/" target="_blank"><img src="https://www.chauvetdj.com/wp-content/uploads/2016/11/namm_logo.png" alt=""></a></li>
+                                        <li class="box"><a href="https://www.plasa.org/" target="_blank"><img src="https://www.chauvetdj.com/wp-content/uploads/2016/11/plasa_logo.png" alt=""></a></li>
+                                        <li class="box"><a href="https://www.usgbc.org/" target="_blank"><img src="https://www.chauvetdj.com/wp-content/uploads/2016/11/usgbc_logo.png" alt=""></a></li>
+                      </ul>
+                <span class="copyright fontface box">© 2024 CHAUVET DJ. <span>All rights reserved.</span>&nbsp;&nbsp;<a href="https://www.chauvetprofessional.com/wp-content/uploads/2022/04/Chauvet-GDPR-Privacy-Policy_April-2022.pdf" target="_blank">Privacy Policy</a></span>
+      </div>
+    </section>
+    <a href="#" class="back_top fontface bold btn">Back to Top</a>
+  </footer>  
+</div>
+
+<script type="54a9ed80920ef8178c15d01c-text/javascript" src="https://www.chauvetdj.com/wp-content/themes/chauvetdj/js/nav.js"></script>
+<script type="54a9ed80920ef8178c15d01c-text/javascript" src="https://www.chauvetdj.com/wp-content/themes/chauvetdj/js/gallery.js"></script>
+<script type="54a9ed80920ef8178c15d01c-text/javascript" src="https://www.chauvetdj.com/wp-content/themes/chauvetdj/js/FitVids.js"></script>
+<script type="54a9ed80920ef8178c15d01c-text/javascript">
+$(document).ready(function() {
+	if ("ontouchstart" in window || "ontouch" in window) { $('body').addClass('touch'); }
+	
+	jQuery('.back_top.btn').click(function(e){
+		$('html, body').stop().animate({ scrollTop: 0 }, 500);
+		e.preventDefault();
+	});
+	
+	jQuery('.content-block').fitVids();
+
+  $("#quick-product-find").keyup(function(e){
+
+    if( $(this).val() == null || $(this).val() == ''){
+      $('#quick-product-dropdown li').css('display','block');
+
+    } else{
+
+
+
+    $('#quick-product-dropdown li').css('display','none');
+    
+    $('#quick-product-dropdown li a:contains('+$(this).val().toUpperCase()+')').parent().css('display','block');
+    $('#quick-product-dropdown li.excemted-on-filter').css('display','block');
+    }
+    }
+
+  );
+
+  $('.expand-filter').click(function(e) {
+    /* Act on the event */
+    e.preventDefault();
+    $('.product-filter-wrap').slideToggle(300);
+    $('.expand-filter').parent().toggleClass('active');
+
+  });
+
+
+});
+</script>
+<!-- Custom Feeds for Instagram JS -->
+<script type="54a9ed80920ef8178c15d01c-text/javascript">
+var sbiajaxurl = "https://www.chauvetdj.com/wp-admin/admin-ajax.php";
+
+</script>
+<!-- YouTube Feeds JS -->
+<script type="54a9ed80920ef8178c15d01c-text/javascript">
+
+</script>
+    <!-- Meta Pixel Event Code -->
+    <script type="54a9ed80920ef8178c15d01c-text/javascript">
+        document.addEventListener( 'wpcf7mailsent', function( event ) {
+        if( "fb_pxl_code" in event.detail.apiResponse){
+          eval(event.detail.apiResponse.fb_pxl_code);
+        }
+      }, false );
+    </script>
+    <!-- End Meta Pixel Event Code -->
+    <div id="fb-pxl-ajax-code"></div>		<!-- Google Tag Manager (noscript) snippet added by Site Kit -->
+		<noscript>
+			<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NZHPF57" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+		</noscript>
+		<!-- End Google Tag Manager (noscript) snippet added by Site Kit -->
+		<link rel="stylesheet" id="gravity_forms_theme_reset-css" href="https://www.chauvetdj.com/wp-content/plugins/gravityforms/assets/css/dist/gravity-forms-theme-reset.min.css?ver=2.9.0" type="text/css" media="all">
+<link rel="stylesheet" id="gravity_forms_theme_foundation-css" href="https://www.chauvetdj.com/wp-content/plugins/gravityforms/assets/css/dist/gravity-forms-theme-foundation.min.css?ver=2.9.0" type="text/css" media="all">
+<link rel="stylesheet" id="gravity_forms_theme_framework-css" href="https://www.chauvetdj.com/wp-content/plugins/gravityforms/assets/css/dist/gravity-forms-theme-framework.min.css?ver=2.9.0" type="text/css" media="all">
+<link rel="stylesheet" id="gravity_forms_orbital_theme-css" href="https://www.chauvetdj.com/wp-content/plugins/gravityforms/assets/css/dist/gravity-forms-orbital-theme.min.css?ver=2.9.0" type="text/css" media="all">
+<script type="54a9ed80920ef8178c15d01c-text/javascript" src="https://www.chauvetdj.com/wp-content/plugins/anti-spam/assets/js/anti-spam.js?ver=7.3.8" id="anti-spam-script-js"></script>
+<script type="54a9ed80920ef8178c15d01c-text/javascript" id="cffscripts-js-extra">
+/* <![CDATA[ */
+var cffOptions = {"placeholder":"https:\/\/www.chauvetdj.com\/wp-content\/plugins\/custom-facebook-feed-pro\/assets\/img\/placeholder.png","resized_url":"https:\/\/www.chauvetdj.com\/wp-content\/uploads\/sb-facebook-feed-images\/","nonce":"0f7ab24c69"};
+/* ]]> */
+</script>
+<script type="54a9ed80920ef8178c15d01c-text/javascript" src="https://www.chauvetdj.com/wp-content/plugins/custom-facebook-feed-pro/assets/js/cff-scripts.min.js?ver=4.6.6" id="cffscripts-js"></script>
+<script type="54a9ed80920ef8178c15d01c-text/javascript" id="product_dropdown-js-extra">
+/* <![CDATA[ */
+var productDropdown = {"ajax_url":"https:\/\/www.chauvetdj.com\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type="54a9ed80920ef8178c15d01c-text/javascript" src="https://www.chauvetdj.com/wp-content/themes/chauvetdj/js/product-dropdown.js" id="product_dropdown-js"></script>
+<script type="54a9ed80920ef8178c15d01c-text/javascript" src="https://www.chauvetdj.com/wp-includes/js/dist/dom-ready.min.js?ver=f77871ff7694fffea381" id="wp-dom-ready-js"></script>
+<script type="54a9ed80920ef8178c15d01c-text/javascript" src="https://www.chauvetdj.com/wp-includes/js/dist/hooks.min.js?ver=4d63a3d491d11ffd8ac6" id="wp-hooks-js"></script>
+<script type="54a9ed80920ef8178c15d01c-text/javascript" src="https://www.chauvetdj.com/wp-includes/js/dist/i18n.min.js?ver=5e580eb46a90c2b997e6" id="wp-i18n-js"></script>
+<script type="54a9ed80920ef8178c15d01c-text/javascript" id="wp-i18n-js-after">
+/* <![CDATA[ */
+wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
+/* ]]> */
+</script>
+<script type="54a9ed80920ef8178c15d01c-text/javascript" src="https://www.chauvetdj.com/wp-includes/js/dist/a11y.min.js?ver=3156534cc54473497e14" id="wp-a11y-js"></script>
+<script type="54a9ed80920ef8178c15d01c-text/javascript" defer="defer" src="https://www.chauvetdj.com/wp-content/plugins/gravityforms/js/jquery.json.min.js?ver=2.9.0" id="gform_json-js"></script>
+<script type="54a9ed80920ef8178c15d01c-text/javascript" id="gform_gravityforms-js-extra">
+/* <![CDATA[ */
+var gform_i18n = {"datepicker":{"days":{"monday":"Mo","tuesday":"Tu","wednesday":"We","thursday":"Th","friday":"Fr","saturday":"Sa","sunday":"Su"},"months":{"january":"January","february":"February","march":"March","april":"April","may":"May","june":"June","july":"July","august":"August","september":"September","october":"October","november":"November","december":"December"},"firstDay":1,"iconText":"Select date"}};
+var gf_legacy_multi = [];
+var gform_gravityforms = {"strings":{"invalid_file_extension":"This type of file is not allowed. Must be one of the following:","delete_file":"Delete this file","in_progress":"in progress","file_exceeds_limit":"File exceeds size limit","illegal_extension":"This type of file is not allowed.","max_reached":"Maximum number of files reached","unknown_error":"There was a problem while saving the file on the server","currently_uploading":"Please wait for the uploading to complete","cancel":"Cancel","cancel_upload":"Cancel this upload","cancelled":"Cancelled"},"vars":{"images_url":"https:\/\/www.chauvetdj.com\/wp-content\/plugins\/gravityforms\/images"}};
+var gf_global = {"gf_currency_config":{"name":"U.S. Dollar","symbol_left":"$","symbol_right":"","symbol_padding":"","thousand_separator":",","decimal_separator":".","decimals":2,"code":"USD"},"base_url":"https:\/\/www.chauvetdj.com\/wp-content\/plugins\/gravityforms","number_formats":[],"spinnerUrl":"https:\/\/www.chauvetdj.com\/wp-content\/plugins\/gravityforms\/images\/spinner.svg","version_hash":"e7e01b46a09a8aab94e9491f0f3bd85b","strings":{"newRowAdded":"New row added.","rowRemoved":"Row removed","formSaved":"The form has been saved.  The content contains the link to return and complete the form."}};
+/* ]]> */
+</script>
+<script type="54a9ed80920ef8178c15d01c-text/javascript" defer="defer" src="https://www.chauvetdj.com/wp-content/plugins/gravityforms/js/gravityforms.min.js?ver=2.9.0" id="gform_gravityforms-js"></script>
+<script type="54a9ed80920ef8178c15d01c-text/javascript" defer="defer" src="https://www.chauvetdj.com/wp-content/plugins/gravityforms/js/placeholders.jquery.min.js?ver=2.9.0" id="gform_placeholder-js"></script>
+<script type="54a9ed80920ef8178c15d01c-text/javascript" defer="defer" src="https://www.chauvetdj.com/wp-content/plugins/gravityforms/assets/js/dist/utils.min.js?ver=f802885f3482236736b18b55abcdc360" id="gform_gravityforms_utils-js"></script>
+<script type="54a9ed80920ef8178c15d01c-text/javascript" defer="defer" src="https://www.chauvetdj.com/wp-content/plugins/gravityforms/assets/js/dist/vendor-theme.min.js?ver=ddd2702ee024d421149a5e61416f1ff5" id="gform_gravityforms_theme_vendors-js"></script>
+<script type="54a9ed80920ef8178c15d01c-text/javascript" id="gform_gravityforms_theme-js-extra">
+/* <![CDATA[ */
+var gform_theme_config = {"common":{"form":{"honeypot":{"version_hash":"e7e01b46a09a8aab94e9491f0f3bd85b"},"ajax":{"ajaxurl":"https:\/\/www.chauvetdj.com\/wp-admin\/admin-ajax.php","ajax_submission_nonce":"0a0bb00907","i18n":{"step_announcement":"Step %1$s of %2$s, %3$s","unknown_error":"There was an unknown error processing your request. Please try again."}}}},"hmr_dev":"","public_path":"https:\/\/www.chauvetdj.com\/wp-content\/plugins\/gravityforms\/assets\/js\/dist\/","config_nonce":"d4f71be330"};
+/* ]]> */
+</script>
+<script type="54a9ed80920ef8178c15d01c-text/javascript" defer="defer" src="https://www.chauvetdj.com/wp-content/plugins/gravityforms/assets/js/dist/scripts-theme.min.js?ver=c055226f9b8c432c9206edab9070263c" id="gform_gravityforms_theme-js"></script>
+<script type="54a9ed80920ef8178c15d01c-text/javascript">
+/* <![CDATA[ */
+ gform.initializeOnLoaded( function() { jQuery(document).on('gform_post_render', function(event, formId, currentPage){if(formId == 9) {if(typeof Placeholders != 'undefined'){
+                        Placeholders.enable();
+                    }} } );jQuery(document).on('gform_post_conditional_logic', function(event, formId, fields, isInit){} ) } ); 
+/* ]]> */
+</script>
+<script type="54a9ed80920ef8178c15d01c-text/javascript">
+/* <![CDATA[ */
+ gform.initializeOnLoaded( function() {jQuery(document).trigger("gform_pre_post_render", [{ formId: "9", currentPage: "1", abort: function() { this.preventDefault(); } }]);                if (event && event.defaultPrevented) {                return;         }        const gformWrapperDiv = document.getElementById( "gform_wrapper_9" );        if ( gformWrapperDiv ) {            const visibilitySpan = document.createElement( "span" );            visibilitySpan.id = "gform_visibility_test_9";            gformWrapperDiv.insertAdjacentElement( "afterend", visibilitySpan );        }        const visibilityTestDiv = document.getElementById( "gform_visibility_test_9" );        let postRenderFired = false;                function triggerPostRender() {            if ( postRenderFired ) {                return;            }            postRenderFired = true;            jQuery( document ).trigger( 'gform_post_render', [9, 1] );            gform.utils.trigger( { event: 'gform/postRender', native: false, data: { formId: 9, currentPage: 1 } } );            gform.utils.trigger( { event: 'gform/post_render', native: false, data: { formId: 9, currentPage: 1 } } );            if ( visibilityTestDiv ) {                visibilityTestDiv.parentNode.removeChild( visibilityTestDiv );            }        }        function debounce( func, wait, immediate ) {            var timeout;            return function() {                var context = this, args = arguments;                var later = function() {                    timeout = null;                    if ( !immediate ) func.apply( context, args );                };                var callNow = immediate && !timeout;                clearTimeout( timeout );                timeout = setTimeout( later, wait );                if ( callNow ) func.apply( context, args );            };        }        const debouncedTriggerPostRender = debounce( function() {            triggerPostRender();        }, 200 );        if ( visibilityTestDiv && visibilityTestDiv.offsetParent === null ) {            const observer = new MutationObserver( ( mutations ) => {                mutations.forEach( ( mutation ) => {                    if ( mutation.type === 'attributes' && visibilityTestDiv.offsetParent !== null ) {                        debouncedTriggerPostRender();                        observer.disconnect();                    }                });            });            observer.observe( document.body, {                attributes: true,                childList: false,                subtree: true,                attributeFilter: [ 'style', 'class' ],            });        } else {            triggerPostRender();        }    } ); 
+/* ]]> */
+</script>
+
+		<!-- Cookie Notice plugin v2.5.3 by Hu-manity.co https://hu-manity.co/ -->
+		<div id="cookie-notice" role="dialog" class="cookie-notice-hidden cookie-revoke-hidden cn-position-bottom" aria-label="Cookie Notice" style="background-color: rgba(20,43,59,1);"><div class="cookie-notice-container" style="color: #fff"><span id="cn-notice-text" class="cn-text-container">We use cookies to ensure that we give you the best experience on our website. If you continue to use this site we will assume that you are happy with it.</span><span id="cn-notice-buttons" class="cn-buttons-container"><a href="#" id="cn-accept-cookie" data-cookie-set="accept" class="cn-set-cookie cn-button cn-button-custom button" aria-label="Ok">Ok</a><a href="#" id="cn-refuse-cookie" data-cookie-set="refuse" class="cn-set-cookie cn-button cn-button-custom button" aria-label="No">No</a><a href="https://www.chauvetlighting.com/wp-content/uploads/2019/04/Chauvet-GDPR-Privacy-Policy_April-2019.pdf" target="_blank" id="cn-more-info" class="cn-more-info cn-button cn-button-custom button" aria-label="Privacy policy">Privacy policy</a></span><span id="cn-close-notice" data-cookie-set="accept" class="cn-close-icon" title="No"></span></div>
+			
+		</div>
+		<!-- / Cookie Notice plugin -->			<script type="54a9ed80920ef8178c15d01c-text/javascript" id="wpsp-script-frontend"></script>
+			
+<script type="54a9ed80920ef8178c15d01c-text/javascript">
+$(function(){
+  var loadfilter = function(link){
+    $.get(link, function(data) {
+      $('#products .wrapper').html('');
+      var post = $("#products .wrapper .product", data);
+      $('#products .wrapper').append(post);
+      jQuery('.load_more').load(link+' .load_more a');
+    });
+  }
+  $('#filter-lists li a').click(function(e) {
+    e.preventDefault();
+    if( $(this).parent('li').hasClass('filter-this') ){ $(this).parent('li').removeClass('filter-this'); }
+    else{ $(this).parent('li').addClass('filter-this'); }
+
+    $('#products .wrapper').html('<span class="loader white box">Loading Products...</span>');
+    var filterthis = '';
+    $('#filter-lists li').each(
+      function(){
+        if($(this).hasClass('filter-this') ){
+          filterthis += $(this).find('a').data('tofilter') + '.';
+        }
+      }
+    )
+    //console.log(filterthis);
+      console.log('en-https://www.chauvetdj.com');
+              loadfilter('https://www.chauvetdj.com/contact-us//?filter-products=1&filter='+filterthis);
+        
+  });
+});
+</script>
+
+
+
+<!--Add Email Passer for Subscribe Button  SB  10-20-2016  Begin here-->
+<script type="54a9ed80920ef8178c15d01c-text/javascript">
+jQuery(document).ready(function($){
+
+$(".clicktoshowprod input").change(function() {
+    if(this.checked) {
+        $('.showwhencheck').css('display','block');
+    }
+    else{
+      $('.showwhencheck').css('display','none');
+    }
+});
+
+
+});
+</script>
+<!--Email Passer for Subscribe Button Ends here-->
+
+
+
+</body></html>
