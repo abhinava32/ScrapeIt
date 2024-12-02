@@ -1,6 +1,7 @@
 import React, { useState, FormEvent, ChangeEvent } from "react";
 import axios from "axios";
 import ClimbingBoxLoader from "react-spinners/ClipLoader";
+import DataContainer from "../components/DataContainer";
 
 interface ScrapedData {
   headings?: string[];
@@ -16,10 +17,7 @@ const App: React.FC = () => {
     setLoader(true);
     e.preventDefault();
     try {
-      const response = await axios.post<ScrapedData>(
-        "http://localhost:5000/scrape",
-        { url }
-      );
+      const response = await axios.post<ScrapedData>("/api/scrape", { url });
       setData(response.data);
       setLoader(false);
     } catch (error) {
@@ -49,17 +47,20 @@ const App: React.FC = () => {
           <ClimbingBoxLoader
             color={"#36d7b7"}
             loading={loaded}
-            size={15}
+            size={35}
             aria-label="Loading Spinner"
             data-testid="loader"
           />
         ) : (
           <>
             {data && (
-              <div>
-                <h2>Scraped Data</h2>
-                <pre>{JSON.stringify(data, null, 2)}</pre>
-              </div>
+              <>
+                <DataContainer />
+                <div>
+                  <h2>Scraped Data</h2>
+                  <pre>{JSON.stringify(data, null, 2)}</pre>
+                </div>
+              </>
             )}
           </>
         )}
