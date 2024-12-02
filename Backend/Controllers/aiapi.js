@@ -52,7 +52,7 @@ const getContactAi = async (link) => {
           },
           {
             role: "user",
-            content: `Can you give me the details in a JSON format like this: phone number, fax number, country, and address from the HTML: ${htmlContent}. I only want the details in JSON format. Any extra information should be written like extraInfo: [information]. I will convert this text to JSON.`,
+            content: `Can you give me the details in a JSON format like this: phone number, email, fax number, country, and address from the HTML: ${htmlContent}. I only want the details in JSON format. Any extra information should be written like extraInfo: [information]. I will convert this text to JSON.`,
           },
         ],
       },
@@ -111,10 +111,10 @@ module.exports.ask = async (req, res) => {
       link.startsWith("http") ? link : new URL(link, url).href
     );
     const uniqueLinks = [...new Set(absoluteLinks)];
-    const details = await Promise.all(
-      uniqueLinks.map((link) => getContactAi(link))
-    );
-
+    // const details = await Promise.all(
+    //   uniqueLinks.map((link) => getContactAi(link))
+    // );
+    const details = await getContactAi(uniqueLinks[0]);
     //getting business details
     const businessLinks = links.filter((link) => businessRegex.test(link));
     const absoluteBusinessLinks = businessLinks.map((link) =>
@@ -127,8 +127,8 @@ module.exports.ask = async (req, res) => {
     // );
     const detailBusiness = await getBusinessDetails(uniqueBusinessLinks[0]);
     res.json({
-      details,
-      detailBusiness,
+      Contact_Details: details,
+      Business_Details: detailBusiness,
       message: "Scraping completed successfully.",
     });
   } catch (error) {
