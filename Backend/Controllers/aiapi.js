@@ -249,7 +249,7 @@ module.exports.ask = async (req, res) => {
     }
   } catch (err) {
     // console.log(err);
-    res.status(500).json({
+    return res.status(500).json({
       message: "Error in processing data",
       details: err.message,
     });
@@ -270,19 +270,19 @@ module.exports.ask = async (req, res) => {
 
     const detailData = await sendToAi();
     if (detailData) {
-      res.status(200).json({
+      return res.status(200).json({
         data: detailData,
         message: "Scraping completed successfully.",
       });
     } else {
-      res.status(500).json({
+      return res.status(500).json({
         message: "Error in processing data",
         details: err.message,
       });
     }
   } catch (err) {
     // console.log(err);
-    res.status(500).json({
+    return res.status(500).json({
       message: "Error in processing data",
       details: err.message,
     });
