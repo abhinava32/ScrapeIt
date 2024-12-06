@@ -235,6 +235,7 @@ module.exports.ask = async (req, res) => {
 
   try {
     const links = await getLinks();
+    // console.log("links are ", links);
     await getDetails(links.contactus_link, "Contact Page");
     await getDetails(links.aboutus_link, "About Us Page");
     await getDetails(links.products_link, "Product/Services Page");
@@ -350,7 +351,7 @@ const sendToAi = async () => {
     // Parse the cleaned JSON
     const jsonResponse = JSON.parse(cleanedJson);
     // console.log("response is ", jsonResponse);
-    console.log("Extracted details:", JSON.stringify(jsonResponse, null, 2));
+    // console.log("Extracted details:", JSON.stringify(jsonResponse, null, 2));
     return jsonResponse;
   } catch (error) {
     console.error("Error contacting OpenAI:", error);
