@@ -8,11 +8,17 @@ const model = "gpt-3.5-turbo";
 //const model = 'gpt-4-turbo'
 
 const getDetails = async (link, pageType) => {
-  //console.log("fetching details from  ", link);
+  console.log("fetching details from  ", link);
   if (!link) {
     return { message: "No link provided" };
   }
-  const { data: html } = await axios.get(link);
+  try {
+    var { data: html } = await axios.get(link);
+  } catch (err) {
+    console.log("error in getDetails");
+    return;
+  }
+
   const $ = cheerio.load(html);
   $("style, script, img, link, meta").remove();
   const text = $("body").text();
@@ -29,7 +35,7 @@ const getDetails = async (link, pageType) => {
     await fs.appendFile("scrapehtml.html", `\n`);
     //console.log("file written successfully");
   } catch (error) {
-    //console.log(error);
+    console.log("error wrting file", pageType);
     return null;
   }
 };
@@ -209,36 +215,58 @@ module.exports.ask = async (req, res) => {
       // links.map(async (link) => await fs.appendFile("links.txt"));
       for (let i = 0; i < uniqueContactLinks.length; i++) {
         // await fs.appendFile("links.txt", "Contact Us links");
-        await fs.appendFile(
-          "links.txt",
-          "contact us links \n" + uniqueContactLinks[i] + "\n"
-        );
+        try {
+          await fs.appendFile(
+            "links.txt",
+            "contact us links \n" + uniqueContactLinks[i] + "\n"
+          );
+        } catch (err) {
+          console.log("error writing contact links to file");
+        }
       }
       for (let i = 0; i < uniqueBusinessLinks.length; i++) {
-        await fs.appendFile(
-          "links.txt",
-          "About Us links \n" + uniqueBusinessLinks[i] + "\n"
-        );
+        try {
+          await fs.appendFile(
+            "links.txt",
+            "About Us links \n" + uniqueBusinessLinks[i] + "\n"
+          );
+        } catch (err) {
+          console.log("error writing About Us links to file");
+        }
       }
       for (let i = 0; i < uniqueProductLinks.length; i++) {
-        await fs.appendFile(
-          "links.txt",
-          "Product/Services Links \n" + uniqueProductLinks[i] + "\n"
-        );
+        try {
+          await fs.appendFile(
+            "links.txt",
+            "Product/Services Links \n" + uniqueProductLinks[i] + "\n"
+          );
+        } catch (err) {
+          console.log("error writing Product/Services links to file");
+        }
       }
     } catch (err) {
-      console.log(err);
+      console.log("error in writing links file");
     }
   } catch (err) {
-    console.log(err);
+    // console.log(err);
+    res.status(500).json({
+      message: "Error in processing data",
+      details: err.message,
+    });
   }
 
   try {
     const links = await getLinks();
     // console.log("links are ", links);
-    await getDetails(links.contactus_link, "Contact Page");
-    await getDetails(links.aboutus_link, "About Us Page");
-    await getDetails(links.products_link, "Product/Services Page");
+    if (links.contactus_link) {
+      await getDetails(links.contactus_link, "Contact Page");
+    }
+    if (links.aboutus_link) {
+      await getDetails(links.aboutus_link, "About Us Page");
+    }
+    if (links.products_link) {
+      await getDetails(links.products_link, "Product/Services Page");
+    }
 
     const detailData = await sendToAi();
     if (detailData) {
@@ -253,7 +281,7 @@ module.exports.ask = async (req, res) => {
       });
     }
   } catch (err) {
-    console.log(err);
+    // console.log(err);
     res.status(500).json({
       message: "Error in processing data",
       details: err.message,
