@@ -4,7 +4,7 @@ const { readFile } = require("fs");
 const fs = require("fs").promises;
 const { writeFile } = require("fs/promises");
 const model = "gpt-3.5-turbo";
-
+const tokenLimit = 15000;
 //const model = 'gpt-4-turbo'
 
 const getDetails = async (link, pageType) => {
@@ -304,7 +304,7 @@ const sendToAi = async () => {
     return { message: "Reduce input size to keep cost below $0.01." };
   }
 
-  if (tokenEstimate > 10000 && model === "gpt-3.5-turbo") {
+  if (tokenEstimate > tokenLimit && model === "gpt-3.5-turbo") {
     console.log("Reduce input size to keep cost below $0.01.");
     return { message: "Reduce input size to keep cost below $0.01." };
   }

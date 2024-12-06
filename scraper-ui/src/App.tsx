@@ -36,6 +36,7 @@ const App: React.FC = () => {
       }
     } catch (error) {
       console.error("Error scraping data:", error);
+      setData(null);
     } finally {
       setLoader(false);
       setTimeout(() => setCooldown(false), 2000);
@@ -92,7 +93,9 @@ const App: React.FC = () => {
                 />
                 <p className="text-3xl">Site Not Reachable</p>
               </div>
-            ) : null}
+            ) : (
+              <div></div>
+            )}
           </>
         )}
       </div>
