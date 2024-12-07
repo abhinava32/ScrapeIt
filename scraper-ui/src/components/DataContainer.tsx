@@ -2,6 +2,7 @@ import React from "react";
 import { ScrapedData } from "../App";
 import { DataField } from "./DataField";
 import { toast, Toaster } from "react-hot-toast";
+import { IoCopyOutline } from "react-icons/io5";
 
 interface DataContainerProps {
   data: ScrapedData;
@@ -15,6 +16,7 @@ const DataContainer: React.FC<DataContainerProps> = ({ data }) => {
   const products = businessDetails["products"] || [];
   const description = businessDetails["description"] || "";
   const extraInfo = businessDetails["extraInfo"] || "";
+  const reason = businessDetails["reason"] || "";
 
   const contactDetails = data["Contact_Details"] || {};
   const name = contactDetails["name"] || "";
@@ -37,7 +39,7 @@ const DataContainer: React.FC<DataContainerProps> = ({ data }) => {
     <div className="container mx-auto p-4">
       <Toaster position="top-right" /> {/* Add Toaster component */}
       {/* Business Type Header */}
-      <div className="mb-6 p-4 text-center bg-yellow-800 text-white rounded-lg">
+      <div className="mb-6 p-4 text-center bg-purple-800 text-white rounded-lg">
         <h2 className="text-2xl font-bold">Business Type</h2>
         <p className="text-4xl mt-2">{businessType || "Not specified"}</p>
       </div>
@@ -72,6 +74,11 @@ const DataContainer: React.FC<DataContainerProps> = ({ data }) => {
               value={extraInfo}
               onCopy={handleCopyClick}
             />
+            <DataField
+              label="Reason for Business Type"
+              value={reason}
+              onCopy={handleCopyClick}
+            />
           </div>
 
           <div>
@@ -83,6 +90,12 @@ const DataContainer: React.FC<DataContainerProps> = ({ data }) => {
                 <li key={index} className="p-4">
                   <p>
                     <b>{product["name"]}</b>
+                    <button
+                      className="ml-2 hover:pointer"
+                      onClick={() => handleCopyClick(product["name"])}
+                    >
+                      <IoCopyOutline className="w-4 h-4" />
+                    </button>
                   </p>
                   <p>{product["description"]}</p>
                 </li>
