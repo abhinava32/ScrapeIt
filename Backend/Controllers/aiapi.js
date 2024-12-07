@@ -5,7 +5,7 @@ const fs = require("fs").promises;
 const { writeFile } = require("fs/promises");
 const model = "gpt-3.5-turbo";
 const tokenLimit = 15000;
-//const model = 'gpt-4-turbo'
+// const model = "gpt-4-turbo";
 
 const getDetails = async (link, pageType) => {
   console.log("fetching details from  ", link);
@@ -101,7 +101,7 @@ const isValidUrl = (link) => {
   return true;
 };
 
-const getLinks = async () => {
+const getLinks = async (res) => {
   const htmlContent = await fs.readFile("links.txt");
 
   try {
@@ -113,19 +113,23 @@ const getLinks = async () => {
           {
             role: "system",
             content:
-              "You are a helpful assistant that extracts information from HTML reduced text. Respond with raw JSON only. Do not include escape characters or format it as a string.",
+              "You are a JSON formatter. You must respond with valid JSON only, no additional text or explanation. The JSON must follow the exact structure specified in the user's request.",
           },
           {
             role: "user",
-            content: `Since websites has different kind of links, (for ex: as contact us may be written as reach us) I need your help. I want three links (one for each) to visit that can have contact-us, about-us and products/services information. Can you give me the details in a JSON format like this: 
+            content: `Extract exactly one link for each category (contact-us, about-us, products/services) from the provided HTML content. Return ONLY a JSON object with this exact structure:
             {
-              contactus_link: [one contact us page link],
-              aboutus_link: [one about us page link],
-              products_link: [one product and services page link]
+              "contactus_link": "single_contact_link_here",
+              "aboutus_link": "single_about_link_here",
+              "products_link": "single_product_link_here"
             }
-             from the HTML: ${htmlContent}. I only want the details in JSON format.`,
+            
+            HTML Content: ${htmlContent}`,
           },
         ],
+        temperature: 0.1, // Lower temperature for more consistent output
+        max_tokens: 1000,
+        response_format: { type: "json_object" }, // Enforce JSON response
       },
       {
         headers: {
@@ -135,19 +139,21 @@ const getLinks = async () => {
       }
     );
 
-    // Get the raw response and clean it up
     const aiResponse = response.data.choices[0].message.content;
 
-    // Clean up any escape characters (like \n or \")
-    const cleanedJson = aiResponse.replace(/\\n/g, "").replace(/\\"/g, '"');
-
-    // Parse the cleaned JSON
-    const jsonResponse = JSON.parse(cleanedJson);
-    // console.log("response is ", jsonResponse);
-    //console.log("Extracted links are:", JSON.stringify(jsonResponse, null, 2));
-    return jsonResponse;
+    // Additional safety check to ensure valid JSON
+    try {
+      const jsonResponse = JSON.parse(aiResponse);
+      // console.log("Extracted links:", JSON.stringify(jsonResponse, null, 2));
+      return jsonResponse;
+    } catch (parseError) {
+      console.error("JSON Parse Error:", parseError);
+      // return res.status(500).json({ error: "Invalid JSON response from AI" };
+      throw new Error("Invalid JSON response from AI");
+    }
   } catch (error) {
     console.error("Error contacting OpenAI:", error);
+    throw error;
   }
 };
 
@@ -299,7 +305,7 @@ const sendToAi = async () => {
   const tokenEstimate = Math.ceil(reducedContent.length / 4); // Estimate tokens
 
   console.log("Estimated Tokens:", tokenEstimate);
-  if (tokenEstimate > 700 && model === "gpt-4-turbo") {
+  if (tokenEstimate > tokenLimit && model === "gpt-4-turbo") {
     //console.log("Reduce input size to keep cost below $0.01.");
     return { message: "Reduce input size to keep cost below $0.01." };
   }
@@ -341,17 +347,17 @@ const sendToAi = async () => {
                 },
               Business_Details: {
                 description: [small description],
-                businessType: [choose only one type of business from the following options only(do not add anything from your side): 
-                                  1. Manufacturer
-                                  2. Industrial Services
-                                  3. Exporter
-                                  4. Trader
-                                  5. Distributor
-                                  6. Supplier
-                                  7. Wholesaler
-                                  8. Others.
-                                  In case of multiple types, Manufacturer must be the topmost priority.
+                businessType: [Look if the business type is manufacturer. Someone can be Manufacturer only if they make products on their own (service providers are not manufacturer). if business type is not manufacturer then choose only one type of business from the following options only(do not add anything from your side): 
+                                  1. Industrial Services (if the business is helping others for manufacturing of products)
+                                  2. Exporter
+                                  3. Trader
+                                  4. Distributor
+                                  5. Supplier
+                                  6. Wholesaler
+                                  7. Others.
+                                  
                               ],
+                reason: [reason why you chose this business type],
                 products: [list of max three products in this format:
                   {name: [], description: []}  
                 ],
@@ -361,6 +367,8 @@ const sendToAi = async () => {
              from the HTML: ${htmlContent}. I only want the details in JSON format.`,
           },
         ],
+        temperature: 0.1, // Lower temperature for more consistent output
+        response_format: { type: "json_object" },
       },
       {
         headers: {
@@ -383,5 +391,9 @@ const sendToAi = async () => {
     return jsonResponse;
   } catch (error) {
     console.error("Error contacting OpenAI:", error);
+    return res.status(500).json({
+      message: "Error in processing data",
+      details: error.message,
+    });
   }
 };

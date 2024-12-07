@@ -45,7 +45,9 @@ const App: React.FC = () => {
 
   return (
     <div>
-      <div className="m-auto text-5xl mt-10 text-center">Scrape It</div>
+      <div className="m-auto text-5xl text-purple-900 mt-10 text-center">
+        Scrape It
+      </div>
       <form
         onSubmit={handleSubmit}
         className=" text-center mt-8 p-4 w-1/2 m-auto flex items-center h-24"
@@ -68,7 +70,7 @@ const App: React.FC = () => {
             ${
               loading ? "cursor-not-allowed bg-gray-200" : "hover:bg-purple-800"
             }
-            w-1/4 h-14 text-2xl focus:outline-none text-white bg-purple-700  focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900`}
+            w-1/4 h-14 text-xl focus:outline-none text-white bg-purple-700  focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900`}
         >
           {loading ? "Loading..." : cooldown ? "Please wait..." : "Scrape"}
         </button>
