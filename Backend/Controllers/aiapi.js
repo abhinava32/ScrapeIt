@@ -350,7 +350,7 @@ const sendToAi = async () => {
                                   6. Supplier
                                   7. Wholesaler
                                   8. Others.
-                                  priority will be from 1 to 8 in the order of the options above. with 1 being the topmost priority.
+                                  In case of multiple types, Manufacturer must be the topmost priority.
                               ],
                 products: [list of max three products in this format:
                   {name: [], description: []}  
