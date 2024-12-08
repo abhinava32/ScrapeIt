@@ -3,9 +3,10 @@ const cheerio = require("cheerio");
 const { readFile } = require("fs");
 const fs = require("fs").promises;
 const { writeFile } = require("fs/promises");
-const model = "gpt-3.5-turbo";
+// const model = "gpt-3.5-turbo";
 const tokenLimit = 15000;
 // const model = "gpt-4-turbo";
+// const model = "gpt-4o-mini";
 
 const getDetails = async (link, pageType) => {
   console.log("fetching details from  ", link);
@@ -101,7 +102,7 @@ const isValidUrl = (link) => {
   return true;
 };
 
-const getLinks = async (res) => {
+const getLinks = async (model) => {
   const htmlContent = await fs.readFile("links.txt");
 
   try {
@@ -158,6 +159,7 @@ const getLinks = async (res) => {
 };
 
 module.exports.ask = async (req, res) => {
+  const model = req.body.model;
   const contactRegex =
     /(?:contact[-\s]?(?:us|form|page|info|information|details|support|sales|team|now|here|today)?|get[-\s](?:in[-\s]touch|connected)|reach[-\s](?:us|out)|connect[-\s](?:with[-\s]us|now)|support[-\s](?:center|desk)|help[-\s]desk|enquiry|inquiry|feedback|write[-\s]to[-\s]us|message[-\s]us|talk[-\s]to[-\s]us|let\'s[-\s]talk|customer[-\s](?:service|support|care)|technical[-\s]support|sales[-\s](?:inquiry|team)|locations?|offices?|branches?|where[-\s](?:to[-\s]find[-\s]us|we[-\s]are)|visit[-\s]us)/i;
 
@@ -262,7 +264,7 @@ module.exports.ask = async (req, res) => {
   }
 
   try {
-    const links = await getLinks();
+    const links = await getLinks(model);
     // console.log("links are ", links);
     if (links.contactus_link) {
       await getDetails(links.contactus_link, "Contact Page");
@@ -274,7 +276,8 @@ module.exports.ask = async (req, res) => {
       await getDetails(links.products_link, "Product/Services Page");
     }
 
-    const detailData = await sendToAi();
+    const detailData = await sendToAi(model);
+    detailData["Links"] = links;
     if (detailData) {
       return res.status(200).json({
         data: detailData,
@@ -295,7 +298,7 @@ module.exports.ask = async (req, res) => {
   }
 };
 
-const sendToAi = async () => {
+const sendToAi = async (model) => {
   // reading file
   //console.log("sending to AI...");
   const htmlContent = await fs.readFile("scrapehtml.html", "utf-8");
@@ -305,13 +308,8 @@ const sendToAi = async () => {
   const tokenEstimate = Math.ceil(reducedContent.length / 4); // Estimate tokens
 
   console.log("Estimated Tokens:", tokenEstimate);
-  if (tokenEstimate > tokenLimit && model === "gpt-4-turbo") {
+  if (tokenEstimate > tokenLimit) {
     //console.log("Reduce input size to keep cost below $0.01.");
-    return { message: "Reduce input size to keep cost below $0.01." };
-  }
-
-  if (tokenEstimate > tokenLimit && model === "gpt-3.5-turbo") {
-    console.log("Reduce input size to keep cost below $0.01.");
     return { message: "Reduce input size to keep cost below $0.01." };
   }
 
@@ -332,9 +330,9 @@ const sendToAi = async () => {
             {
               Contact_Details: {
                 name: [name of the company], 
-                phone: [phone], 
+                phone: [phone (remove special characters)], 
                 email: [email], 
-                fax: [fax], 
+                fax: [fax (remove speacial characters)], 
                 country: [country], 
                 address: {
                     street: [street],
@@ -361,7 +359,7 @@ const sendToAi = async () => {
                 products: [list of max three products in this format:
                   {name: [], description: []}  
                 ],
-                products: [list of max three products 
+                products: [list of max three products (with code number if possible)]
                 extraInfo: [extraInfo in string]
             }
              from the HTML: ${htmlContent}. I only want the details in JSON format.`,

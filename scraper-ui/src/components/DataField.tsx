@@ -13,7 +13,7 @@ export const DataField: React.FC<DataFieldProps> = ({
 }) => {
   return (
     <div className="flex w-full mb-2 border-b-2 ">
-      <div className="grow">
+      <div className="">
         <p>
           <b>{label}:</b> {value || "Not specified"}
         </p>
