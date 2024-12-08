@@ -17,6 +17,7 @@ const DataContainer: React.FC<DataContainerProps> = ({ data }) => {
   const description = businessDetails["description"] || "";
   const extraInfo = businessDetails["extraInfo"] || "";
   const reason = businessDetails["reason"] || "";
+  const links = data["Links"] || {};
 
   const contactDetails = data["Contact_Details"] || {};
   const name = contactDetails["name"] || "";
@@ -101,6 +102,38 @@ const DataContainer: React.FC<DataContainerProps> = ({ data }) => {
                 </li>
               ))}
             </ul>
+          </div>
+          <div>
+            <p>
+              <b>contact us Link:</b> {links["contactus_link"]}
+              <button
+                className="ml-2 hover:pointer"
+                onClick={() => handleCopyClick(links["contactus_link"])}
+              >
+                <IoCopyOutline className="w-4 h-4" />
+              </button>
+            </p>
+            <p>
+              <b>About Us Link:</b> {links["aboutus_link"]}
+              <button
+                className="ml-2 hover:pointer"
+                onClick={() => handleCopyClick(links["aboutus_link"])}
+              >
+                <IoCopyOutline className="w-4 h-4" />
+              </button>
+            </p>
+            <p>
+              <b>Product Link:</b>
+              {links["products_link"]}
+              <button
+                className="ml-2 hover:pointer"
+                onClick={() => handleCopyClick(links["products_link"])}
+              >
+                <IoCopyOutline className="w-4 h-4" />
+              </button>
+            </p>
+            {/* <p>Product Link: {links[]}</p> */}
+            {/* <p>{JSON.stringify(links, null, 2)}</p> */}
           </div>
         </div>
       </div>
