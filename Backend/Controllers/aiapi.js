@@ -330,8 +330,8 @@ const sendToAi = async (model) => {
             {
               Contact_Details: {
                 name: [name of the company], 
-                phone: [phone (retain country codes and area codes in the correct sequence; remove special characters but keep digits in the correct order)], 
-                email: [list of emails], 
+                phone: [list of phone (max 3) (retain country codes and area codes in the correct sequence; remove special characters but keep digits in the correct order)], 
+                email: [list of emails (max 3)], 
                 fax: [fax (remove speacial characters) and do not remove any digit], 
                 country: [country], 
                 address: {
