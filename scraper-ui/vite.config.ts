@@ -5,6 +5,10 @@ import * as dotenv from "dotenv";
 dotenv.config();
 // https://vite.dev/config/
 export default defineConfig({
+  base: "./", // Use relative paths for assets
+  build: {
+    outDir: "dist", // Optional: Specify output folder
+  },
   plugins: [react()],
   server: {
     proxy: {

@@ -23,8 +23,8 @@ const DataContainer: React.FC<DataContainerProps> = ({ data }) => {
   const name = contactDetails["name"] || "";
   const address = contactDetails["address"] || {};
   const country = contactDetails["country"] || "";
-  const email = contactDetails["email"] || "";
-  const phone = contactDetails["phone"] || "";
+  const emails = contactDetails["email"] || "";
+  const phones = contactDetails["phone"] || "";
   const fax = contactDetails["fax"] || "";
 
   const handleCopyClick = async (textToCopy: string) => {
@@ -48,9 +48,27 @@ const DataContainer: React.FC<DataContainerProps> = ({ data }) => {
         {/* Contact Details Section */}
         <div className="w-1/2 p-6 ">
           <DataField label="Name" value={name} onCopy={handleCopyClick} />
-          <DataField label="Phone" value={phone} onCopy={handleCopyClick} />
+          {phones.map((phone_number: string) => {
+            return (
+              <DataField
+                label="Phone"
+                value={phone_number}
+                onCopy={handleCopyClick}
+              />
+            );
+          })}
+
           <DataField label="Fax" value={fax} onCopy={handleCopyClick} />
-          <DataField label="Email" value={email} onCopy={handleCopyClick} />
+          {emails.map((email_id: string) => {
+            return (
+              <DataField
+                label="Email"
+                value={email_id}
+                onCopy={handleCopyClick}
+              />
+            );
+          })}
+
           <DataField label="Country" value={country} onCopy={handleCopyClick} />
           <div className="overflow-auto">
             <DataField
