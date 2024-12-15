@@ -8,7 +8,7 @@ const tokenLimit = 15000;
 // const model = "gpt-4-turbo";
 // const model = "gpt-4o-mini";
 
-const getDetails = async (link, pageType) => {
+const getDetails = async (link, pageType, domain) => {
   console.log("fetching details from  ", link);
   if (!link) {
     return { message: "No link provided" };
@@ -31,9 +31,9 @@ const getDetails = async (link, pageType) => {
     .join("\n"); // Join lines back
 
   try {
-    await fs.appendFile("scrapehtml.html", `**** ${pageType}**** \n`);
-    await fs.appendFile("scrapehtml.html", cleanText);
-    await fs.appendFile("scrapehtml.html", `\n`);
+    await fs.appendFile(`scrape-${domain}.html`, `**** ${pageType}**** \n`);
+    await fs.appendFile(`scrape-${domain}.html`, cleanText);
+    await fs.appendFile(`scrape-${domain}.html`, `\n`);
     //console.log("file written successfully");
   } catch (error) {
     console.log("error wrting file", pageType);
@@ -102,8 +102,8 @@ const isValidUrl = (link) => {
   return true;
 };
 
-const getLinks = async (model) => {
-  const htmlContent = await fs.readFile("links.txt");
+const getLinks = async (model, domain) => {
+  const htmlContent = await fs.readFile(`${domain}-link.txt`);
 
   try {
     const response = await axios.post(
@@ -170,21 +170,9 @@ module.exports.ask = async (req, res) => {
   const productsRegex =
     /(?:products?(?:[-\s](?:and|&)[-\s]services?)?|services?|solutions?|offerings?|merchandise|goods|items?|supplies|equipment|tools?|accessories|parts?|components?|systems?|packages?|bundles?|kits?|collections?|catalogs?|inventory|stock|product[-\s]line|service[-\s]offerings?|business[-\s]solutions?|enterprise[-\s]solutions?|professional[-\s]services?|consulting[-\s]services?|managed[-\s]services?|support[-\s]services?|maintenance[-\s]services?|repair[-\s]services?|installation[-\s]services?|technical[-\s]services?|cloud[-\s]services?|digital[-\s]services?|online[-\s]services?|products?[-\s]portfolio|service[-\s]portfolio|business[-\s]portfolio|solutions?[-\s]portfolio|product[-\s]catalog|service[-\s]catalog|product[-\s]range|service[-\s]range|product[-\s]suite|service[-\s]suite|solutions?[-\s]suite|business[-\s]suite|enterprise[-\s]suite|product[-\s]offering|service[-\s]offering|solutions?[-\s]offering|business[-\s]offering|enterprise[-\s]offering)/i;
 
-  try {
-    await fs.access("links.txt");
-    await fs.unlink("links.txt");
-  } catch (err) {
-    //console.log("no previous file");
-  }
-
-  try {
-    await fs.access("scrapehtml.html");
-    await fs.unlink("scrapehtml.html");
-  } catch (err) {
-    //console.log("no previous file for scrapeHtml");
-  }
-
   const url = req.body.url;
+  const domain = url.match(/www\.(.*?)\.[a-z]{2,6}/)[1];
+  console.log("domain is ", domain);
   console.log("url is ", url);
   try {
     // Fetch the HTML from the given URL
@@ -225,17 +213,17 @@ module.exports.ask = async (req, res) => {
         // await fs.appendFile("links.txt", "Contact Us links");
         try {
           await fs.appendFile(
-            "links.txt",
+            `${domain}-link.txt`,
             "contact us links \n" + uniqueContactLinks[i] + "\n"
           );
         } catch (err) {
-          console.log("error writing contact links to file");
+          console.log("error writing contact links to file", err);
         }
       }
       for (let i = 0; i < uniqueBusinessLinks.length; i++) {
         try {
           await fs.appendFile(
-            "links.txt",
+            `${domain}-link.txt`,
             "About Us links \n" + uniqueBusinessLinks[i] + "\n"
           );
         } catch (err) {
@@ -245,7 +233,7 @@ module.exports.ask = async (req, res) => {
       for (let i = 0; i < uniqueProductLinks.length; i++) {
         try {
           await fs.appendFile(
-            "links.txt",
+            `${domain}-link.txt`,
             "Product/Services Links \n" + uniqueProductLinks[i] + "\n"
           );
         } catch (err) {
@@ -264,19 +252,33 @@ module.exports.ask = async (req, res) => {
   }
 
   try {
-    const links = await getLinks(model);
+    const links = await getLinks(model, domain);
     // console.log("links are ", links);
     if (links.contactus_link) {
-      await getDetails(links.contactus_link, "Contact Page");
+      await getDetails(links.contactus_link, "Contact Page", domain);
     }
     if (links.aboutus_link) {
-      await getDetails(links.aboutus_link, "About Us Page");
+      await getDetails(links.aboutus_link, "About Us Page", domain);
     }
     if (links.products_link) {
-      await getDetails(links.products_link, "Product/Services Page");
+      await getDetails(links.products_link, "Product/Services Page", domain);
     }
 
-    const detailData = await sendToAi(model);
+    const detailData = await sendToAi(model, domain);
+    try {
+      await fs.access(`${domain}-link.txt`);
+      await fs.unlink(`${domain}-link.txt`);
+    } catch (err) {
+      console.log(`error in deleting ${domain}-link.txt`);
+    }
+
+    try {
+      await fs.access(`scrape-${domain}.html`);
+      await fs.unlink(`scrape-${domain}.html`);
+    } catch (err) {
+      console.log(`error in deleting scrape-${domain}.html`);
+    }
+
     detailData["Links"] = links;
     if (detailData) {
       return res.status(200).json({
@@ -298,10 +300,10 @@ module.exports.ask = async (req, res) => {
   }
 };
 
-const sendToAi = async (model) => {
+const sendToAi = async (model, link) => {
   // reading file
   //console.log("sending to AI...");
-  const htmlContent = await fs.readFile("scrapehtml.html", "utf-8");
+  const htmlContent = await fs.readFile(`scrape-${link}.html`, "utf-8");
   //console.log("html is ", htmlContent);
   const $ = cheerio.load(htmlContent);
   const reducedContent = $("body").text().trim();
@@ -330,7 +332,7 @@ const sendToAi = async (model) => {
             {
               Contact_Details: {
                 name: [name of the company], 
-                phone: [list of phone (max 3) (retain country codes and area codes in the correct sequence; remove special characters but keep digits in the correct order)], 
+                phone: [list of phone (max 3) (retain country codes and area codes in the correct sequence but remove special characters and spaces keeping digits in the correct order)], 
                 email: [list of emails (max 3)], 
                 fax: [fax (remove speacial characters) and do not remove any digit], 
                 country: [country], 
