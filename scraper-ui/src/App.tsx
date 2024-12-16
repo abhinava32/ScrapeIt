@@ -69,7 +69,7 @@ const App: React.FC = () => {
             >
               <option value="gpt-3.5-turbo">GPT-3.5 Turbo</option>
               <option value="gpt-4o-mini">GPT-4 Mini</option>
-              <option value="gpt-4-turbo">GPT-4 Turbo</option>
+              <option value="gpt-4o">GPT-4o</option>
             </select>
           </div>
 

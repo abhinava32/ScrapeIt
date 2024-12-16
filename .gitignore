@@ -15,7 +15,8 @@ Backend/logs/
 Backend/debug.log
 Backend/*.db
 Backend/secret.txt
-Backend/scrapehtml.html
+Backend/scrape*
+Backend/*.txt
 Backend/links.txt
 
 # Frontend (Vite + TypeScript)
