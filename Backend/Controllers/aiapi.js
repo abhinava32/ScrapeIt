@@ -172,8 +172,10 @@ module.exports.ask = async (req, res) => {
 
   const url = req.body.url;
   const domain = url.match(/www\.(.*?)\.[a-z]{2,6}/)[1];
-  console.log("domain is ", domain);
-  console.log("url is ", url);
+  const now = new Date();
+  const options = { timeZone: "Asia/Kolkata", hour12: false };
+  const istDateTime = now.toLocaleString("en-IN", options);
+  console.log(istDateTime, ": url is ", url);
   try {
     // Fetch the HTML from the given URL
     const { data: html } = await axios.get(url, {
