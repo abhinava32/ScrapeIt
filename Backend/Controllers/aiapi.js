@@ -104,6 +104,7 @@ const isValidUrl = (link) => {
 
 const getLinks = async (model, domain) => {
   const htmlContent = await fs.readFile(`${domain}-link.txt`);
+  // console.log("content: ", htmlContent);
 
   try {
     const response = await axios.post(
@@ -171,7 +172,17 @@ module.exports.ask = async (req, res) => {
     /(?:products?(?:[-\s](?:and|&)[-\s]services?)?|services?|solutions?|offerings?|merchandise|goods|items?|supplies|equipment|tools?|accessories|parts?|components?|systems?|packages?|bundles?|kits?|collections?|catalogs?|inventory|stock|product[-\s]line|service[-\s]offerings?|business[-\s]solutions?|enterprise[-\s]solutions?|professional[-\s]services?|consulting[-\s]services?|managed[-\s]services?|support[-\s]services?|maintenance[-\s]services?|repair[-\s]services?|installation[-\s]services?|technical[-\s]services?|cloud[-\s]services?|digital[-\s]services?|online[-\s]services?|products?[-\s]portfolio|service[-\s]portfolio|business[-\s]portfolio|solutions?[-\s]portfolio|product[-\s]catalog|service[-\s]catalog|product[-\s]range|service[-\s]range|product[-\s]suite|service[-\s]suite|solutions?[-\s]suite|business[-\s]suite|enterprise[-\s]suite|product[-\s]offering|service[-\s]offering|solutions?[-\s]offering|business[-\s]offering|enterprise[-\s]offering)/i;
 
   const url = req.body.url;
-  const domain = url.match(/www\.(.*?)\.[a-z]{2,6}/)[1];
+  let domain = "temp";
+  try {
+    const testUrl = url.match(/www\.(.*?)\.[a-z]{2,6}/);
+    if (testUrl.length > 1) {
+      domain = testUrl[1];
+    } else {
+      doamin = "temp";
+    }
+  } catch (err) {
+    console.log("error in naming domain, setting it to default name: temp");
+  }
   const now = new Date();
   const options = { timeZone: "Asia/Kolkata", hour12: false };
   const istDateTime = now.toLocaleString("en-IN", options);
@@ -190,6 +201,12 @@ module.exports.ask = async (req, res) => {
         message: "Site not working",
       });
     }
+    try {
+      await getDetails(url, "home page", domain);
+    } catch (err) {
+      console.log("error in getting home page details");
+    }
+
     const $ = cheerio.load(html);
     $("style, script").remove();
 
@@ -208,6 +225,8 @@ module.exports.ask = async (req, res) => {
     const uniqueContactLinks = [...new Set(contactLinks)];
     const uniqueBusinessLinks = [...new Set(businessLinks)];
     const uniqueProductLinks = [...new Set(productsLinks)];
+
+    // console.log("unique contact links: ", uniqueContactLinks);
 
     try {
       // links.map(async (link) => await fs.appendFile("links.txt"));
@@ -246,7 +265,7 @@ module.exports.ask = async (req, res) => {
       console.log("error in writing links file");
     }
   } catch (err) {
-    // console.log(err);
+    console.log("error in connecting");
     return res.status(500).json({
       message: "Error in processing data",
       details: err.message,
