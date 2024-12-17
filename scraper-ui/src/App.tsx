@@ -14,6 +14,7 @@ const App: React.FC = () => {
   const [cooldown, setCooldown] = useState<boolean>(false);
   const [started, setStarted] = useState<boolean>(false);
   const [model, setModel] = useState("gpt-4o-mini");
+  const [errMsg, setErrMsg] = useState<string>("");
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>): Promise<void> => {
     e.preventDefault();
@@ -33,14 +34,20 @@ const App: React.FC = () => {
         } else {
           console.log(`Request failed with status: ${response.status}`);
           setData(null);
+          console.log("responsse is ", response.data.message);
+          setErrMsg(response.data.message);
         }
       } catch (error) {
         console.error("Error processing response:", error);
+        console.log("responsse is ", response.data.message);
+        setErrMsg(response.data.message);
         setData(null);
       }
     } catch (error) {
       console.error("Error scraping data:", error);
       setData(null);
+      const err = error as { response: { data: { message: string } } };
+      setErrMsg(err.response.data.message);
     } finally {
       setLoader(false);
       setTimeout(() => setCooldown(false), 2000);
@@ -120,7 +127,7 @@ const App: React.FC = () => {
                   className="w-80 mx-auto h-80"
                   alt=""
                 />
-                <p className="text-3xl">Site Not Reachable</p>
+                <p className="text-3xl text-red-600">{errMsg}</p>
               </div>
             ) : (
               <div></div>

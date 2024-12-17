@@ -154,7 +154,7 @@ const getLinks = async (model, domain) => {
       throw new Error("Invalid JSON response from AI");
     }
   } catch (error) {
-    console.error("Error contacting OpenAI:", error);
+    console.error("Error contacting OpenAI:");
     throw error;
   }
 };
@@ -183,6 +183,7 @@ module.exports.ask = async (req, res) => {
   } catch (err) {
     console.log("error in naming domain, setting it to default name: temp");
   }
+  // console.log("domain is ", domain);
   const now = new Date();
   const options = { timeZone: "Asia/Kolkata", hour12: false };
   const istDateTime = now.toLocaleString("en-IN", options);
@@ -267,7 +268,7 @@ module.exports.ask = async (req, res) => {
   } catch (err) {
     console.log("error in connecting");
     return res.status(500).json({
-      message: "Error in processing data",
+      message: "Site is unreachable",
       details: err.message,
     });
   }
@@ -286,6 +287,11 @@ module.exports.ask = async (req, res) => {
     }
 
     const detailData = await sendToAi(model, domain);
+    if (detailData.costly) {
+      return res.status(500).json({
+        message: "Costly Search, Please search this manually !!",
+      });
+    }
     try {
       await fs.access(`${domain}-link.txt`);
       await fs.unlink(`${domain}-link.txt`);
@@ -333,7 +339,10 @@ const sendToAi = async (model, link) => {
   console.log("Estimated Tokens:", tokenEstimate);
   if (tokenEstimate > tokenLimit) {
     //console.log("Reduce input size to keep cost below $0.01.");
-    return { message: "Reduce input size to keep cost below $0.01." };
+    return {
+      message: "Reduce input size to keep cost below $0.01.",
+      costly: true,
+    };
   }
 
   try {
@@ -413,7 +422,8 @@ const sendToAi = async (model, link) => {
   } catch (error) {
     console.error("Error contacting OpenAI:", error);
     return res.status(500).json({
-      message: "Error in processing data",
+      message:
+        "Error in contacting AI, please retry again or contact your admin",
       details: error.message,
     });
   }
