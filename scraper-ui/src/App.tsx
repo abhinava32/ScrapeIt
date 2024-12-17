@@ -1,4 +1,4 @@
-import React, { useState, FormEvent } from "react";
+import React, { useState, FormEvent, useEffect } from "react";
 import axios from "axios";
 import DataContainer from "./components/DataContainer";
 
@@ -15,6 +15,14 @@ const App: React.FC = () => {
   const [started, setStarted] = useState<boolean>(false);
   const [model, setModel] = useState("gpt-4o-mini");
   const [errMsg, setErrMsg] = useState<string>("");
+
+  useEffect(() => {
+    if (loading) {
+      document.title = "loading...";
+    } else {
+      document.title = "Scrape It";
+    }
+  }, [loading]);
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>): Promise<void> => {
     e.preventDefault();
