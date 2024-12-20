@@ -4,7 +4,7 @@ const { readFile } = require("fs");
 const fs = require("fs").promises;
 const { writeFile } = require("fs/promises");
 // const model = "gpt-3.5-turbo";
-const tokenLimit = 15000;
+const tokenLimit = 30000;
 // const model = "gpt-4-turbo";
 // const model = "gpt-4o-mini";
 
