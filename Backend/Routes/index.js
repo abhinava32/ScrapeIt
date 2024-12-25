@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { ask } = require("../Controllers/aiapi");
+const { ask } = require("../Controllers/AI/aiapi");
 
 router.get("/", (req, res) => {
   res.status(200).json({ message: "Hello World" });
