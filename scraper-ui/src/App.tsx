@@ -82,9 +82,13 @@ const App: React.FC = () => {
               disabled={loading}
               className="w-full bg-gray-100 focus:outline-none focus:ring-4 rounded border-2 border-gray-200 h-14 p-2"
             >
-              <option value="gpt-3.5-turbo">GPT-3.5 Turbo</option>
+              <option value="gpt-3.5-turbo" disabled={true}>
+                GPT-3.5 Turbo
+              </option>
               <option value="gpt-4o-mini">GPT-4 Mini</option>
-              <option value="gpt-4o">GPT-4o</option>
+              <option value="gpt-4o" disabled={true}>
+                GPT-4o
+              </option>
             </select>
           </div>
 
