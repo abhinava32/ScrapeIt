@@ -77,6 +77,7 @@ module.exports.ask = async (req, res) => {
 
     try {
       // links.map(async (link) => await fs.appendFile("links.txt"));
+      await fs.appendFile(`${domain}-link.txt`, ""); //create file first
       for (let i = 0; i < uniqueContactLinks.length; i++) {
         // await fs.appendFile("links.txt", "Contact Us links");
         try {
