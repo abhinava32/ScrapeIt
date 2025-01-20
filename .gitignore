@@ -18,6 +18,7 @@ Backend/secret.txt
 Backend/scrape*
 Backend/*.txt
 Backend/links.txt
+Backend/prompt.txt
 
 # Frontend (Vite + TypeScript)
 Frontend/node_modules/
