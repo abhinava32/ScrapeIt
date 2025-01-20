@@ -51,7 +51,7 @@ const getLinks = async (model, domain) => {
           },
           {
             role: "user",
-            content: `Extract exactly one link for each category (contact-us, about-us, products/services) from the provided HTML content. Return ONLY a JSON object with this exact structure:
+            content: `Extract exactly one link for each category (contact-us, about-us, products/services) from the provided HTML content. Please ignore pdf links and Return ONLY a JSON object with this exact structure:
             {
               "contactus_link": "single_contact_link_here",
               "aboutus_link": "single_about_link_here",
