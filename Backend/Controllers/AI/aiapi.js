@@ -4,6 +4,7 @@ const fs = require("fs").promises;
 const filterLinks = require("./linkFilter");
 const { getDetails, getLinks } = require("./details");
 const sendToAi = require("./APIcalls");
+const WebsiteData = require("../../Models/websiteData");
 
 module.exports.ask = async (req, res) => {
   const model = req.body.model;
@@ -154,6 +155,11 @@ module.exports.ask = async (req, res) => {
 
     detailData["Links"] = links;
     if (detailData) {
+      const websiteData = new WebsiteData({
+        url,
+        data: detailData,
+      });
+      await websiteData.save();
       return res.status(200).json({
         data: detailData,
         message: "Scraping completed successfully.",

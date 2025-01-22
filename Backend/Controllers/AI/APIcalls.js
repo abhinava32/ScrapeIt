@@ -19,6 +19,7 @@ const sendToAi = async (model, link) => {
       costly: true,
     };
   }
+  const prompt = await fs.readFile(`prompt.txt`, "utf-8");
 
   try {
     const response = await axios.post(
@@ -34,41 +35,7 @@ const sendToAi = async (model, link) => {
           {
             role: "user",
             content: `Can you give me the details in a JSON format like this: 
-              {
-                Contact_Details: {
-                  name: [name of the company], 
-                  phone: [list of phone (max 3) (retain country codes and area codes in the correct sequence but remove special characters and spaces keeping digits in the correct order)], 
-                  email: [list of emails (max 3)], 
-                  fax: [fax (remove speacial characters) and do not remove any digit], 
-                  country: [country], 
-                  address: {
-                      street: [street],
-                      city: [city],
-                      state: [state],
-                      country: [country],
-                      pincode: [pincode],
-                      fullAddress: [full address]
-                    }. 
-                  },
-                Business_Details: {
-                  description: [small description],
-                  businessType: [Look if the business type is manufacturer. Someone can be Manufacturer only if they make products on their own (service providers are not manufacturer). if business type is not manufacturer then choose only one type of business from the following options only(do not add anything from your side): 
-                                    1. Industrial Services (if the business is helping others for manufacturing of products)
-                                    2. Exporter
-                                    3. Trader
-                                    4. Distributor
-                                    5. Supplier
-                                    6. Wholesaler
-                                    7. Others.
-                                    
-                                ],
-                  reason: [reason why you chose this business type],
-                  products: [list of max three products in this format:
-                    {name: [], description: []}  
-                  ],
-                  products: [list of max three products (with code number if possible)]
-                  extraInfo: [extraInfo in string]
-              }
+              ${prompt}
                from the HTML: ${htmlContent}. I only want the details in JSON format.`,
           },
         ],
