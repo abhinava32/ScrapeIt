@@ -3,7 +3,6 @@ const axios = require("axios");
 const fs = require("fs").promises;
 
 const getDetails = async (link, pageType, domain) => {
-  console.log("fetching details from  ", link);
   if (!link) {
     return { message: "No link provided" };
   }

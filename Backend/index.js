@@ -1,4 +1,5 @@
 const express = require("express");
+const cookieParser = require("cookie-parser");
 
 require("dotenv").config();
 
@@ -12,10 +13,12 @@ try {
 const app = express();
 const PORT = 5000;
 
-app.use(cors());
 app.use(express.json());
-
-app.use("/", require("./Routes"));
+app.use(express.urlencoded({ extended: true }));
+app.use(cors());
+app.use(cookieParser());
+app.use(express.json());
+app.use("/", require("./Middlewares/isAuthenticated"), require("./Routes"));
 
 app.listen(PORT, () =>
   console.log(`Server running on http://localhost:${PORT}`)
