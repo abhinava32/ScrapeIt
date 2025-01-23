@@ -8,8 +8,8 @@ const Pricing = () => {
   const pricingPlans = [
     {
       name: "Silver",
-      monthlyPrice: 29,
-      annualPrice: 290,
+      monthlyPrice: 55,
+      annualPrice: 550,
       features: [
         "Basic web scraping",
         "1000 requests per month",
@@ -21,8 +21,8 @@ const Pricing = () => {
     },
     {
       name: "Gold",
-      monthlyPrice: 59,
-      annualPrice: 590,
+      monthlyPrice: 120,
+      annualPrice: 1200,
       features: [
         "Advanced web scraping",
         "5000 requests per month",
@@ -36,8 +36,8 @@ const Pricing = () => {
     },
     {
       name: "Platinum",
-      monthlyPrice: 99,
-      annualPrice: 990,
+      monthlyPrice: 199,
+      annualPrice: 1500,
       features: [
         "Enterprise web scraping",
         "Unlimited requests",
