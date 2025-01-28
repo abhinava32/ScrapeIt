@@ -2,9 +2,15 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import { useDispatch } from "react-redux";
+import type { AppDispatch } from "../store/store";
+import { login } from "../features/setUser";
+import axios from "axios";
 
 const Login = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch<AppDispatch>();
+
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -52,9 +58,32 @@ const Login = () => {
     setIsLoading(true);
     try {
       // Add your signin logic here
-      console.log("Form submitted:", formData);
-      // On successful signin
-      navigate("/dashboard");
+      const response = await axios.post("/api/user/login", formData, {
+        withCredentials: true,
+      });
+      if (response.status === 200 && response.data.success) {
+        setIsLoading(false);
+        console.log("logged in user ", response.data);
+        dispatch(
+          login({
+            isLoggedIn: true,
+            name: response.data.data.name,
+            email: response.data.data.email,
+            avatar: response.data.data.avatar,
+            id: response.data.data.id,
+          })
+        );
+        // On successful signin
+        navigate("/app", { state: { showToast: true } });
+
+        // console.log("Form submitted:", formData);
+        // On successful signi
+      }
+      if (response.status === 200 && !response.data.success) {
+        setErrors({
+          submit: response.data.message,
+        });
+      }
     } catch (error) {
       console.error("Signin error:", error);
       setErrors({
@@ -86,7 +115,9 @@ const Login = () => {
       <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-md">
           <Link to="/" className="flex justify-center">
-            <span className="text-3xl font-bold text-blue-600">Scrape It</span>
+            <span className="text-3xl font-bold text-blue-600">
+              Scrape2Data
+            </span>
           </Link>
           <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
             Sign in to your account

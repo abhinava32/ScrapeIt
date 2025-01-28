@@ -98,7 +98,7 @@ const Footer = () => {
           <div className="space-y-8 xl:col-span-1">
             <Link to="/" className="flex items-center">
               <span className="text-2xl font-bold text-blue-600">
-                Scrape It
+                Scrape2Data
               </span>
             </Link>
             <p className="text-gray-500 text-base">
@@ -201,7 +201,7 @@ const Footer = () => {
         {/* Bottom Section */}
         <div className="mt-12 border-t border-gray-200 pt-8">
           <p className="text-base text-gray-400 xl:text-center">
-            © {new Date().getFullYear()} Scrape It. All rights reserved.
+            © {new Date().getFullYear()} Scrape2Data. All rights reserved.
           </p>
         </div>
       </div>

@@ -3,14 +3,18 @@ import type { PayloadAction } from "@reduxjs/toolkit";
 
 export interface userState {
   isLoggedIn: Boolean;
-  userName: string;
-  userType: "Square" | "Triangle" | "Circle" | "null"; // Enum-like string literal type
+  name: string;
+  email: string;
+  avatar: String;
+  id: String;
 }
 
 const initialState: userState = {
   isLoggedIn: false,
-  userName: "",
-  userType: "null", // Default value can be 'agent' or any valid value
+  name: "",
+  email: "",
+  avatar: "",
+  id: "",
 };
 
 export const setUser = createSlice({
@@ -19,12 +23,25 @@ export const setUser = createSlice({
   reducers: {
     login: (state, action: PayloadAction<userState>) => {
       state.isLoggedIn = true;
-      state.userName = action.payload.userName;
-      state.userType = action.payload.userType;
+      state.id = action.payload.id;
+      state.name = action.payload.name;
+      state.email = action.payload.email;
+      state.avatar = action.payload.avatar;
     },
     logout: (state) => {
-      (state.isLoggedIn = false), (state.userName = "");
-      state.userType = "null"; // Reset or set to a default value
+      (state.isLoggedIn = false),
+        (state.name = ""),
+        (state.email = ""),
+        (state.avatar = ""),
+        (state.id = ""); // Reset or set to a default value
+    },
+    setDetails: (state, action: PayloadAction<userState>) => {
+      if (state.isLoggedIn) {
+        state.name = action.payload.name;
+        state.email = action.payload.email;
+        state.avatar = action.payload.avatar;
+        state.id = action.payload.id;
+      }
     },
   },
 });

@@ -1,5 +1,5 @@
 import React from "react";
-import { ScrapedData } from "../App";
+import { ScrapedData } from "../pages/MainApp";
 import { DataField } from "./DataField";
 import { toast, Toaster } from "react-hot-toast";
 import { IoCopyOutline } from "react-icons/io5";
@@ -37,12 +37,12 @@ const DataContainer: React.FC<DataContainerProps> = ({ data }) => {
     }
   };
   return (
-    <div className="container mx-auto p-4">
+    <div className="container mx-auto">
       <Toaster position="top-right" /> {/* Add Toaster component */}
       {/* Business Type Header */}
-      <div className="mb-6 p-4 text-center bg-purple-800 text-white rounded-lg">
-        <h2 className="text-2xl font-bold">Business Type</h2>
-        <p className="text-4xl mt-2">{businessType || "Not specified"}</p>
+      <div className="mb-2 p-4 text-center bg-purple-800 text-white rounded-lg">
+        <h2 className="text-xl font-bold">Business Type</h2>
+        <p className="text-2xl mt-2">{businessType || "Not specified"}</p>
       </div>
       <div className="flex flex-row w-full">
         {/* Contact Details Section */}

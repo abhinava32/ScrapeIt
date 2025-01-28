@@ -2,14 +2,14 @@ const jwt = require("jsonwebtoken");
 const jwtKey = process.env.JWT_SECRET;
 const User = require("../Models/users");
 
-const isAuthenticated = (req, res, next) => {
+const isAuthenticated = async (req, res, next) => {
   const token = req.cookies?.auth_token;
-  const ip =
-    req.ip ||
-    req.headers["x-forwarded-for"]?.split(",")[0] ||
-    req.socket.remoteAddress ||
-    "Unknown";
-  console.log("IP: ", ip);
+  // const ip =
+  //   req.ip ||
+  //   req.headers["x-forwarded-for"]?.split(",")[0] ||
+  //   req.socket.remoteAddress ||
+  //   "Unknown";
+  // console.log("IP: ", ip);
   if (!token) {
     return next();
   }
@@ -23,9 +23,11 @@ const isAuthenticated = (req, res, next) => {
     console.log(istDateTime, ": invalid cookie from ", ip);
   }
 
-  if (User.findById(decoded.id)) {
+  const user = await User.findById(decoded.id);
+
+  if (user) {
     req.user = decoded.id;
-    console.log("User is authenticated");
+    req.userDetails = user;
     return next();
   }
 };

@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Signup from "./pages/Signup";
 import { useEffect, useState } from "react";
@@ -9,13 +9,36 @@ import NotFound from "./pages/NotFound";
 import PricingPage from "./pages/PricingPage";
 import ContactUs from "./pages/ContactUs";
 import MainApp from "./pages/MainApp";
+import LoadingLogo from "./components/LoadingLogo";
+import axios from "axios";
+import { useDispatch } from "react-redux";
+import { AppDispatch } from "./store/store";
+import { login } from "./features/setUser";
 
 function App() {
   const [isLoaded, setLoaded] = useState(false);
+  const dispatch = useDispatch<AppDispatch>();
 
   const request = async () => {
+    try {
+      const response = await axios.get("/api/user/profile", {
+        withCredentials: true,
+        timeout: 3000,
+      });
+
+      dispatch(
+        login({
+          isLoggedIn: true,
+          name: response.data.name,
+          email: response.data.email,
+          avatar: response.data.avatar,
+          id: response.data.id,
+        })
+      );
+    } catch (err) {
+      console.log("User not logged in");
+    }
     setLoaded(true);
-    return true;
   };
 
   useEffect(() => {
@@ -40,7 +63,8 @@ function App() {
           </Routes>
         </Router>
       ) : (
-        <div className="w-20 h-20 mt-60 m-auto">Loading....</div>
+        // <div className="w-20 h-20 mt-60 m-auto">Loadi</div>
+        <LoadingLogo />
       )}
     </>
   );

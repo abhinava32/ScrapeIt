@@ -58,9 +58,9 @@ const AboutUs = () => {
                     <span className="block text-blue-600">Since 2019</span>
                   </h1>
                   <p className="mt-6 text-xl leading-8 text-gray-600">
-                    For over 5 years, Scrape It has been at the forefront of web
-                    scraping technology, providing businesses with quality data
-                    solutions that drive growth and innovation.
+                    For over 5 years, Scrape2Data has been at the forefront of
+                    web scraping technology, providing businesses with quality
+                    data solutions that drive growth and innovation.
                   </p>
                   <div className="mt-8 space-y-6 text-gray-500">
                     <p>

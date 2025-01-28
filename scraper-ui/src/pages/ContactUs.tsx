@@ -323,7 +323,9 @@ const ContactUs = () => {
               title="Office Location"
               className="absolute inset-0 w-full h-full"
               frameBorder="0"
-              src={`https://www.google.com/maps/embed/v1/place?key=YOUR_GOOGLE_MAPS_API_KEY&q=Space+Needle,Seattle+WA`}
+              src={`https://www.google.com/maps/embed/v1/place?key=${
+                import.meta.env.GOOGLE_MAPS_KEY
+              }&q=Space+Needle,Seattle+WA`}
               allowFullScreen
             />
           </div>

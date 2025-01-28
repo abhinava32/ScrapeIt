@@ -2,6 +2,8 @@ const User = require("../../Models/users");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const jwtKey = process.env.JWT_SECRET;
+const redis = require("../../Config/Redis");
+const UAParser = require("ua-parser-js");
 
 const createProfile = async (req, res) => {
   if (req.user) {
@@ -54,8 +56,55 @@ const getProfile = async (req, res) => {
 
   return res.status(200).json({
     message: "Processed info successfully",
-    user,
+    data: {
+      name: user.name,
+      email: user.email,
+      avatar: user.avatar,
+      id: user._id,
+    },
   });
+};
+
+const storeUserLoginInfo = async (user, req) => {
+  try {
+    const userKey = `user:${user._id}`;
+
+    // Parse user agent
+    const parser = new UAParser(req.headers["user-agent"]);
+    const browserInfo = parser.getBrowser();
+    const osInfo = parser.getOS();
+    const deviceInfo = parser.getDevice();
+
+    const ip = req.ip || req.connection.remoteAddress;
+
+    // Create a unique key for this login session
+    const loginTimestamp = new Date().getTime();
+    const sessionKey = `${ip}-${loginTimestamp}`;
+
+    // Create login session object with detailed browser info
+    const loginInfo = {
+      ip: ip,
+      browser: {
+        name: browserInfo.name,
+        version: browserInfo.version,
+        os: `${osInfo.name} ${osInfo.version}`,
+        device: deviceInfo.type || "desktop",
+        vendor: deviceInfo.vendor || "unknown",
+      },
+      timestamp: loginTimestamp,
+    };
+
+    // Store using Redis
+    await redis.set(userKey, JSON.stringify(loginInfo));
+
+    // Set expiry (30 days)
+    await redis.expire(userKey, 60 * 60 * 24 * 30);
+
+    return true;
+  } catch (error) {
+    console.error("Redis storage error:", error);
+    return false;
+  }
 };
 
 const signIn = async (req, res) => {
@@ -65,28 +114,27 @@ const signIn = async (req, res) => {
       user: req.user,
     });
   }
-  console.log("signing in initiated...");
   try {
     // Assume user is validated here
     const user = await User.findOne({ email: req.body.email }).select(
       "name email password avatar"
     );
-    console.log("user found", user);
     const isValidPassword = await bcrypt.compare(
       req.body.password,
       user.password
     );
 
     if (!isValidPassword) {
-      return res.status(401).json({
+      return res.status(200).json({
         success: false,
         message: "Invalid credentials",
       });
     }
-    console.log("password matched");
+
+    await storeUserLoginInfo(user, req);
+
     // Create token
     const token = jwt.sign({ id: user._id }, jwtKey);
-    console.log("token created", token);
 
     // Set cookie options
     const cookieOptions = {
@@ -94,15 +142,25 @@ const signIn = async (req, res) => {
       secure: process.env.NODE_ENV === "production", // HTTPS only in production
       sameSite: process.env.NODE_ENV === "production" ? "strict" : "lax", // Protection against CSRF
       maxAge: 12 * 60 * 60 * 1000, // 24 hours in milliseconds
+      path: "/", // Path for which the cookie is valid
+      domain:
+        process.env.NODE_ENV === "production"
+          ? process.env.DOMAIN
+          : "localhost", // Domain for which the cookie is valid
     };
 
     // Set the cookie
     res.cookie("auth_token", token, cookieOptions);
-    console.log("Cookie set successfully");
     // Send response
     return res.status(200).json({
       success: true,
       message: "Successfully signed in",
+      data: {
+        id: user._id,
+        name: user.name,
+        email: user.email,
+        avatar: user.avatar,
+      },
     });
   } catch (error) {
     return res.status(500).json({
@@ -110,6 +168,21 @@ const signIn = async (req, res) => {
       message: "Sign-in failed",
       error: error.message,
     });
+  }
+};
+
+const getUserLoginHistory = async (userId) => {
+  try {
+    const userKey = `user:${userId}`;
+    const loginHistory = await redis.hgetall(userKey);
+
+    // Parse the stored JSON strings back to objects
+    return Object.entries(loginHistory).map(([key, value]) => {
+      return JSON.parse(value);
+    });
+  } catch (error) {
+    console.error("Error fetching login history:", error);
+    return [];
   }
 };
 

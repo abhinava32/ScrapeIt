@@ -1,13 +1,22 @@
 const cheerio = require("cheerio");
 const axios = require("axios");
 const fs = require("fs").promises;
+const { getPageHtml } = require("./getPageDetails");
 
 const getDetails = async (link, pageType, domain) => {
   if (!link) {
     return { message: "No link provided" };
   }
   try {
-    var { data: html } = await axios.get(link);
+    var { data: html } = await axios.get(link, {
+      headers: {
+        "User-Agent":
+          "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36",
+      },
+      timeout: 10000,
+    });
+    // var { data: html } = await axios.get(link);
+    // var html = await getPageHtml(link);
   } catch (err) {
     console.log("EGD1: error in getDetails");
     return;
@@ -60,7 +69,7 @@ const getLinks = async (model, domain) => {
             HTML Content: ${htmlContent}`,
           },
         ],
-        temperature: 0.1, // Lower temperature for more consistent output
+        temperature: 0.3, // Lower temperature for more consistent output
         max_tokens: 1000,
         response_format: { type: "json_object" }, // Enforce JSON response
       },
