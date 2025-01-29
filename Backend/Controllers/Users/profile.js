@@ -177,18 +177,43 @@ const signOut = async (req, res) => {
       message: "User not logged in",
     });
   }
-  req.user = null;
-  const token = await jwt.sign({}, process.env.JWT_SECRET, { expiresIn: 1 });
-  res.cookie("auth_token", token, {
-    httpOnly: true,
-    secure: process.env.NODE_ENV === "production",
-    sameSite: process.env.NODE_ENV === "production" ? "strict" : "lax",
-    maxAge: 1,
-  });
 
-  return res.status(200).json({
-    message: "User logged out successfully",
-  });
+  try {
+    // Clear Redis data if exists
+    const userKey = `user:${req.user}`;
+    await redis.del(userKey);
+
+    // Clear the cookie properly
+    const getCookieConfig = () => {
+      const isProduction = process.env.NODE_ENV === "production";
+      return {
+        httpOnly: true,
+        secure: isProduction,
+        sameSite: isProduction ? "strict" : "lax",
+        expires: new Date(0), // This ensures the cookie is immediately expired
+        path: "/",
+        ...(isProduction && { domain: process.env.DOMAIN }),
+      };
+    };
+
+    // Clear the auth token
+    res.clearCookie("auth_token", getCookieConfig());
+
+    // Clear user from request
+    req.user = null;
+
+    return res.status(200).json({
+      success: true,
+      message: "User logged out successfully",
+    });
+  } catch (error) {
+    console.error("Logout error:", error);
+    return res.status(500).json({
+      success: false,
+      message: "Error during logout",
+      error: error.message,
+    });
+  }
 };
 
 module.exports = {
