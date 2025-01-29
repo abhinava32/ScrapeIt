@@ -53,24 +53,19 @@ const verifyBrowserFingerprint = async (req, res, next) => {
     if (!isSameBrowser) {
       return res.status(401).json({
         success: false,
-        message: `Unauthorized access: Session already active in ${sessionInfo.browser.name} on ${sessionInfo.browser.os}, ${sessionInfo.browser.device}`,
+        message: `Unauthorized access: Session already active in ${sessionInfo.browser.name} on ${sessionInfo.browser.os}, ${sessionInfo.vendor} ${sessionInfo.browser.device}`,
       });
     }
 
     // Update last active timestamp
     sessionInfo.timestamp = Date.now();
-    await redis.set(
-      userKey,
-      JSON.stringify(sessionInfo),
-      "EX",
-      60 * 60 * 24 * 30
-    ); // 30 days expiry
+    await redis.set(userKey, JSON.stringify(sessionInfo), "EX", 60 * 60 * 24); // 1 day expiry
 
-    console.log("Session verified:", {
-      user: req.user,
-      browser: currentFingerprint.browserName,
-      ip: currentFingerprint.ip,
-    });
+    // console.log("Session verified:", {
+    //   user: req.user,
+    //   browser: currentFingerprint.browserName,
+    //   ip: currentFingerprint.ip,
+    // });
 
     next();
   } catch (error) {

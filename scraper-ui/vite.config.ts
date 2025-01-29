@@ -21,9 +21,23 @@ export default defineConfig(({ mode }) => {
           changeOrigin: true,
           secure: false,
           rewrite: (path) => path.replace(/^\/api/, ""),
+          xfwd: true,
+          configure: (proxy, _options) => {
+            proxy.on("proxyReq", (proxyReq, req, _res) => {
+              // Add null checks and type safety
+              const clientIP = req.socket?.remoteAddress || "0.0.0.0";
+
+              if (clientIP) {
+                proxyReq.setHeader("X-Forwarded-For", clientIP);
+                proxyReq.setHeader("X-Real-IP", clientIP);
+              }
+            });
+          },
         },
       },
       hmr: false,
+      host: true,
+      allowedHosts: ["www.scrape2data.com", "scrape2data.com", "localhost"],
     },
   };
 });

@@ -14,6 +14,11 @@ try {
 const app = express();
 const PORT = 5000;
 
+//for getting the ip address
+app.set("trust proxy", true);
+app.enable("trust proxy");
+app.set("trust proxy", "loopback");
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());

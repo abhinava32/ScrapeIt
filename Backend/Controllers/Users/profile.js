@@ -143,7 +143,7 @@ const signIn = async (req, res) => {
         httpOnly: true,
         secure: isProduction,
         sameSite: isProduction ? "strict" : "lax",
-        maxAge: 12 * 60 * 60 * 1000,
+        maxAge: 12 * 60 * 60 * 1000, //12 hours
         path: "/",
         ...(isProduction && { domain: process.env.DOMAIN }),
       };

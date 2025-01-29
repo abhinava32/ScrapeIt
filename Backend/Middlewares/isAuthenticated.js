@@ -9,7 +9,7 @@ const isAuthenticated = async (req, res, next) => {
   //   req.headers["x-forwarded-for"]?.split(",")[0] ||
   //   req.socket.remoteAddress ||
   //   "Unknown";
-  // console.log("IP: ", ip);
+  // console.log("IP: ", ip, " REQUESTING ", req.url);
   if (!token) {
     return next();
   }
