@@ -27,7 +27,7 @@ module.exports.ask = async (req, res) => {
   const now = new Date();
   const options = { timeZone: "Asia/Kolkata", hour12: false };
   const istDateTime = now.toLocaleString("en-IN", options);
-  console.log(istDateTime, ": url is ", url);
+  console.log(istDateTime, "", req.userDetails.email, " : url is ", url);
   try {
     // Fetch the HTML from the given URL
     const { data: html } = await axios.get(url, {
@@ -155,11 +155,14 @@ module.exports.ask = async (req, res) => {
 
     detailData["Links"] = links;
     if (detailData) {
-      const websiteData = new WebsiteData({
-        url,
-        data: detailData,
-      });
-      await websiteData.save();
+      if (process.env.NODE_ENV === "production") {
+        const websiteData = new WebsiteData({
+          url,
+          data: detailData,
+        });
+        await websiteData.save();
+      }
+
       return res.status(200).json({
         data: detailData,
         message: "Scraping completed successfully.",
