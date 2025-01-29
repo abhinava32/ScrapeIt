@@ -66,11 +66,11 @@ const verifyBrowserFingerprint = async (req, res, next) => {
       60 * 60 * 24 * 30
     ); // 30 days expiry
 
-    // console.log("Session verified:", {
-    //   user: req.user,
-    //   browser: currentFingerprint.browserName,
-    //   ip: currentFingerprint.ip,
-    // });
+    console.log("Session verified:", {
+      user: req.user,
+      browser: currentFingerprint.browserName,
+      ip: currentFingerprint.ip,
+    });
 
     next();
   } catch (error) {

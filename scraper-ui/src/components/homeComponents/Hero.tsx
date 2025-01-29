@@ -43,7 +43,7 @@ const Hero = () => {
                   <span className="block text-blue-600">Introducing</span>
                   {/* <span className="block text-blue-600">Made Simple</span> */}
                   <img
-                    className="h-64"
+                    className="h-44"
                     src="/logo.png"
                     alt="Scrape2Data Web scraping made simple"
                   />

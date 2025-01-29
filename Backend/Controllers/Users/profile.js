@@ -136,21 +136,21 @@ const signIn = async (req, res) => {
     // Create token
     const token = jwt.sign({ id: user._id }, jwtKey);
 
-    // Set cookie options
-    const cookieOptions = {
-      httpOnly: true, // Prevents JavaScript access to cookie
-      secure: process.env.NODE_ENV === "production", // HTTPS only in production
-      sameSite: process.env.NODE_ENV === "production" ? "strict" : "lax", // Protection against CSRF
-      maxAge: 12 * 60 * 60 * 1000, // 24 hours in milliseconds
-      path: "/", // Path for which the cookie is valid
-      domain:
-        process.env.NODE_ENV === "production"
-          ? process.env.DOMAIN
-          : "localhost", // Domain for which the cookie is valid
+    const getCookieConfig = () => {
+      const isProduction = process.env.NODE_ENV === "production";
+
+      return {
+        httpOnly: true,
+        secure: isProduction,
+        sameSite: isProduction ? "strict" : "lax",
+        maxAge: 12 * 60 * 60 * 1000,
+        path: "/",
+        ...(isProduction && { domain: process.env.DOMAIN }),
+      };
     };
 
     // Set the cookie
-    res.cookie("auth_token", token, cookieOptions);
+    res.cookie("auth_token", token, getCookieConfig());
     // Send response
     return res.status(200).json({
       success: true,
@@ -168,21 +168,6 @@ const signIn = async (req, res) => {
       message: "Sign-in failed",
       error: error.message,
     });
-  }
-};
-
-const getUserLoginHistory = async (userId) => {
-  try {
-    const userKey = `user:${userId}`;
-    const loginHistory = await redis.hgetall(userKey);
-
-    // Parse the stored JSON strings back to objects
-    return Object.entries(loginHistory).map(([key, value]) => {
-      return JSON.parse(value);
-    });
-  } catch (error) {
-    console.error("Error fetching login history:", error);
-    return [];
   }
 };
 
