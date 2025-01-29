@@ -5,10 +5,8 @@ router.get("/", (req, res) => {
   res.status(200).json({ message: "Hello World" });
 });
 
-router.post(
-  "/scrape",
+router.use("/user", require("./User"));
 
-  ask
-);
+router.post("/scrape", ask);
 
 module.exports = router;
