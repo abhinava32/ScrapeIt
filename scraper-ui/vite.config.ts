@@ -24,6 +24,8 @@ export default defineConfig(({ mode }) => {
           xfwd: true,
           configure: (proxy, _options) => {
             proxy.on("proxyReq", (proxyReq, req, _res) => {
+              proxyReq.removeHeader("X-Forwarded-For");
+              proxyReq.removeHeader("X-Real-IP");
               // Add null checks and type safety
               const clientIP = req.socket?.remoteAddress || "0.0.0.0";
 
