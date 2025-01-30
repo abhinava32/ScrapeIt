@@ -151,6 +151,7 @@ const signIn = async (req, res) => {
 
     // Set the cookie
     res.cookie("auth_token", token, getCookieConfig());
+    console.log("logged in user is ", user.name);
     // Send response
     return res.status(200).json({
       success: true,
@@ -183,8 +184,20 @@ const signOut = async (req, res) => {
     const userKey = `user:${req.user}`;
     await redis.del(userKey);
 
+    // Clear the cookie properly
+    const getCookieConfig = () => {
+      const isProduction = process.env.NODE_ENV === "production";
+      return {
+        httpOnly: true,
+        secure: isProduction,
+        sameSite: isProduction ? "strict" : "lax",
+        path: "/",
+        ...(isProduction && { domain: process.env.DOMAIN }),
+      };
+    };
+
     // Clear the auth token
-    res.clearCookie("auth_token");
+    res.clearCookie("auth_token", getCookieConfig());
 
     // Clear user from request
     req.user = null;
