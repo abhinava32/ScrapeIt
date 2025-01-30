@@ -6,6 +6,11 @@ const redis = require("../../Config/Redis");
 const UAParser = require("ua-parser-js");
 
 const createProfile = async (req, res) => {
+  if (process.env.NODE_ENV === "production") {
+    return res.status(403).json({
+      message: "Forbidden",
+    });
+  }
   if (req.user) {
     return res.status(200).json({
       message: "User already logged in",
@@ -75,7 +80,11 @@ const storeUserLoginInfo = async (user, req) => {
     const osInfo = parser.getOS();
     const deviceInfo = parser.getDevice();
 
-    const ip = req.ip || req.connection.remoteAddress;
+    const ip =
+      req.headers["cf-connecting-ip"] ||
+      req.headers["x-forwarded-for"]?.split(",")[0] ||
+      req.ip ||
+      req.connection.remoteAddress;
 
     // Create a unique key for this login session
     const loginTimestamp = new Date().getTime();
