@@ -183,21 +183,8 @@ const signOut = async (req, res) => {
     const userKey = `user:${req.user}`;
     await redis.del(userKey);
 
-    // Clear the cookie properly
-    const getCookieConfig = () => {
-      const isProduction = process.env.NODE_ENV === "production";
-      return {
-        httpOnly: true,
-        secure: isProduction,
-        sameSite: isProduction ? "strict" : "lax",
-        expires: new Date(0), // This ensures the cookie is immediately expired
-        path: "/",
-        ...(isProduction && { domain: process.env.DOMAIN }),
-      };
-    };
-
     // Clear the auth token
-    res.clearCookie("auth_token", getCookieConfig());
+    res.clearCookie("auth_token");
 
     // Clear user from request
     req.user = null;
