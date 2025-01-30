@@ -15,8 +15,9 @@ const getBrowserFingerprint = (req) => {
     os: `${osInfo.name} ${osInfo.version}`,
     device: deviceInfo.type || "desktop",
     ip:
-      req.ip ||
+      req.headers["cf-connecting-ip"] ||
       req.headers["x-forwarded-for"]?.split(",")[0] ||
+      req.ip ||
       req.socket.remoteAddress,
   };
 };
