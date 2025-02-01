@@ -24,6 +24,7 @@ const getBrowserFingerprint = (req) => {
 
 // Middleware to verify browser fingerprint
 const verifyBrowserFingerprint = async (req, res, next) => {
+  const authToken = req.cookies?.auth_token;
   try {
     if (!req.user) {
       return next();
@@ -43,9 +44,9 @@ const verifyBrowserFingerprint = async (req, res, next) => {
     }
 
     const sessionInfo = JSON.parse(storedSession);
-
     // Check if current fingerprint matches stored session
     const isSameBrowser =
+      sessionInfo.token === authToken &&
       sessionInfo.browser.name === currentFingerprint.browserName &&
       sessionInfo.browser.version.split(".")[0] ===
         currentFingerprint.browserVersion.split(".")[0] &&
