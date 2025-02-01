@@ -70,7 +70,7 @@ const getProfile = async (req, res) => {
   });
 };
 
-const storeUserLoginInfo = async (user, req) => {
+const storeUserLoginInfo = async (user, req, token) => {
   try {
     const userKey = `user:${user._id}`;
 
@@ -92,7 +92,8 @@ const storeUserLoginInfo = async (user, req) => {
 
     // Create login session object with detailed browser info
     const loginInfo = {
-      ip: ip,
+      token,
+      ip,
       browser: {
         name: browserInfo.name,
         version: browserInfo.version,
@@ -139,11 +140,10 @@ const signIn = async (req, res) => {
         message: "Invalid credentials",
       });
     }
-
-    await storeUserLoginInfo(user, req);
-
     // Create token
     const token = jwt.sign({ id: user._id }, jwtKey);
+
+    await storeUserLoginInfo(user, req, token);
 
     const getCookieConfig = () => {
       const isProduction = process.env.NODE_ENV === "production";

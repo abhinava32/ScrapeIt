@@ -156,11 +156,15 @@ module.exports.ask = async (req, res) => {
     detailData["Links"] = links;
     if (detailData) {
       if (process.env.NODE_ENV === "production") {
-        const websiteData = new WebsiteData({
-          url,
-          data: detailData,
-        });
-        await websiteData.save();
+        try {
+          const websiteData = new WebsiteData({
+            url,
+            data: detailData,
+          });
+          await websiteData.save();
+        } catch (err) {
+          console.log("EA8: error in saving data to database");
+        }
       }
 
       return res.status(200).json({
