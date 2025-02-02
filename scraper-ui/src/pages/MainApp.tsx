@@ -86,7 +86,7 @@ const App: React.FC = () => {
     <div>
       <Navbar></Navbar>
       <ToastContainer></ToastContainer>
-      <div className="m-auto text-3xl text-purple-900 mt-28 text-center">
+      <div className="m-auto text-3xl text-blue-900 mt-28 text-center">
         <b>Scrape2Data</b>
       </div>
       <form
@@ -114,7 +114,7 @@ const App: React.FC = () => {
           disabled={loading || cooldown}
           className={`
       ${loading ? "cursor-not-allowed bg-gray-200" : "hover:bg-purple-800"}
-      w-full md:w-1/4 h-14 mt-4 text-xl focus:outline-none text-white bg-purple-700  focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900`}
+      w-full md:w-1/4 h-14 mt-4 text-xl focus:outline-none text-white bg-blue-700  focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900`}
         >
           {loading ? "Loading..." : cooldown ? "Please wait..." : "Scrape"}
         </button>

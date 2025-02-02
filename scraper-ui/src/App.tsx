@@ -29,10 +29,10 @@ function App() {
       dispatch(
         login({
           isLoggedIn: true,
-          name: response.data.name,
-          email: response.data.email,
-          avatar: response.data.avatar,
-          id: response.data.id,
+          name: response.data.data.name,
+          email: response.data.data.email,
+          avatar: response.data.data.avatar,
+          id: response.data.data.id,
         })
       );
     } catch (err) {
