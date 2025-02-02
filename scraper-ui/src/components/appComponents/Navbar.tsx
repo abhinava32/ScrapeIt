@@ -2,10 +2,12 @@ import axios from "axios";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { logout } from "../../features/setUser";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { RootState } from "../../store/store";
 
 const Navbar = () => {
+  const user = useSelector((state: RootState) => state.user);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const Navigate = useNavigate();
   const dispatch = useDispatch();
@@ -39,6 +41,9 @@ const Navbar = () => {
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
             <div className="flex items-center space-x-4">
+              <div>
+                Welcome <b className="text-blue-600">{user.name}</b>
+              </div>
               <button
                 onClick={logoutFunc}
                 className="text-blue-600 ring ring-blue hover:ring-blue-800 hover:text-blue-700 px-3 py-2 rounded-md text-sm font-medium border-ring"
@@ -86,6 +91,9 @@ const Navbar = () => {
         <div className="md:hidden">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             <div className="space-y-2 pt-2">
+              <div className="mx-auto b-2">
+                Welcome <b className="text-blue-600">{user.name}</b>
+              </div>
               <button
                 onClick={logoutFunc}
                 className="block w-full text-left bg-blue-600 text-white hover:bg-blue-700 px-3 py-2 rounded-md text-base font-medium"

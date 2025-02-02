@@ -40,7 +40,7 @@ const DataContainer: React.FC<DataContainerProps> = ({ data }) => {
     <div className="container mx-auto">
       <Toaster position="top-right" /> {/* Add Toaster component */}
       {/* Business Type Header */}
-      <div className="mb-2 p-4 text-center bg-purple-800 text-white rounded-lg">
+      <div className="mb-2 p-4 text-center bg-blue-800 text-white rounded-lg">
         <h2 className="text-xl font-bold">Business Type</h2>
         <p className="text-2xl mt-2">{businessType || "Not specified"}</p>
       </div>
