@@ -8,7 +8,7 @@ interface DataContainerProps {
   data: ScrapedData;
 }
 
-const DataContainer: React.FC<DataContainerProps> = ({ data }) => {
+const DataContainer: React.FC<DataContainerProps> = ({ data }, {}) => {
   // Keep existing data structure
   data = data["data"];
   const businessDetails = data["Business_Details"] || {};
@@ -17,13 +17,14 @@ const DataContainer: React.FC<DataContainerProps> = ({ data }) => {
   const description = businessDetails["description"] || "";
   const extraInfo = businessDetails["extraInfo"] || "";
   const reason = businessDetails["reason"] || "";
-  const links = data["Links"] || {};
+  const links: { string: string } = data["Links"] || {};
 
   const contactDetails = data["Contact_Details"] || {};
   const name = contactDetails["name"] || "";
   const address = contactDetails["address"] || {};
   const country = contactDetails["country"] || "";
   const emails = contactDetails["email"] || "";
+  const pdfs = contactDetails["pdfs"] || {};
   const phones = contactDetails["phone"] || "";
   const fax = contactDetails["fax"] || "";
 
@@ -66,6 +67,11 @@ const DataContainer: React.FC<DataContainerProps> = ({ data }) => {
                 value={email_id}
                 onCopy={handleCopyClick}
               />
+            );
+          })}
+          {pdfs.map((pdf: string) => {
+            return (
+              <DataField label="Pdf" value={pdf} onCopy={handleCopyClick} />
             );
           })}
 
@@ -121,37 +127,37 @@ const DataContainer: React.FC<DataContainerProps> = ({ data }) => {
               ))}
             </ul>
           </div>
+          {/* Enhanced version with formatted link names */}
           <div>
             <p>
-              <b>contact us Link:</b> {links["contactus_link"]}
-              <button
-                className="ml-2 hover:pointer"
-                onClick={() => handleCopyClick(links["contactus_link"])}
-              >
-                <IoCopyOutline className="w-4 h-4" />
-              </button>
+              <b>Visited Links: </b>
             </p>
-            <p>
-              <b>About Us Link:</b> {links["aboutus_link"]}
-              <button
-                className="ml-2 hover:pointer"
-                onClick={() => handleCopyClick(links["aboutus_link"])}
-              >
-                <IoCopyOutline className="w-4 h-4" />
-              </button>
-            </p>
-            <p>
-              <b>Product Link:</b>
-              {links["products_link"]}
-              <button
-                className="ml-2 hover:pointer"
-                onClick={() => handleCopyClick(links["products_link"])}
-              >
-                <IoCopyOutline className="w-4 h-4" />
-              </button>
-            </p>
-            {/* <p>Product Link: {links[]}</p> */}
-            {/* <p>{JSON.stringify(links, null, 2)}</p> */}
+            <ul>
+              {Object.entries(links).map(([linkName, url], index) => {
+                // Format the link name: remove _link suffix and capitalize words
+                const displayName = linkName
+                  .replace(/_link$/, "") // Remove _link suffix
+                  .split("_") // Split by underscore
+                  .map((word) => word.charAt(0).toUpperCase() + word.slice(1)) // Capitalize each word
+                  .join(" "); // Join with spaces
+
+                return (
+                  <li key={index} className="p-2">
+                    <p>
+                      <b>{displayName}: </b>
+                      {url}
+                      <button
+                        className="ml-2 hover:pointer"
+                        onClick={() => handleCopyClick(url)}
+                        title="Copy URL"
+                      >
+                        <IoCopyOutline className="w-4 h-4" />
+                      </button>
+                    </p>
+                  </li>
+                );
+              })}
+            </ul>
           </div>
         </div>
       </div>

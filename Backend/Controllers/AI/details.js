@@ -7,6 +7,10 @@ const getDetails = async (link, pageType, domain) => {
   if (!link) {
     return { message: "No link provided" };
   }
+  if (process.env.DEBUG_MODE === true) {
+    console.log("fetching details from ", link);
+  }
+
   try {
     var { data: html } = await axios.get(link, {
       headers: {
@@ -23,7 +27,9 @@ const getDetails = async (link, pageType, domain) => {
   }
 
   const $ = cheerio.load(html);
-  $("style, script, img, link, meta").remove();
+  $(
+    "style, script, noscript, iframe, img, link, meta, form, button, svg"
+  ).remove();
   const text = $("body").text();
   cleanText = text
     .split("\n") // Split by new lines
@@ -44,7 +50,6 @@ const getDetails = async (link, pageType, domain) => {
 
 const getLinks = async (model, domain) => {
   const htmlContent = await fs.readFile(`${domain}-link.txt`);
-  // console.log("content: ", htmlContent);
 
   try {
     const response = await axios.post(
@@ -64,6 +69,16 @@ const getLinks = async (model, domain) => {
               "contactus_link": "single_contact_link_here",
               "aboutus_link": "single_about_link_here",
               "products_link": "single_product_link_here"
+              "service_link":"single_service_page_link"
+              "terms_link":"single_terms_link"
+              "privacy_link":"single_privacy_link"
+              "faq":"single_faq_link"
+              "blog":"single_blog_link"
+              "careers":"single_careers_link"
+              "other_important_link1": "single_other_link_here",
+              "other_important_link2": "single_other_link_here",
+              "other_important_link3": "single_other_link_here",
+              "other_important_link4": "single_other_link_here",
             }
             
             HTML Content: ${htmlContent}`,
@@ -86,7 +101,9 @@ const getLinks = async (model, domain) => {
     // Additional safety check to ensure valid JSON
     try {
       const jsonResponse = JSON.parse(aiResponse);
-      // console.log("Extracted links:", JSON.stringify(jsonResponse, null, 2));
+      if (process.env.DEBUG_MODE === true) {
+        console.log("Extracted links:", JSON.stringify(jsonResponse, null, 2));
+      }
       return jsonResponse;
     } catch (parseError) {
       console.error("EGD3: JSON Parse Error:", parseError);
