@@ -1,6 +1,7 @@
 import { defineConfig, loadEnv } from "vite";
 import react from "@vitejs/plugin-react";
 import * as dotenv from "dotenv";
+import path from "path";
 
 dotenv.config();
 
@@ -36,6 +37,14 @@ export default defineConfig(({ mode }) => {
             });
           },
         },
+      },
+      fs: {
+        strict: false, // Disable strict file serving
+        allow: [
+          // Allow serving files from these locations
+          path.resolve(__dirname, "."), // Allow current directory
+          "/home/ubuntu/scrapeit/scraper-ui",
+        ],
       },
       hmr: false,
       host: true,
