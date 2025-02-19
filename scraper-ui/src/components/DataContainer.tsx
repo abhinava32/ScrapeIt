@@ -58,8 +58,16 @@ const DataContainer: React.FC<DataContainerProps> = ({ data }, {}) => {
               />
             );
           })}
+          {fax.map((fax_number: string) => {
+            return (
+              <DataField
+                label="Fax"
+                value={fax_number}
+                onCopy={handleCopyClick}
+              />
+            );
+          })}
 
-          <DataField label="Fax" value={fax} onCopy={handleCopyClick} />
           {emails.map((email_id: string) => {
             return (
               <DataField
