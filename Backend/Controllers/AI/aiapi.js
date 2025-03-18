@@ -22,9 +22,12 @@ const {
 module.exports.ask = async (req, res) => {
   const model = req.body.model;
 
-  const url = req.body.url;
+  let url = req.body.url;
   let domain = "temp";
   const enc = tiktokens.encoding_for_model(model);
+  if (url.substring(0, 4) !== "http") {
+    url = "http://" + url;
+  }
   try {
     const testUrl = url.match(/www\.(.*?)\.[a-z]{2,6}/);
     if (testUrl.length > 1) {
