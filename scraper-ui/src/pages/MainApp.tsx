@@ -97,7 +97,7 @@ const App: React.FC = () => {
           <div className="md:w-2/3 grow">
             <input
               type="text"
-              placeholder="URL Format: http://www.mingleimpex.com Or https://www.mingleimpex.com"
+              placeholder="Enter URL"
               disabled={loading}
               value={url}
               onChange={(e) => {
